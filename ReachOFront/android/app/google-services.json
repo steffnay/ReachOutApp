@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "37407735627",
+    "firebase_url": "https://reachofront.firebaseio.com",
+    "project_id": "reachofront",
+    "storage_bucket": "reachofront.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:37407735627:android:17068d694190c2f3",
+        "android_client_info": {
+          "package_name": "com.reachofront"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "37407735627-q2qmr3c6i8840rrd28gvl5de2hev6dsv.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.reachofront",
+            "certificate_hash": "a590c9a034037677711bb637421a7a4dea5634e5"
+          }
+        },
+        {
+          "client_id": "37407735627-sktu6aamkn16rc618sd1m7a8h3052lpm.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCln_SXH-q62-j8r4XFVfoL2tPnQqLhq94"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "37407735627-sktu6aamkn16rc618sd1m7a8h3052lpm.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
