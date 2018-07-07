@@ -10,6 +10,28 @@ export default class SignUp extends React.Component {
     password: '',
     errorMessage: null }
 
+    componentDidMount() {
+      GoogleSignin.hasPlayServices({ autoResolve: true })
+      .then(() => {
+        // play services are available. can now configure library
+      })
+      .catch(err => {
+        console.log('Play services error', err.code, err.message);
+      });
+
+
+      GoogleSignin.configure({
+        scopes: ['https://www.googleapis.com/auth/drive.readonly'], // what API you want to access on behalf of the user, default is email and profile
+        webClientId: '37407735627-sktu6aamkn16rc618sd1m7a8h3052lpm.apps.googleusercontent.com',
+        // offlineAccess: true, // if you want to access Google API on behalf of the user FROM YOUR SERVER
+        // hostedDomain: '', // specifies a hosted domain restriction
+        // forceConsentPrompt: true, // [Android] if you want to show the authorization prompt at each login
+        // accountName: '', // [Android] specifies an account name on the device that should be used
+      }).then(() => {
+        // you can now call currentUserAsync()
+      });
+    }
+
   handleSignUp = () => {
     firebase
       .auth()
@@ -25,6 +47,20 @@ export default class SignUp extends React.Component {
       .then(() => this.props.navigation.navigate('Main'))
       .catch(error => this.setState({ errorMessage: error.message }))
   }
+
+  googleSignIn = () => {
+    GoogleSignin.signIn()
+    .then((user) => {
+      console.log(user);
+      this.setState({user: user});
+    })
+    .catch((err) => {
+      console.log('WRONG SIGNIN', err);
+    })
+    .done()
+  }
+
+
 
 render() {
     return (
@@ -57,10 +93,10 @@ render() {
         />
 
         <GoogleSigninButton
-          style={{ width: 48, height: 48 }}
+          style={{ width: 250, height: 48 }}
           size={GoogleSigninButton.Size.Wide}
           color={GoogleSigninButton.Color.Dark}
-          onPress={this._signIn}/>
+          onPress={this.googleSignIn}/>
 
       </View>
     )
