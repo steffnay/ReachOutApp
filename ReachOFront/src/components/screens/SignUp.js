@@ -56,6 +56,7 @@ export default class SignUp extends React.Component {
       console.log(user);
       this.setState({user: user});
     })
+    .then(() => this.props.navigation.navigate('Main'))
     .catch((err) => {
       console.log('WRONG SIGNIN', err);
     })
