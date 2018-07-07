@@ -1,8 +1,7 @@
 import React from 'react'
 import { StyleSheet, Text, TextInput, View, Button } from 'react-native'
 import firebase from 'react-native-firebase'
-import { GoogleSignin, GoogleSigninButton } from 'react-native-google-signin';
-import GoogleLogin from './GoogleLoginButton';
+// import { GoogleSigninButton } from 'react-native-google-signin';
 
 
 export default class SignUp extends React.Component {
@@ -26,29 +25,6 @@ export default class SignUp extends React.Component {
       .then(() => this.props.navigation.navigate('Main'))
       .catch(error => this.setState({ errorMessage: error.message }))
   }
-
-  googleCreate = () => {
-    GoogleSignInOptions gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
-        .requestEmail()
-        .build();
-
-    mGoogleSignInClient = GoogleSignIn.getClient(this, gso);
-
-
-  }
-
-  googleSignIn = async () => {
-    try {
-      const user = await GoogleSignin.signIn();
-      this.setState({ user });
-    } catch (error) {
-      if (error.code === 'CANCELED') {
-        // user cancelled the login flow
-      } else {
-        // some other error happened
-      }
-    }
-  };
 
 render() {
     return (
@@ -80,37 +56,6 @@ render() {
           onPress={() => this.props.navigation.navigate('Login')}
         />
 
-        // <GoogleSigninButton
-        //   style={{ width: 250, height: 48 }}
-        //   size={GoogleSigninButton.Size.Wide}
-        //   color={GoogleSigninButton.Color.Dark}
-        //   onPress={this.googleSignIn()}
-        //   onCreate={this.googleCreate()}/>
-
-
-
-        <GoogleLogin
-           onLogin={
-             (result) => {
-               console.log(‘Google onLogin’)
-               if (result.message) {
-                 alert(‘error: ‘ + result.message)
-               } else {
-                 alert(“Login was successful “ + result.name + ‘ — ‘ + result.email)
-               }
-            }
-           }
-           onLogout={() => alert(“logged out”)}
-             onError={
-               (result) => {
-                 if (result.error) {
-                   alert(‘error: ‘ + result.error)
-                 } else {
-                   alert(“error”)
-                 }
-              }
-           }
-        />
       </View>
     )
   }

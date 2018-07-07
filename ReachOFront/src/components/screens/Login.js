@@ -1,75 +1,63 @@
-import React, { Component } from 'react'
-import { View, Text, TouchableOpacity, TextInput, Button, StyleSheet } from 'react-native'
+import React from 'react'
+import firebase from 'react-native-firebase'
 
 
+export default class Login extends React.Component {
+  state = { email: '', password: '', errorMessage: null }
 
-class Login extends Component {
 
-  constructor () {
-    super()
-    this.state = {
-      credentials: {
-        login: "",
-        password: "",
-      }
-    }
+  handleLogin = () => {
+    const { email, pasword } = this.state
+    firebase
+      .auth()
+      .signInWithEmailAndPassword(email, password)
+      .then(() => this.props.navigation.navigate('Main'))
+      .catch(error => this.setState({ errorMessage: error.message }))
   }
-
-  _fbAuth() {
-    alert("fb auth")
-  }
-
-  updateText(text, field) {
-    // do it this way with Object.assign because state is nested
-    // and react wont know that the nested value has changed
-    let newCredentials = Object.assign(this.state.credentials)
-    newCredentials[field] = text
-    this.setState({
-      credentials: newCredentials
-    })
-  }
-
-
-  register() {
-    // send credentials to server if signup success...
-      alert(JSON.stringify(this.state.credentials))
-      this.props.navigation.navigate('main')
-    // else error message...
-  }
-
 
   render() {
     return (
-      <View style={{height: 100 + "%",
-        width: 100 + "%",
-        flex: 1,
-        justifyContent: "center",
-        alignItems: "center",
-        }}
-      >
-
-          <Text>LOGIN PAGE</Text>
-          <TextInput value={this.state.login} onChangeText={text => this.updateText(text, 'login')} autoCorrect={false} placeholder="Username" style={styles.input}/>
-          <TextInput value={this.state.password} onChangeText={text => this.updateText(text, 'password')} autoCorrect={false} secureTextEntry placeholder="Password" style={styles.input}/>
-          <Button onPress={() => this.register()} title="Signup"/>
-          <TouchableOpacity onPress={this._fbAuth}>
-            <Text>Login with Facebook</Text>
-          </TouchableOpacity>
+      <View style={styles.container}>
+        <Text>Login</Text>
+        {this.state.errorMessage &&
+          <Text style={{ color: 'red' }}>
+            {this.state.errorMessage}
+          </Text>}
+        <TextInput
+          style={styles.textInput}
+          autoCapitalize="none"
+          placeholder="Email"
+          onChangeText={email => this.setState({ email })}
+          value={this.state.email}
+        />
+        <TextInput
+          secureTextEntry
+          style={styles.textInput}
+          autoCapitalize="none"
+          placeholder="Password"
+          onChangeText={password => this.setState({ password })}
+          value={this.state.password}
+        />
+        <Button title="Login" onPress={this.handleLogin} />
+        <Button
+          title="Don't have an account? Sign Up"
+          onPress={() => this.props.navigation.navigate('SignUp')}
+        />
       </View>
-
     )
   }
 }
-
 const styles = StyleSheet.create({
-  input: {
-    height: 50,
-    width: 80 + "%",
-    paddingHorizontal: 20,
-    backgroundColor: "rgb(222,22,122)",
-    marginBottom: 10,
+  container: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center'
+  },
+  textInput: {
+    height: 40,
+    width: '90%',
+    borderColor: 'gray',
+    borderWidth: 1,
+    marginTop: 8
   }
-
 })
-
-export default Login

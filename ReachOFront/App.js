@@ -1,42 +1,33 @@
-import React from 'react';
-import { View, Text } from 'react-native';
-import firebase from 'react-native-firebase';
-import ReachOut from './src/ReachOut.js'
+import React from 'react'
+import { StyleSheet, Platform, Image, Text, View } from 'react-native'
+import { TabNavigator, SwitchNavigator } from 'react-navigation'
 
-class App extends React.Component {
 
-  constructor() {
-    super();
-    this.state = {
-      isAuthenticated: false,
-    };
+// import the different screens
+import Loading from './src/components/screens/Loading'
+import SignUp from './src/components/screens/SignUp'
+import Main from './src/components/screens/Main'
+import LogOut from './src/components/screens/LogOut'
+import Profile from './src/components/screens/Profile'
+import Contacts from './src/components/screens/Contacts'
+
+
+const Tabs = TabNavigator({
+  profile: Profile,
+  logout: LogOut,
+
+})
+
+
+// create our app's navigation stack
+const App = SwitchNavigator(
+  {
+    Loading,
+    SignUp,
+    Main: Tabs,
+  },
+  {
+    initialRouteName: 'Loading'
   }
-
-  componentDidMount() {
-    firebase.auth().signInAnonymouslyAndRetrieveData()
-      .then(() => {
-        this.setState({
-          isAuthenticated: true,
-        });
-      });
-
-  }
-
-  render() {
-    // If the user has not authenticated
-    if (!this.state.isAuthenticated) {
-      return null;
-    }
-
-
-
-    return (
-      <View>
-        <Text>Welcome to my awesome app!</Text>
-      </View>
-    );
-  }
-
-}
-
-export default App;
+)
+export default App
