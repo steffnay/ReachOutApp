@@ -2,6 +2,7 @@
 import React from 'react'
 import { StyleSheet, Text, TextInput, View, Button } from 'react-native'
 import firebase from 'react-native-firebase'
+import { GoogleSignin } from 'react-native-google-signin';
 
 
 export default class SignUp extends React.Component {
@@ -11,9 +12,22 @@ export default class SignUp extends React.Component {
     errorMessage: null }
 
   handleLogOut = () => {
+    this.signOut()
     firebase.auth().signOut()
     .then(() => this.props.navigation.navigate('Loading'))
       .catch(error => this.setState({ errorMessage: error.message }))
+  }
+
+  signOut() {
+    try {
+      GoogleSignin.revokeAccess();
+      GoogleSignin.signOut();
+      this.setState({ user: null });
+    } catch (error) {
+      this.setState({
+        error,
+      });
+    }
   }
 
 

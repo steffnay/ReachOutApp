@@ -8,6 +8,8 @@ export default class Main extends React.Component {
   componentDidMount() {
     const { currentUser } = firebase.auth()
     this.setState({ currentUser })
+    console.log(currentUser)
+    console.log("this is user")
 }
 
 render() {

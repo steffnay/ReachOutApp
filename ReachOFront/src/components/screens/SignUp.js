@@ -50,11 +50,42 @@ export default class SignUp extends React.Component {
       .catch(error => this.setState({ errorMessage: error.message }))
   }
 
+  firebaseLogin = (googleData) => {
+    const credential = firebase.auth.GoogleAuthProvider.credential(
+      googleData.idToken,
+      googleData.accessToken
+    );
+
+    // login with credential
+    const currentUser = firebase
+      .auth()
+      .signInAndRetrieveDataWithCredential(credential);
+      console.log("made it to end of firebaselogin")
+  }
+
+
   googleSignIn = () => {
     GoogleSignin.signIn()
-    .then((user) => {
-      console.log(user);
-      this.setState({user: user});
+    .then((data) => {
+      const credential = firebase.auth.GoogleAuthProvider.credential(
+        data.idToken,
+        data.accessToken
+      );
+
+      // login with credential
+      const currentUser = firebase
+        .auth()
+        .signInAndRetrieveDataWithCredential(credential);
+
+        console.log("made it to end of firebaselogin 1")
+        let now = firebase.auth().currentUser
+        console.log(now)
+        console.log("made it to end of firebaselogin 2")
+
+
+
+      console.log(data);
+      this.setState({user: data});
     })
     .then(() => this.props.navigation.navigate('Main'))
     .catch((err) => {
@@ -66,6 +97,7 @@ export default class SignUp extends React.Component {
 
 
 render() {
+
     return (
       <View style={styles.container}>
         <Text>Sign Up</Text>
@@ -100,6 +132,7 @@ render() {
           size={GoogleSigninButton.Size.Wide}
           color={GoogleSigninButton.Color.Dark}
           onPress={this.googleSignIn}/>
+
 
       </View>
     )
