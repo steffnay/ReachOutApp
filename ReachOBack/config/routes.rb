@@ -16,7 +16,7 @@ Rails.application.routes.draw do
   get '/contacts', to: 'contacts#index', as: 'contacts'
 
   resources :contact_notifications
-  resources :mood_logs
+  resources :mood_logs, only: [:show]
   resources :mood_updates
 
   # resources :users, only: [:index]
