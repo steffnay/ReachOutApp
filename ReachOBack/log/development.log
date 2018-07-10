@@ -9170,3 +9170,1033 @@ Processing by ContactsController#user_list as */*
 Completed 200 OK in 73ms (Views: 5.4ms | ActiveRecord: 14.0ms)
 
 
+Started GET "/users/1" for 127.0.0.1 at 2018-07-09 19:41:27 -0700
+Started GET "/contacts/user_list/2" for 127.0.0.1 at 2018-07-09 19:41:27 -0700
+  
+ActionController::RoutingError (No route matches [GET] "/contacts/user_list/2"):
+  
+actionpack (5.1.6) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.6) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.6) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.6) lib/rails/rack/logger.rb:24:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.6) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.6) lib/rails/engine.rb:522:in `call'
+puma (3.11.4) lib/puma/configuration.rb:225:in `call'
+puma (3.11.4) lib/puma/server.rb:632:in `handle_request'
+puma (3.11.4) lib/puma/server.rb:446:in `process_client'
+puma (3.11.4) lib/puma/server.rb:306:in `block in run'
+puma (3.11.4) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (124.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 504ms (Views: 1.6ms | ActiveRecord: 409.6ms)
+
+
+Started GET "/users/1" for 127.0.0.1 at 2018-07-09 19:42:42 -0700
+Started GET "/contacts/user_list/2" for 127.0.0.1 at 2018-07-09 19:42:42 -0700
+  
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+ActionController::RoutingError (No route matches [GET] "/contacts/user_list/2"):
+  
+actionpack (5.1.6) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.6) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.6) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.6) lib/rails/rack/logger.rb:24:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.6) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.6) lib/rails/engine.rb:522:in `call'
+puma (3.11.4) lib/puma/configuration.rb:225:in `call'
+puma (3.11.4) lib/puma/server.rb:632:in `handle_request'
+puma (3.11.4) lib/puma/server.rb:446:in `process_client'
+puma (3.11.4) lib/puma/server.rb:306:in `block in run'
+puma (3.11.4) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+  [1m[36mUser Load (182.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 432ms (Views: 4.8ms | ActiveRecord: 182.2ms)
+
+
+Started GET "/contacts/user_list/1" for 127.0.0.1 at 2018-07-09 19:43:18 -0700
+Started GET "/users/1" for 127.0.0.1 at 2018-07-09 19:43:18 -0700
+  
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+ActionController::RoutingError (No route matches [GET] "/contacts/user_list/1"):
+  
+actionpack (5.1.6) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.6) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.6) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.6) lib/rails/rack/logger.rb:24:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.6) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.6) lib/rails/engine.rb:522:in `call'
+puma (3.11.4) lib/puma/configuration.rb:225:in `call'
+puma (3.11.4) lib/puma/server.rb:632:in `handle_request'
+puma (3.11.4) lib/puma/server.rb:446:in `process_client'
+puma (3.11.4) lib/puma/server.rb:306:in `block in run'
+puma (3.11.4) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+  [1m[36mUser Load (179.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 505ms (Views: 4.6ms | ActiveRecord: 179.0ms)
+
+
+Started GET "/users/1" for 127.0.0.1 at 2018-07-09 19:43:28 -0700
+Started GET "/contacts/userlist/1" for 127.0.0.1 at 2018-07-09 19:43:28 -0700
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+Processing by ContactsController#user_list as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (114.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 153ms (Views: 2.6ms | ActiveRecord: 114.2ms)
+
+
+  [1m[36mContact Load (0.7ms)[0m  [1m[34mSELECT "contacts".* FROM "contacts" WHERE "contacts"."user_id" = $1[0m  [["user_id", 1]]
+Completed 500 Internal Server Error in 571ms (ActiveRecord: 145.0ms)
+
+
+  
+NameError (undefined local variable or method `user_id' for #<ContactsController:0x00007ffa77c51d58>
+Did you mean?  user_list):
+  
+app/controllers/contacts_controller.rb:82:in `block in user_list'
+app/controllers/contacts_controller.rb:74:in `user_list'
+Started GET "/users/1" for 127.0.0.1 at 2018-07-09 19:43:47 -0700
+Started GET "/contacts/userlist/1" for 127.0.0.1 at 2018-07-09 19:43:47 -0700
+Processing by ContactsController#user_list as HTML
+  Parameters: {"id"=>"1"}
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (9.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 162ms (Views: 2.5ms | ActiveRecord: 9.7ms)
+
+
+  [1m[36mContact Load (21.7ms)[0m  [1m[34mSELECT "contacts".* FROM "contacts" WHERE "contacts"."user_id" = $1[0m  [["user_id", 1]]
+Completed 500 Internal Server Error in 617ms (ActiveRecord: 21.7ms)
+
+
+  
+NameError (undefined local variable or method `user_id' for #<ContactsController:0x00007ffa7ba47f40>
+Did you mean?  user_list):
+  
+app/controllers/contacts_controller.rb:82:in `block in user_list'
+app/controllers/contacts_controller.rb:74:in `user_list'
+Started GET "/contacts/userlist/1" for 127.0.0.1 at 2018-07-09 19:45:11 -0700
+Started GET "/users/1" for 127.0.0.1 at 2018-07-09 19:45:11 -0700
+Processing by UsersController#show as HTML
+Processing by ContactsController#user_list as HTML
+  Parameters: {"id"=>"1"}
+  Parameters: {"id"=>"1"}
+  [1m[36mContact Load (4.6ms)[0m  [1m[34mSELECT "contacts".* FROM "contacts" WHERE "contacts"."user_id" = $1[0m  [["user_id", 1]]
+  [1m[36mUser Load (80.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 336ms (Views: 1.0ms | ActiveRecord: 237.2ms)
+
+
+Completed 500 Internal Server Error in 624ms (ActiveRecord: 4.6ms)
+
+
+  
+NameError (undefined local variable or method `user_id' for #<ContactsController:0x00007ffa78246380>
+Did you mean?  user_list):
+  
+app/controllers/contacts_controller.rb:82:in `block in user_list'
+app/controllers/contacts_controller.rb:74:in `user_list'
+Started GET "/contacts/userlist/3" for 127.0.0.1 at 2018-07-09 19:45:34 -0700
+Processing by ContactsController#user_list as */*
+  Parameters: {"id"=>"3"}
+  [1m[36mContact Load (4.9ms)[0m  [1m[34mSELECT "contacts".* FROM "contacts" WHERE "contacts"."user_id" = $1[0m  [["user_id", 3]]
+Completed 500 Internal Server Error in 376ms (ActiveRecord: 4.9ms)
+
+
+  
+NameError (undefined local variable or method `user_id' for #<ContactsController:0x00007ffa7b99ae80>
+Did you mean?  user_list):
+  
+app/controllers/contacts_controller.rb:82:in `block in user_list'
+app/controllers/contacts_controller.rb:74:in `user_list'
+Started GET "/users/1" for 127.0.0.1 at 2018-07-09 19:46:02 -0700
+Started GET "/contacts/userlist/1" for 127.0.0.1 at 2018-07-09 19:46:02 -0700
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+Processing by ContactsController#user_list as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (4.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mContact Load (1.8ms)[0m  [1m[34mSELECT "contacts".* FROM "contacts" WHERE "contacts"."user_id" = $1[0m  [["user_id", 1]]
+Completed 200 OK in 198ms (Views: 1.4ms | ActiveRecord: 4.0ms)
+
+
+Completed 500 Internal Server Error in 625ms (ActiveRecord: 1.8ms)
+
+
+  
+NameError (undefined local variable or method `user_id' for #<ContactsController:0x00007ffa7b8c1bd0>
+Did you mean?  user_list):
+  
+app/controllers/contacts_controller.rb:82:in `block in user_list'
+app/controllers/contacts_controller.rb:74:in `user_list'
+Started GET "/users/1" for 127.0.0.1 at 2018-07-09 19:48:07 -0700
+Started GET "/contacts/userlist/1" for 127.0.0.1 at 2018-07-09 19:48:07 -0700
+Processing by ContactsController#user_list as HTML
+  Parameters: {"id"=>"1"}
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mContact Load (34.2ms)[0m  [1m[34mSELECT "contacts".* FROM "contacts" WHERE "contacts"."user_id" = $1[0m  [["user_id", 1]]
+  [1m[36mUser Load (3.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 240ms (Views: 1.1ms | ActiveRecord: 169.1ms)
+
+
+Completed 200 OK in 219ms (Views: 0.4ms | ActiveRecord: 156.4ms)
+
+
+Started POST "/users?last_name=new&email=ssafasfb@email.web&first_name=newbie&phone=%22232-232-2322%22" for 127.0.0.1 at 2018-07-10 14:15:27 -0700
+  [1m[35m (8.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#create as */*
+  Parameters: {"last_name"=>"new", "email"=>"ssafasfb@email.web", "first_name"=>"newbie", "phone"=>"\"232-232-2322\""}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (88.3ms)[0m  [1m[32mINSERT INTO "users" ("first_name", "email", "phone", "last_name", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["first_name", "newbie"], ["email", "ssafasfb@email.web"], ["phone", "\"232-232-2322\""], ["last_name", "new"], ["created_at", "2018-07-10 21:15:29.471876"], ["updated_at", "2018-07-10 21:15:29.471876"]]
+  [1m[35m (44.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mMoodLog Load (78.3ms)[0m  [1m[34mSELECT "mood_logs".* FROM "mood_logs" WHERE "mood_logs"."user_id" = $1[0m  [["user_id", 21]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (2.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 21], ["LIMIT", 1]]
+  [1m[35mSQL (32.5ms)[0m  [1m[32mINSERT INTO "mood_logs" ("user_id", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["user_id", 21], ["created_at", "2018-07-10 21:15:29.769406"], ["updated_at", "2018-07-10 21:15:29.769406"]]
+  [1m[35m (15.1ms)[0m  [1m[35mCOMMIT[0m
+Completed 500 Internal Server Error in 452ms (ActiveRecord: 294.1ms)
+
+
+  
+NoMethodError (undefined method `id' for 21:Integer
+Did you mean?  i):
+  
+app/controllers/users_controller.rb:22:in `create'
+Started POST "/users?last_name=new&email=ssafasfb@email.web&first_name=newbie&phone=%22232-232-2322%22" for 127.0.0.1 at 2018-07-10 14:16:00 -0700
+Processing by UsersController#create as */*
+  Parameters: {"last_name"=>"new", "email"=>"ssafasfb@email.web", "first_name"=>"newbie", "phone"=>"\"232-232-2322\""}
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (5.9ms)[0m  [1m[32mINSERT INTO "users" ("first_name", "email", "phone", "last_name", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["first_name", "newbie"], ["email", "ssafasfb@email.web"], ["phone", "\"232-232-2322\""], ["last_name", "new"], ["created_at", "2018-07-10 21:16:10.531077"], ["updated_at", "2018-07-10 21:16:10.531077"]]
+  [1m[35m (2.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mMoodLog Load (0.7ms)[0m  [1m[34mSELECT "mood_logs".* FROM "mood_logs" WHERE "mood_logs"."user_id" = $1[0m  [["user_id", 22]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 22], ["LIMIT", 1]]
+  [1m[35mSQL (3.2ms)[0m  [1m[32mINSERT INTO "mood_logs" ("user_id", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["user_id", 22], ["created_at", "2018-07-10 21:16:10.575348"], ["updated_at", "2018-07-10 21:16:10.575348"]]
+  [1m[35m (2.8ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 95ms (Views: 1.3ms | ActiveRecord: 15.9ms)
+
+
+  [1m[35m (3.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (3.6ms)[0m  [1m[34mSELECT pg_try_advisory_lock(2366174469259693365)[0m
+  [1m[35m (1.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to AddLogIdToUser (20180710211855)
+  [1m[35m (6.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (69.6ms)[0m  [1m[35mALTER TABLE "users" ADD "log_id" integer[0m
+  [1m[35mSQL (4.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20180710211855"]]
+  [1m[35m (6.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (12.1ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT pg_advisory_unlock(2366174469259693365)[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (7.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (7.5ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (464.1ms)[0m  [1m[35mDROP DATABASE IF EXISTS "reachout-backend_development"[0m
+  [1m[35m (370.9ms)[0m  [1m[35mDROP DATABASE IF EXISTS "reachout-backend_test"[0m
+  [1m[35m (1396.4ms)[0m  [1m[35mCREATE DATABASE "reachout-backend_development" ENCODING = 'unicode'[0m
+  [1m[35m (1310.1ms)[0m  [1m[35mCREATE DATABASE "reachout-backend_test" ENCODING = 'unicode'[0m
+  [1m[35mSQL (9.3ms)[0m  [1m[35mCREATE EXTENSION IF NOT EXISTS "plpgsql"[0m
+  [1m[35m (25.4ms)[0m  [1m[35mDROP TABLE IF EXISTS "contact_notifications" CASCADE[0m
+  [1m[35m (218.5ms)[0m  [1m[35mCREATE TABLE "contact_notifications" ("id" bigserial primary key, "user_id" character varying, "contact_id" integer, "replied" boolean, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (1.0ms)[0m  [1m[35mDROP TABLE IF EXISTS "contacts" CASCADE[0m
+  [1m[35m (56.5ms)[0m  [1m[35mCREATE TABLE "contacts" ("id" bigserial primary key, "first_name" character varying, "last_name" character varying, "phone" character varying, "email" character varying, "confirmed" boolean, "user_id" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (0.5ms)[0m  [1m[35mDROP TABLE IF EXISTS "mood_logs" CASCADE[0m
+  [1m[35m (15.3ms)[0m  [1m[35mCREATE TABLE "mood_logs" ("id" bigserial primary key, "user_id" integer, "last_update" timestamp, "recent_severe" integer DEFAULT 0, "recent_moderate" integer DEFAULT 0, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (0.8ms)[0m  [1m[35mDROP TABLE IF EXISTS "mood_updates" CASCADE[0m
+  [1m[35m (15.9ms)[0m  [1m[35mCREATE TABLE "mood_updates" ("id" bigserial primary key, "primary_mood" integer, "intensity" integer, "mood_log_id" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, "severe" boolean, "moderate" boolean)[0m
+  [1m[35m (0.5ms)[0m  [1m[35mDROP TABLE IF EXISTS "users" CASCADE[0m
+  [1m[35m (18.8ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "first_name" character varying, "email" character varying, "phone" character varying, "age" integer, "last_name" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, "uid" character varying, "provider" character varying, "username" character varying, "password" character varying, "log_id" integer)[0m
+  [1m[35m (30.0ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  [1m[35m (6.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (14.7ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20180710211855)[0m
+  [1m[35m (1.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20180628193929),
+(20180628193256),
+(20180628222601),
+(20180703180703),
+(20180703002647),
+(20180701040732),
+(20180701024330),
+(20180628194005),
+(20180628193424),
+(20180628193846),
+(20180706035237);
+
+[0m
+  [1m[35m (10.5ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (2.9ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (18.0ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2018-07-10 21:24:06.050446"], ["updated_at", "2018-07-10 21:24:06.050446"]]
+  [1m[35m (12.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35mSQL (3.2ms)[0m  [1m[35mCREATE EXTENSION IF NOT EXISTS "plpgsql"[0m
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE IF EXISTS "contact_notifications" CASCADE[0m
+  [1m[35m (104.3ms)[0m  [1m[35mCREATE TABLE "contact_notifications" ("id" bigserial primary key, "user_id" character varying, "contact_id" integer, "replied" boolean, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (0.6ms)[0m  [1m[35mDROP TABLE IF EXISTS "contacts" CASCADE[0m
+  [1m[35m (17.6ms)[0m  [1m[35mCREATE TABLE "contacts" ("id" bigserial primary key, "first_name" character varying, "last_name" character varying, "phone" character varying, "email" character varying, "confirmed" boolean, "user_id" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (0.4ms)[0m  [1m[35mDROP TABLE IF EXISTS "mood_logs" CASCADE[0m
+  [1m[35m (43.2ms)[0m  [1m[35mCREATE TABLE "mood_logs" ("id" bigserial primary key, "user_id" integer, "last_update" timestamp, "recent_severe" integer DEFAULT 0, "recent_moderate" integer DEFAULT 0, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (6.5ms)[0m  [1m[35mDROP TABLE IF EXISTS "mood_updates" CASCADE[0m
+  [1m[35m (23.5ms)[0m  [1m[35mCREATE TABLE "mood_updates" ("id" bigserial primary key, "primary_mood" integer, "intensity" integer, "mood_log_id" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, "severe" boolean, "moderate" boolean)[0m
+  [1m[35m (1.3ms)[0m  [1m[35mDROP TABLE IF EXISTS "users" CASCADE[0m
+  [1m[35m (23.0ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "first_name" character varying, "email" character varying, "phone" character varying, "age" integer, "last_name" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, "uid" character varying, "provider" character varying, "username" character varying, "password" character varying, "log_id" integer)[0m
+  [1m[35m (13.9ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (6.7ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20180710211855)[0m
+  [1m[35m (4.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20180628193929),
+(20180628193256),
+(20180628222601),
+(20180703180703),
+(20180703002647),
+(20180701040732),
+(20180701024330),
+(20180628194005),
+(20180628193424),
+(20180628193846),
+(20180706035237);
+
+[0m
+  [1m[35m (15.8ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.7ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.6ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2018-07-10 21:24:06.473124"], ["updated_at", "2018-07-10 21:24:06.473124"]]
+  [1m[35m (4.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.6ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (2.6ms)[0m  [1m[33mUPDATE "ar_internal_metadata" SET "value" = $1, "updated_at" = $2 WHERE "ar_internal_metadata"."key" = $3[0m  [["value", "test"], ["updated_at", "2018-07-10 21:24:06.487274"], ["key", "environment"]]
+  [1m[35m (2.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.3ms)[0m  [1m[32mINSERT INTO "users" ("id", "first_name", "email", "phone", "age", "last_name", "created_at", "updated_at", "uid", "provider", "username", "password") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12) RETURNING "id"[0m  [["id", 1], ["first_name", "Hedwig"], ["email", "hjoye0@woothemes.com"], ["phone", "178-228-3699"], ["age", 18], ["last_name", "Wolf"], ["created_at", "2018-07-10 21:24:06.770403"], ["updated_at", "2018-07-10 21:24:06.770403"], ["uid", "0741709239"], ["provider", "github"], ["username", "user"], ["password", "password"]]
+  [1m[35m (2.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "users" ("id", "first_name", "email", "phone", "age", "last_name", "created_at", "updated_at", "uid", "provider", "username", "password") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12) RETURNING "id"[0m  [["id", 2], ["first_name", "Allyn"], ["email", "abedo1@biglobe.ne.jp"], ["phone", "413-213-5582"], ["age", 57], ["last_name", "Bedo"], ["created_at", "2018-07-10 21:24:06.777141"], ["updated_at", "2018-07-10 21:24:06.777141"], ["uid", "4927872687"], ["provider", "github"], ["username", "user2"], ["password", "password"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "users" ("id", "first_name", "email", "phone", "age", "last_name", "created_at", "updated_at", "uid", "provider", "username", "password") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12) RETURNING "id"[0m  [["id", 3], ["first_name", "Cheryl"], ["email", "ccamsey2@newyorker.com"], ["phone", "963-511-4214"], ["age", 65], ["last_name", "Camsey"], ["created_at", "2018-07-10 21:24:06.782502"], ["updated_at", "2018-07-10 21:24:06.782502"], ["uid", "4254419269"], ["provider", "github"], ["username", "user1"], ["password", "password"]]
+  [1m[35m (2.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "users" ("id", "first_name", "email", "phone", "last_name", "created_at", "updated_at", "uid", "provider", "username", "password") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11) RETURNING "id"[0m  [["id", 4], ["first_name", "Serene"], ["email", "ssimonnot3@wikimedia.org"], ["phone", "174-671-4106"], ["last_name", "Jones"], ["created_at", "2018-07-10 21:24:06.789276"], ["updated_at", "2018-07-10 21:24:06.789276"], ["uid", "8793568402"], ["provider", "github"], ["username", "user4"], ["password", "password"]]
+  [1m[35m (2.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "users" ("id", "first_name", "email", "phone", "last_name", "created_at", "updated_at", "uid", "provider", "username", "password") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11) RETURNING "id"[0m  [["id", 5], ["first_name", "Henderson"], ["email", "hjertz4@yelp.com"], ["phone", "741-778-5387"], ["last_name", "Jertz"], ["created_at", "2018-07-10 21:24:06.797087"], ["updated_at", "2018-07-10 21:24:06.797087"], ["uid", "5322733888"], ["provider", "github"], ["username", "user5"], ["password", "pw"]]
+  [1m[35m (2.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "users" ("id", "first_name", "email", "phone", "last_name", "created_at", "updated_at", "uid", "provider", "username") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["id", 6], ["first_name", "Artemis"], ["email", "ajeffers5@mapquest.com"], ["phone", "591-973-0275"], ["last_name", "Jeffers"], ["created_at", "2018-07-10 21:24:06.803716"], ["updated_at", "2018-07-10 21:24:06.803716"], ["uid", "8574908203"], ["provider", "github"], ["username", "6"]]
+  [1m[35m (2.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.9ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "users" ("id", "first_name", "email", "phone", "age", "last_name", "created_at", "updated_at", "uid", "provider", "username") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11) RETURNING "id"[0m  [["id", 7], ["first_name", "Isidore"], ["email", "icurme6@ifeng.com"], ["phone", "177-955-7481"], ["age", 74], ["last_name", "Smith"], ["created_at", "2018-07-10 21:24:06.813658"], ["updated_at", "2018-07-10 21:24:06.813658"], ["uid", "0252044387"], ["provider", "github"], ["username", "7"]]
+  [1m[35m (2.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "users" ("id", "first_name", "email", "phone", "last_name", "created_at", "updated_at", "uid", "provider", "username") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["id", 8], ["first_name", "Lynett"], ["email", "lmateja7@xing.com"], ["phone", "458-175-3636"], ["last_name", "Mateja"], ["created_at", "2018-07-10 21:24:06.823103"], ["updated_at", "2018-07-10 21:24:06.823103"], ["uid", "5155243052"], ["provider", "github"], ["username", "8"]]
+  [1m[35m (2.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO "users" ("id", "first_name", "email", "phone", "last_name", "created_at", "updated_at", "uid", "provider", "username") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["id", 9], ["first_name", "Helsa"], ["email", "horwin8@prnewswire.com"], ["phone", "266-740-7117"], ["last_name", "Orwin"], ["created_at", "2018-07-10 21:24:06.832176"], ["updated_at", "2018-07-10 21:24:06.832176"], ["uid", "3661476059"], ["provider", "github"], ["username", "9"]]
+  [1m[35m (2.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.2ms)[0m  [1m[32mINSERT INTO "users" ("id", "first_name", "email", "phone", "age", "last_name", "created_at", "updated_at", "uid", "provider", "username") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11) RETURNING "id"[0m  [["id", 11], ["first_name", "Cosetta"], ["email", "cbrimminga@cargocollective.com"], ["phone", "800-954-6457"], ["age", 38], ["last_name", "Brimming"], ["created_at", "2018-07-10 21:24:06.874856"], ["updated_at", "2018-07-10 21:24:06.874856"], ["uid", "6370697827"], ["provider", "github"], ["username", "11"]]
+  [1m[35m (6.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "users" ("id", "first_name", "email", "phone", "age", "last_name", "created_at", "updated_at", "uid", "provider", "username") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11) RETURNING "id"[0m  [["id", 12], ["first_name", "Chrissy"], ["email", "cdykasb@csmonitor.com"], ["phone", "834-183-3881"], ["age", 22], ["last_name", "Dykas"], ["created_at", "2018-07-10 21:24:06.885753"], ["updated_at", "2018-07-10 21:24:06.885753"], ["uid", "0369163729"], ["provider", "github"], ["username", "12"]]
+  [1m[35m (6.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.9ms)[0m  [1m[32mINSERT INTO "users" ("id", "first_name", "email", "phone", "last_name", "created_at", "updated_at", "uid", "provider", "username") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["id", 13], ["first_name", "Ingra"], ["email", "ipalfreymanc@berkeley.edu"], ["phone", "216-425-6548"], ["last_name", "Marx"], ["created_at", "2018-07-10 21:24:06.897865"], ["updated_at", "2018-07-10 21:24:06.897865"], ["uid", "3375029675"], ["provider", "github"], ["username", "13"]]
+  [1m[35m (2.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO "users" ("id", "first_name", "email", "phone", "age", "last_name", "created_at", "updated_at", "uid", "provider", "username") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11) RETURNING "id"[0m  [["id", 14], ["first_name", "Jillana"], ["email", "jfessierd@de.vu"], ["phone", "779-700-6614"], ["age", 91], ["last_name", "Fessier"], ["created_at", "2018-07-10 21:24:06.908013"], ["updated_at", "2018-07-10 21:24:06.908013"], ["uid", "2319146650"], ["provider", "github"], ["username", "14"]]
+  [1m[35m (2.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "users" ("id", "first_name", "email", "phone", "last_name", "created_at", "updated_at", "uid", "provider", "username") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["id", 15], ["first_name", "Cameron"], ["email", "cludye@domainmarket.com"], ["phone", "862-298-4164"], ["last_name", "Ludy"], ["created_at", "2018-07-10 21:24:06.915798"], ["updated_at", "2018-07-10 21:24:06.915798"], ["uid", "9071692741"], ["provider", "github"], ["username", "15"]]
+  [1m[35m (3.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "users" ("id", "first_name", "email", "phone", "last_name", "created_at", "updated_at", "uid", "provider", "username") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["id", 16], ["first_name", "Latisha"], ["email", "ljerdeinf@blogs.com"], ["phone", "442-630-4118"], ["last_name", "Jerdein"], ["created_at", "2018-07-10 21:24:06.925261"], ["updated_at", "2018-07-10 21:24:06.925261"], ["uid", "3870667894"], ["provider", "github"], ["username", "16"]]
+  [1m[35m (2.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "users" ("id", "first_name", "email", "phone", "age", "last_name", "created_at", "updated_at", "uid", "provider", "username") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11) RETURNING "id"[0m  [["id", 17], ["first_name", "Ezequiel"], ["email", "emistryg@prlog.org"], ["phone", "625-483-2807"], ["age", 90], ["last_name", "Straw"], ["created_at", "2018-07-10 21:24:06.933496"], ["updated_at", "2018-07-10 21:24:06.933496"], ["uid", "1116914439"], ["provider", "github"], ["username", "17"]]
+  [1m[35m (4.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "users" ("id", "first_name", "email", "phone", "age", "last_name", "created_at", "updated_at", "uid", "provider", "username") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11) RETURNING "id"[0m  [["id", 18], ["first_name", "Gianni"], ["email", "gackersh@blogger.com"], ["phone", "373-906-8419"], ["age", 76], ["last_name", "Ackers"], ["created_at", "2018-07-10 21:24:06.943718"], ["updated_at", "2018-07-10 21:24:06.943718"], ["uid", "2069756926"], ["provider", "github"], ["username", "18"]]
+  [1m[35m (5.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "users" ("id", "first_name", "email", "phone", "age", "last_name", "created_at", "updated_at", "uid", "provider", "username") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11) RETURNING "id"[0m  [["id", 19], ["first_name", "Ronna"], ["email", "rkemetzi@sbwire.com"], ["phone", "916-124-5355"], ["age", 20], ["last_name", "LaGrange"], ["created_at", "2018-07-10 21:24:06.952752"], ["updated_at", "2018-07-10 21:24:06.952752"], ["uid", "3907432295"], ["provider", "github"], ["username", "19"]]
+  [1m[35m (2.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "users" ("id", "first_name", "email", "phone", "last_name", "created_at", "updated_at", "uid", "provider", "username") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["id", 20], ["first_name", "Howey"], ["email", "horansj@google.ca"], ["phone", "157-375-9669"], ["last_name", "Orans"], ["created_at", "2018-07-10 21:24:06.960536"], ["updated_at", "2018-07-10 21:24:06.960536"], ["uid", "2248115714"], ["provider", "github"], ["username", "20"]]
+  [1m[35m (2.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (8.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "users"[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (0.9ms)[0m  [1m[32mINSERT INTO "contacts" ("id", "first_name", "last_name", "phone", "email", "confirmed", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["id", 1], ["first_name", "Harli"], ["last_name", "Allflatt"], ["phone", "474-280-6331"], ["email", "hallflatt0@shareasale.com"], ["confirmed", "f"], ["user_id", 1], ["created_at", "2018-07-10 21:24:07.090407"], ["updated_at", "2018-07-10 21:24:07.090407"]]
+  [1m[35m (2.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "contacts" ("id", "first_name", "phone", "email", "confirmed", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["id", 2], ["first_name", "Norrie"], ["phone", "555-136-1374"], ["email", "nparley1@quantcast.com"], ["confirmed", "t"], ["user_id", 1], ["created_at", "2018-07-10 21:24:07.097739"], ["updated_at", "2018-07-10 21:24:07.097739"]]
+  [1m[35m (6.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "contacts" ("id", "first_name", "last_name", "phone", "email", "confirmed", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["id", 3], ["first_name", "Nickie"], ["last_name", "Haslam"], ["phone", "972-987-4609"], ["email", "nhaslam2@dropbox.com"], ["confirmed", "f"], ["user_id", 1], ["created_at", "2018-07-10 21:24:07.109378"], ["updated_at", "2018-07-10 21:24:07.109378"]]
+  [1m[35m (2.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "contacts" ("id", "first_name", "phone", "email", "confirmed", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["id", 4], ["first_name", "Brion"], ["phone", "525-527-2335"], ["email", "btooting3@ucoz.com"], ["confirmed", "f"], ["user_id", 2], ["created_at", "2018-07-10 21:24:07.116824"], ["updated_at", "2018-07-10 21:24:07.116824"]]
+  [1m[35m (2.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "contacts" ("id", "first_name", "phone", "email", "confirmed", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["id", 5], ["first_name", "Madge"], ["phone", "757-973-0867"], ["email", "msimmonett4@yelp.com"], ["confirmed", "t"], ["user_id", 2], ["created_at", "2018-07-10 21:24:07.123023"], ["updated_at", "2018-07-10 21:24:07.123023"]]
+  [1m[35m (3.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "contacts" ("id", "first_name", "phone", "email", "confirmed", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["id", 6], ["first_name", "Hebert"], ["phone", "430-635-4441"], ["email", "hbroderick5@ifeng.com"], ["confirmed", "f"], ["user_id", 2], ["created_at", "2018-07-10 21:24:07.130942"], ["updated_at", "2018-07-10 21:24:07.130942"]]
+  [1m[35m (2.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "contacts" ("id", "first_name", "phone", "email", "confirmed", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["id", 7], ["first_name", "Kelwin"], ["phone", "962-913-6013"], ["email", "kcuddihy6@geocities.jp"], ["confirmed", "f"], ["user_id", 3], ["created_at", "2018-07-10 21:24:07.137457"], ["updated_at", "2018-07-10 21:24:07.137457"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "contacts" ("id", "first_name", "last_name", "phone", "email", "confirmed", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["id", 8], ["first_name", "Lief"], ["last_name", "Breawood"], ["phone", "263-113-2779"], ["email", "lbreawood7@youtube.com"], ["confirmed", "t"], ["user_id", 3], ["created_at", "2018-07-10 21:24:07.142438"], ["updated_at", "2018-07-10 21:24:07.142438"]]
+  [1m[35m (2.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "contacts" ("id", "first_name", "phone", "email", "confirmed", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["id", 9], ["first_name", "Lissa"], ["phone", "353-238-1813"], ["email", "lmesnard8@army.mil"], ["confirmed", "t"], ["user_id", 3], ["created_at", "2018-07-10 21:24:07.150431"], ["updated_at", "2018-07-10 21:24:07.150431"]]
+  [1m[35m (2.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "contacts" ("id", "first_name", "last_name", "phone", "email", "confirmed", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["id", 10], ["first_name", "Avrom"], ["last_name", "Rodway"], ["phone", "361-836-8929"], ["email", "arodway9@bbc.co.uk"], ["confirmed", "f"], ["user_id", 4], ["created_at", "2018-07-10 21:24:07.156485"], ["updated_at", "2018-07-10 21:24:07.156485"]]
+  [1m[35m (2.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "contacts" ("id", "first_name", "phone", "email", "confirmed", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["id", 11], ["first_name", "Tybie"], ["phone", "758-712-1748"], ["email", "tshambrokea@tmall.com"], ["confirmed", "t"], ["user_id", 4], ["created_at", "2018-07-10 21:24:07.162332"], ["updated_at", "2018-07-10 21:24:07.162332"]]
+  [1m[35m (1.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "contacts" ("id", "first_name", "last_name", "phone", "email", "confirmed", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["id", 12], ["first_name", "Whitney"], ["last_name", "Cherrison"], ["phone", "366-244-9674"], ["email", "wcherrisonb@aboutads.info"], ["confirmed", "t"], ["user_id", 4], ["created_at", "2018-07-10 21:24:07.167573"], ["updated_at", "2018-07-10 21:24:07.167573"]]
+  [1m[35m (2.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "contacts" ("id", "first_name", "phone", "email", "confirmed", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["id", 13], ["first_name", "Kristian"], ["phone", "261-351-1856"], ["email", "knathanc@opera.com"], ["confirmed", "t"], ["user_id", 5], ["created_at", "2018-07-10 21:24:07.175189"], ["updated_at", "2018-07-10 21:24:07.175189"]]
+  [1m[35m (3.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "contacts" ("id", "first_name", "last_name", "phone", "email", "confirmed", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["id", 14], ["first_name", "Jorge"], ["last_name", "Mosby"], ["phone", "675-448-7833"], ["email", "jmosbyd@theatlantic.com"], ["confirmed", "t"], ["user_id", 5], ["created_at", "2018-07-10 21:24:07.186428"], ["updated_at", "2018-07-10 21:24:07.186428"]]
+  [1m[35m (2.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "contacts" ("id", "first_name", "last_name", "phone", "email", "confirmed", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["id", 15], ["first_name", "Patric"], ["last_name", "Whitelock"], ["phone", "942-782-3902"], ["email", "pwhitelocke@youku.com"], ["confirmed", "f"], ["user_id", 6], ["created_at", "2018-07-10 21:24:07.192501"], ["updated_at", "2018-07-10 21:24:07.192501"]]
+  [1m[35m (3.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "contacts" ("id", "first_name", "phone", "email", "confirmed", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["id", 16], ["first_name", "Scott"], ["phone", "373-233-5138"], ["email", "spranglef@google.es"], ["confirmed", "f"], ["user_id", 6], ["created_at", "2018-07-10 21:24:07.201649"], ["updated_at", "2018-07-10 21:24:07.201649"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "contacts" ("id", "first_name", "last_name", "phone", "email", "confirmed", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["id", 17], ["first_name", "Ciel"], ["last_name", "Coots"], ["phone", "225-753-5220"], ["email", "ccootsg@mapy.cz"], ["confirmed", "f"], ["user_id", 6], ["created_at", "2018-07-10 21:24:07.205801"], ["updated_at", "2018-07-10 21:24:07.205801"]]
+  [1m[35m (2.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "contacts" ("id", "first_name", "last_name", "phone", "email", "confirmed", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["id", 18], ["first_name", "Orren"], ["last_name", "Durgan"], ["phone", "161-643-2323"], ["email", "odurganh@wsj.com"], ["confirmed", "t"], ["user_id", 7], ["created_at", "2018-07-10 21:24:07.211693"], ["updated_at", "2018-07-10 21:24:07.211693"]]
+  [1m[35m (2.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[35mSQL (1.0ms)[0m  [1m[32mINSERT INTO "contacts" ("id", "first_name", "phone", "email", "confirmed", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["id", 19], ["first_name", "Jaquelin"], ["phone", "846-238-0347"], ["email", "jfirbanksi@example.com"], ["confirmed", "t"], ["user_id", 8], ["created_at", "2018-07-10 21:24:07.218979"], ["updated_at", "2018-07-10 21:24:07.218979"]]
+  [1m[35m (2.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "contacts" ("id", "first_name", "last_name", "phone", "email", "confirmed", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["id", 20], ["first_name", "Thatch"], ["last_name", "Baldacchino"], ["phone", "670-525-8907"], ["email", "tbaldacchinoj@biblegateway.com"], ["confirmed", "f"], ["user_id", 8], ["created_at", "2018-07-10 21:24:07.226649"], ["updated_at", "2018-07-10 21:24:07.226649"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (1.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "contacts" ("id", "first_name", "phone", "email", "confirmed", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["id", 22], ["first_name", "Meagan"], ["phone", "520-589-3573"], ["email", "mrobathaml@joomla.org"], ["confirmed", "t"], ["user_id", 9], ["created_at", "2018-07-10 21:24:07.237294"], ["updated_at", "2018-07-10 21:24:07.237294"]]
+  [1m[35m (2.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "contacts" ("id", "first_name", "last_name", "phone", "email", "confirmed", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["id", 23], ["first_name", "Torrence"], ["last_name", "Robiou"], ["phone", "859-538-8256"], ["email", "trobioum@sfgate.com"], ["confirmed", "t"], ["user_id", 9], ["created_at", "2018-07-10 21:24:07.243540"], ["updated_at", "2018-07-10 21:24:07.243540"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "contacts" ("id", "first_name", "last_name", "phone", "email", "confirmed", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["id", 26], ["first_name", "Gusella"], ["last_name", "Perllman"], ["phone", "926-457-9792"], ["email", "gperllmanp@huffingtonpost.com"], ["confirmed", "f"], ["user_id", 11], ["created_at", "2018-07-10 21:24:07.257423"], ["updated_at", "2018-07-10 21:24:07.257423"]]
+  [1m[35m (2.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "contacts" ("id", "first_name", "phone", "email", "confirmed", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["id", 27], ["first_name", "Lanny"], ["phone", "733-110-7218"], ["email", "leburneq@ucsd.edu"], ["confirmed", "t"], ["user_id", 11], ["created_at", "2018-07-10 21:24:07.264208"], ["updated_at", "2018-07-10 21:24:07.264208"]]
+  [1m[35m (2.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 12], ["LIMIT", 1]]
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "contacts" ("id", "first_name", "phone", "email", "confirmed", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["id", 28], ["first_name", "Henrietta"], ["phone", "944-258-4690"], ["email", "hbovingdonr@ebay.co.uk"], ["confirmed", "t"], ["user_id", 12], ["created_at", "2018-07-10 21:24:07.271652"], ["updated_at", "2018-07-10 21:24:07.271652"]]
+  [1m[35m (1.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 12], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "contacts" ("id", "first_name", "last_name", "phone", "email", "confirmed", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["id", 29], ["first_name", "Friedrich"], ["last_name", "Standley"], ["phone", "828-271-6216"], ["email", "fstandleys@yahoo.com"], ["confirmed", "t"], ["user_id", 12], ["created_at", "2018-07-10 21:24:07.278257"], ["updated_at", "2018-07-10 21:24:07.278257"]]
+  [1m[35m (2.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "contacts" ("id", "first_name", "phone", "email", "confirmed", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["id", 30], ["first_name", "Mersey"], ["phone", "322-786-8935"], ["email", "mgommowet@cafepress.com"], ["confirmed", "t"], ["user_id", 13], ["created_at", "2018-07-10 21:24:07.285301"], ["updated_at", "2018-07-10 21:24:07.285301"]]
+  [1m[35m (2.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "contacts" ("id", "first_name", "last_name", "phone", "email", "confirmed", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["id", 31], ["first_name", "Vince"], ["last_name", "Lomasna"], ["phone", "485-374-7685"], ["email", "vlomasnau@dedecms.com"], ["confirmed", "f"], ["user_id", 13], ["created_at", "2018-07-10 21:24:07.291999"], ["updated_at", "2018-07-10 21:24:07.291999"]]
+  [1m[35m (2.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 14], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "contacts" ("id", "first_name", "phone", "email", "confirmed", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["id", 32], ["first_name", "Sorcha"], ["phone", "430-528-6035"], ["email", "strenemanv@soundcloud.com"], ["confirmed", "t"], ["user_id", 14], ["created_at", "2018-07-10 21:24:07.298612"], ["updated_at", "2018-07-10 21:24:07.298612"]]
+  [1m[35m (2.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 15], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "contacts" ("id", "first_name", "last_name", "phone", "email", "confirmed", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["id", 33], ["first_name", "Reg"], ["last_name", "Galbraith"], ["phone", "562-767-3158"], ["email", "rgalbraithw@hubpages.com"], ["confirmed", "t"], ["user_id", 15], ["created_at", "2018-07-10 21:24:07.304229"], ["updated_at", "2018-07-10 21:24:07.304229"]]
+  [1m[35m (2.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 16], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "contacts" ("id", "first_name", "last_name", "phone", "email", "confirmed", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["id", 34], ["first_name", "Kimball"], ["last_name", "Fosdyke"], ["phone", "398-786-3717"], ["email", "kfosdykex@delicious.com"], ["confirmed", "t"], ["user_id", 16], ["created_at", "2018-07-10 21:24:07.310690"], ["updated_at", "2018-07-10 21:24:07.310690"]]
+  [1m[35m (2.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 16], ["LIMIT", 1]]
+  [1m[35mSQL (0.9ms)[0m  [1m[32mINSERT INTO "contacts" ("id", "first_name", "last_name", "phone", "email", "confirmed", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["id", 35], ["first_name", "Virgie"], ["last_name", "Phillcox"], ["phone", "503-730-3504"], ["email", "vphillcoxy@ebay.com"], ["confirmed", "t"], ["user_id", 16], ["created_at", "2018-07-10 21:24:07.316914"], ["updated_at", "2018-07-10 21:24:07.316914"]]
+  [1m[35m (2.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 16], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "contacts" ("id", "first_name", "last_name", "phone", "email", "confirmed", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["id", 36], ["first_name", "Gradey"], ["last_name", "Olver"], ["phone", "512-946-1072"], ["email", "golverz@shop-pro.jp"], ["confirmed", "t"], ["user_id", 16], ["created_at", "2018-07-10 21:24:07.326286"], ["updated_at", "2018-07-10 21:24:07.326286"]]
+  [1m[35m (2.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "contacts" ("id", "first_name", "phone", "email", "confirmed", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["id", 37], ["first_name", "Lia"], ["phone", "825-253-0057"], ["email", "lwardlaw10@ihg.com"], ["confirmed", "t"], ["user_id", 17], ["created_at", "2018-07-10 21:24:07.333063"], ["updated_at", "2018-07-10 21:24:07.333063"]]
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 18], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "contacts" ("id", "first_name", "phone", "email", "confirmed", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["id", 38], ["first_name", "Gustav"], ["phone", "337-285-5179"], ["email", "glangthorne11@hugedomains.com"], ["confirmed", "f"], ["user_id", 18], ["created_at", "2018-07-10 21:24:07.339096"], ["updated_at", "2018-07-10 21:24:07.339096"]]
+  [1m[35m (4.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 19], ["LIMIT", 1]]
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "contacts" ("id", "first_name", "last_name", "phone", "email", "confirmed", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["id", 39], ["first_name", "Neville"], ["last_name", "Sankey"], ["phone", "824-682-1285"], ["email", "nsankey12@slate.com"], ["confirmed", "t"], ["user_id", 19], ["created_at", "2018-07-10 21:24:07.351506"], ["updated_at", "2018-07-10 21:24:07.351506"]]
+  [1m[35m (3.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 20], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "contacts" ("id", "first_name", "last_name", "phone", "email", "confirmed", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["id", 40], ["first_name", "Elisha"], ["last_name", "Mordan"], ["phone", "999-681-8411"], ["email", "emordan13@un.org"], ["confirmed", "f"], ["user_id", 20], ["created_at", "2018-07-10 21:24:07.361440"], ["updated_at", "2018-07-10 21:24:07.361440"]]
+  [1m[35m (2.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "contacts"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (0.8ms)[0m  [1m[32mINSERT INTO "mood_logs" ("id", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["id", 1], ["user_id", 1], ["created_at", "2018-07-10 21:24:07.407489"], ["updated_at", "2018-07-10 21:24:07.407489"]]
+  [1m[35m (2.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "mood_logs" ("id", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["id", 2], ["user_id", 2], ["created_at", "2018-07-10 21:24:07.417257"], ["updated_at", "2018-07-10 21:24:07.417257"]]
+  [1m[35m (5.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "mood_logs" ("id", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["id", 3], ["user_id", 3], ["created_at", "2018-07-10 21:24:07.426294"], ["updated_at", "2018-07-10 21:24:07.426294"]]
+  [1m[35m (2.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "mood_logs" ("id", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["id", 4], ["user_id", 4], ["created_at", "2018-07-10 21:24:07.432322"], ["updated_at", "2018-07-10 21:24:07.432322"]]
+  [1m[35m (2.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "mood_logs" ("id", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["id", 5], ["user_id", 5], ["created_at", "2018-07-10 21:24:07.439139"], ["updated_at", "2018-07-10 21:24:07.439139"]]
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "mood_logs" ("id", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["id", 6], ["user_id", 6], ["created_at", "2018-07-10 21:24:07.443718"], ["updated_at", "2018-07-10 21:24:07.443718"]]
+  [1m[35m (2.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "mood_logs" ("id", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["id", 7], ["user_id", 7], ["created_at", "2018-07-10 21:24:07.449867"], ["updated_at", "2018-07-10 21:24:07.449867"]]
+  [1m[35m (2.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[35mSQL (0.8ms)[0m  [1m[32mINSERT INTO "mood_logs" ("id", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["id", 8], ["user_id", 8], ["created_at", "2018-07-10 21:24:07.456338"], ["updated_at", "2018-07-10 21:24:07.456338"]]
+  [1m[35m (3.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "mood_logs" ("id", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["id", 9], ["user_id", 9], ["created_at", "2018-07-10 21:24:07.464448"], ["updated_at", "2018-07-10 21:24:07.464448"]]
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "mood_logs" ("id", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["id", 11], ["user_id", 11], ["created_at", "2018-07-10 21:24:07.474383"], ["updated_at", "2018-07-10 21:24:07.474383"]]
+  [1m[35m (2.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 12], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "mood_logs" ("id", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["id", 12], ["user_id", 12], ["created_at", "2018-07-10 21:24:07.479938"], ["updated_at", "2018-07-10 21:24:07.479938"]]
+  [1m[35m (2.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "mood_logs" ("id", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["id", 13], ["user_id", 13], ["created_at", "2018-07-10 21:24:07.486439"], ["updated_at", "2018-07-10 21:24:07.486439"]]
+  [1m[35m (2.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 14], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "mood_logs" ("id", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["id", 14], ["user_id", 14], ["created_at", "2018-07-10 21:24:07.493023"], ["updated_at", "2018-07-10 21:24:07.493023"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 15], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "mood_logs" ("id", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["id", 15], ["user_id", 15], ["created_at", "2018-07-10 21:24:07.497812"], ["updated_at", "2018-07-10 21:24:07.497812"]]
+  [1m[35m (2.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 16], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "mood_logs" ("id", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["id", 16], ["user_id", 16], ["created_at", "2018-07-10 21:24:07.505295"], ["updated_at", "2018-07-10 21:24:07.505295"]]
+  [1m[35m (2.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "mood_logs" ("id", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["id", 17], ["user_id", 17], ["created_at", "2018-07-10 21:24:07.511774"], ["updated_at", "2018-07-10 21:24:07.511774"]]
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 18], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "mood_logs" ("id", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["id", 18], ["user_id", 18], ["created_at", "2018-07-10 21:24:07.517313"], ["updated_at", "2018-07-10 21:24:07.517313"]]
+  [1m[35m (4.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 19], ["LIMIT", 1]]
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "mood_logs" ("id", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["id", 19], ["user_id", 19], ["created_at", "2018-07-10 21:24:07.526835"], ["updated_at", "2018-07-10 21:24:07.526835"]]
+  [1m[35m (2.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (1.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 20], ["LIMIT", 1]]
+  [1m[35mSQL (0.8ms)[0m  [1m[32mINSERT INTO "mood_logs" ("id", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["id", 20], ["user_id", 20], ["created_at", "2018-07-10 21:24:07.535872"], ["updated_at", "2018-07-10 21:24:07.535872"]]
+  [1m[35m (6.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT COUNT(*) FROM "mood_logs"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mMoodLog Load (0.3ms)[0m  [1m[34mSELECT  "mood_logs".* FROM "mood_logs" WHERE "mood_logs"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35mSQL (7.6ms)[0m  [1m[32mINSERT INTO "mood_updates" ("id", "primary_mood", "intensity", "mood_log_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["id", 1], ["primary_mood", 3], ["intensity", -3], ["mood_log_id", 2], ["created_at", "2018-07-10 21:24:07.625188"], ["updated_at", "2018-07-10 21:24:07.625188"]]
+  [1m[35m (2.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mMoodUpdate Load (0.3ms)[0m  [1m[34mSELECT  "mood_updates".* FROM "mood_updates" WHERE "mood_updates"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mMoodLog Load (0.2ms)[0m  [1m[34mSELECT  "mood_logs".* FROM "mood_logs" WHERE "mood_logs"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35mSQL (0.7ms)[0m  [1m[33mUPDATE "mood_updates" SET "created_at" = $1, "moderate" = $2, "severe" = $3, "updated_at" = $4 WHERE "mood_updates"."id" = $5[0m  [["created_at", "2018-07-02 16:01:51"], ["moderate", "f"], ["severe", "f"], ["updated_at", "2018-07-10 21:24:07.648080"], ["id", 1]]
+  [1m[35m (6.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mMoodLog Load (0.5ms)[0m  [1m[34mSELECT  "mood_logs".* FROM "mood_logs" WHERE "mood_logs"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "mood_updates" ("id", "primary_mood", "intensity", "mood_log_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["id", 2], ["primary_mood", 0], ["intensity", 9], ["mood_log_id", 2], ["created_at", "2018-07-10 21:24:07.661498"], ["updated_at", "2018-07-10 21:24:07.661498"]]
+  [1m[35m (6.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mMoodUpdate Load (0.5ms)[0m  [1m[34mSELECT  "mood_updates".* FROM "mood_updates" WHERE "mood_updates"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mMoodLog Load (1.6ms)[0m  [1m[34mSELECT  "mood_logs".* FROM "mood_logs" WHERE "mood_logs"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35mSQL (0.8ms)[0m  [1m[33mUPDATE "mood_updates" SET "created_at" = $1, "severe" = $2, "moderate" = $3, "updated_at" = $4 WHERE "mood_updates"."id" = $5[0m  [["created_at", "2018-07-01 22:36:39"], ["severe", "t"], ["moderate", "f"], ["updated_at", "2018-07-10 21:24:07.677711"], ["id", 2]]
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mMoodLog Load (0.5ms)[0m  [1m[34mSELECT  "mood_logs".* FROM "mood_logs" WHERE "mood_logs"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "mood_updates" ("id", "primary_mood", "intensity", "mood_log_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["id", 3], ["primary_mood", 5], ["intensity", -5], ["mood_log_id", 6], ["created_at", "2018-07-10 21:24:07.685226"], ["updated_at", "2018-07-10 21:24:07.685226"]]
+  [1m[35m (2.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mMoodUpdate Load (0.4ms)[0m  [1m[34mSELECT  "mood_updates".* FROM "mood_updates" WHERE "mood_updates"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mMoodLog Load (0.3ms)[0m  [1m[34mSELECT  "mood_logs".* FROM "mood_logs" WHERE "mood_logs"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[35mSQL (0.5ms)[0m  [1m[33mUPDATE "mood_updates" SET "created_at" = $1, "moderate" = $2, "severe" = $3, "updated_at" = $4 WHERE "mood_updates"."id" = $5[0m  [["created_at", "2018-07-01 19:24:14"], ["moderate", "f"], ["severe", "f"], ["updated_at", "2018-07-10 21:24:07.691917"], ["id", 3]]
+  [1m[35m (3.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mMoodLog Load (1.1ms)[0m  [1m[34mSELECT  "mood_logs".* FROM "mood_logs" WHERE "mood_logs"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "mood_updates" ("id", "primary_mood", "intensity", "mood_log_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["id", 4], ["primary_mood", -2], ["intensity", 5], ["mood_log_id", 8], ["created_at", "2018-07-10 21:24:07.700474"], ["updated_at", "2018-07-10 21:24:07.700474"]]
+  [1m[35m (2.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mMoodUpdate Load (0.3ms)[0m  [1m[34mSELECT  "mood_updates".* FROM "mood_updates" WHERE "mood_updates"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mMoodLog Load (0.2ms)[0m  [1m[34mSELECT  "mood_logs".* FROM "mood_logs" WHERE "mood_logs"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[33mUPDATE "mood_updates" SET "created_at" = $1, "moderate" = $2, "severe" = $3, "updated_at" = $4 WHERE "mood_updates"."id" = $5[0m  [["created_at", "2018-07-01 20:03:45"], ["moderate", "t"], ["severe", "f"], ["updated_at", "2018-07-10 21:24:07.707260"], ["id", 4]]
+  [1m[35m (2.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mMoodLog Load (0.2ms)[0m  [1m[34mSELECT  "mood_logs".* FROM "mood_logs" WHERE "mood_logs"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "mood_updates" ("id", "primary_mood", "intensity", "mood_log_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["id", 5], ["primary_mood", 1], ["intensity", 1], ["mood_log_id", 8], ["created_at", "2018-07-10 21:24:07.713032"], ["updated_at", "2018-07-10 21:24:07.713032"]]
+  [1m[35m (2.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mMoodUpdate Load (0.5ms)[0m  [1m[34mSELECT  "mood_updates".* FROM "mood_updates" WHERE "mood_updates"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mMoodLog Load (0.2ms)[0m  [1m[34mSELECT  "mood_logs".* FROM "mood_logs" WHERE "mood_logs"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[33mUPDATE "mood_updates" SET "created_at" = $1, "moderate" = $2, "severe" = $3, "updated_at" = $4 WHERE "mood_updates"."id" = $5[0m  [["created_at", "2018-06-30 11:33:28"], ["moderate", "f"], ["severe", "f"], ["updated_at", "2018-07-10 21:24:07.720910"], ["id", 5]]
+  [1m[35m (2.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mMoodLog Load (0.4ms)[0m  [1m[34mSELECT  "mood_logs".* FROM "mood_logs" WHERE "mood_logs"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "mood_updates" ("id", "primary_mood", "intensity", "mood_log_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["id", 6], ["primary_mood", -4], ["intensity", -5], ["mood_log_id", 8], ["created_at", "2018-07-10 21:24:07.727208"], ["updated_at", "2018-07-10 21:24:07.727208"]]
+  [1m[35m (2.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mMoodUpdate Load (0.4ms)[0m  [1m[34mSELECT  "mood_updates".* FROM "mood_updates" WHERE "mood_updates"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mMoodLog Load (0.2ms)[0m  [1m[34mSELECT  "mood_logs".* FROM "mood_logs" WHERE "mood_logs"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[33mUPDATE "mood_updates" SET "created_at" = $1, "moderate" = $2, "severe" = $3, "updated_at" = $4 WHERE "mood_updates"."id" = $5[0m  [["created_at", "2018-07-01 19:08:13"], ["moderate", "t"], ["severe", "f"], ["updated_at", "2018-07-10 21:24:07.734463"], ["id", 6]]
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mMoodLog Load (0.3ms)[0m  [1m[34mSELECT  "mood_logs".* FROM "mood_logs" WHERE "mood_logs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (0.8ms)[0m  [1m[32mINSERT INTO "mood_updates" ("id", "primary_mood", "intensity", "mood_log_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["id", 7], ["primary_mood", 1], ["intensity", 1], ["mood_log_id", 1], ["created_at", "2018-07-10 21:24:07.740523"], ["updated_at", "2018-07-10 21:24:07.740523"]]
+  [1m[35m (2.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mMoodUpdate Load (0.2ms)[0m  [1m[34mSELECT  "mood_updates".* FROM "mood_updates" WHERE "mood_updates"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mMoodLog Load (0.4ms)[0m  [1m[34mSELECT  "mood_logs".* FROM "mood_logs" WHERE "mood_logs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (0.5ms)[0m  [1m[33mUPDATE "mood_updates" SET "created_at" = $1, "moderate" = $2, "severe" = $3, "updated_at" = $4 WHERE "mood_updates"."id" = $5[0m  [["created_at", "2018-06-30 02:11:40"], ["moderate", "f"], ["severe", "f"], ["updated_at", "2018-07-10 21:24:07.748953"], ["id", 7]]
+  [1m[35m (2.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mMoodLog Load (0.2ms)[0m  [1m[34mSELECT  "mood_logs".* FROM "mood_logs" WHERE "mood_logs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "mood_updates" ("id", "primary_mood", "intensity", "mood_log_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["id", 8], ["primary_mood", 2], ["intensity", 4], ["mood_log_id", 1], ["created_at", "2018-07-10 21:24:07.756350"], ["updated_at", "2018-07-10 21:24:07.756350"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mMoodUpdate Load (0.3ms)[0m  [1m[34mSELECT  "mood_updates".* FROM "mood_updates" WHERE "mood_updates"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mMoodLog Load (0.2ms)[0m  [1m[34mSELECT  "mood_logs".* FROM "mood_logs" WHERE "mood_logs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (0.5ms)[0m  [1m[33mUPDATE "mood_updates" SET "created_at" = $1, "moderate" = $2, "severe" = $3, "updated_at" = $4 WHERE "mood_updates"."id" = $5[0m  [["created_at", "2018-06-30 04:15:42"], ["moderate", "f"], ["severe", "f"], ["updated_at", "2018-07-10 21:24:07.764426"], ["id", 8]]
+  [1m[35m (6.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mMoodLog Load (0.3ms)[0m  [1m[34mSELECT  "mood_logs".* FROM "mood_logs" WHERE "mood_logs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "mood_updates" ("id", "primary_mood", "intensity", "mood_log_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["id", 9], ["primary_mood", 5], ["intensity", 6], ["mood_log_id", 1], ["created_at", "2018-07-10 21:24:07.776023"], ["updated_at", "2018-07-10 21:24:07.776023"]]
+  [1m[35m (5.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mMoodUpdate Load (0.3ms)[0m  [1m[34mSELECT  "mood_updates".* FROM "mood_updates" WHERE "mood_updates"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mMoodLog Load (0.2ms)[0m  [1m[34mSELECT  "mood_logs".* FROM "mood_logs" WHERE "mood_logs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[33mUPDATE "mood_updates" SET "created_at" = $1, "moderate" = $2, "severe" = $3, "updated_at" = $4 WHERE "mood_updates"."id" = $5[0m  [["created_at", "2018-07-02 23:00:42"], ["moderate", "f"], ["severe", "f"], ["updated_at", "2018-07-10 21:24:07.786039"], ["id", 9]]
+  [1m[35m (2.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mMoodLog Load (0.2ms)[0m  [1m[34mSELECT  "mood_logs".* FROM "mood_logs" WHERE "mood_logs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "mood_updates" ("id", "primary_mood", "intensity", "mood_log_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["id", 10], ["primary_mood", 10], ["intensity", 5], ["mood_log_id", 1], ["created_at", "2018-07-10 21:24:07.792145"], ["updated_at", "2018-07-10 21:24:07.792145"]]
+  [1m[35m (2.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mMoodUpdate Load (0.3ms)[0m  [1m[34mSELECT  "mood_updates".* FROM "mood_updates" WHERE "mood_updates"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mMoodLog Load (0.2ms)[0m  [1m[34mSELECT  "mood_logs".* FROM "mood_logs" WHERE "mood_logs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (0.8ms)[0m  [1m[33mUPDATE "mood_updates" SET "created_at" = $1, "moderate" = $2, "severe" = $3, "updated_at" = $4 WHERE "mood_updates"."id" = $5[0m  [["created_at", "2018-06-30 00:47:05"], ["moderate", "f"], ["severe", "f"], ["updated_at", "2018-07-10 21:24:07.798513"], ["id", 10]]
+  [1m[35m (2.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mMoodLog Load (0.2ms)[0m  [1m[34mSELECT  "mood_logs".* FROM "mood_logs" WHERE "mood_logs"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "mood_updates" ("id", "primary_mood", "intensity", "mood_log_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["id", 11], ["primary_mood", -7], ["intensity", -4], ["mood_log_id", 2], ["created_at", "2018-07-10 21:24:07.806536"], ["updated_at", "2018-07-10 21:24:07.806536"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mMoodUpdate Load (0.3ms)[0m  [1m[34mSELECT  "mood_updates".* FROM "mood_updates" WHERE "mood_updates"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mMoodLog Load (0.2ms)[0m  [1m[34mSELECT  "mood_logs".* FROM "mood_logs" WHERE "mood_logs"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[33mUPDATE "mood_updates" SET "created_at" = $1, "moderate" = $2, "severe" = $3, "updated_at" = $4 WHERE "mood_updates"."id" = $5[0m  [["created_at", "2018-06-30 12:20:03"], ["moderate", "f"], ["severe", "f"], ["updated_at", "2018-07-10 21:24:07.812753"], ["id", 11]]
+  [1m[35m (2.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mMoodLog Load (0.2ms)[0m  [1m[34mSELECT  "mood_logs".* FROM "mood_logs" WHERE "mood_logs"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "mood_updates" ("id", "primary_mood", "intensity", "mood_log_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["id", 12], ["primary_mood", -5], ["intensity", 4], ["mood_log_id", 2], ["created_at", "2018-07-10 21:24:07.819238"], ["updated_at", "2018-07-10 21:24:07.819238"]]
+  [1m[35m (5.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mMoodUpdate Load (0.3ms)[0m  [1m[34mSELECT  "mood_updates".* FROM "mood_updates" WHERE "mood_updates"."id" = $1 LIMIT $2[0m  [["id", 12], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mMoodLog Load (0.3ms)[0m  [1m[34mSELECT  "mood_logs".* FROM "mood_logs" WHERE "mood_logs"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[33mUPDATE "mood_updates" SET "created_at" = $1, "moderate" = $2, "severe" = $3, "updated_at" = $4 WHERE "mood_updates"."id" = $5[0m  [["created_at", "2018-07-01 23:42:54"], ["moderate", "t"], ["severe", "f"], ["updated_at", "2018-07-10 21:24:07.830407"], ["id", 12]]
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mMoodLog Load (0.2ms)[0m  [1m[34mSELECT  "mood_logs".* FROM "mood_logs" WHERE "mood_logs"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "mood_updates" ("id", "primary_mood", "intensity", "mood_log_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["id", 13], ["primary_mood", 3], ["intensity", 5], ["mood_log_id", 3], ["created_at", "2018-07-10 21:24:07.836210"], ["updated_at", "2018-07-10 21:24:07.836210"]]
+  [1m[35m (2.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mMoodUpdate Load (0.2ms)[0m  [1m[34mSELECT  "mood_updates".* FROM "mood_updates" WHERE "mood_updates"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mMoodLog Load (0.2ms)[0m  [1m[34mSELECT  "mood_logs".* FROM "mood_logs" WHERE "mood_logs"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[33mUPDATE "mood_updates" SET "created_at" = $1, "moderate" = $2, "severe" = $3, "updated_at" = $4 WHERE "mood_updates"."id" = $5[0m  [["created_at", "2018-07-01 00:29:56"], ["moderate", "f"], ["severe", "f"], ["updated_at", "2018-07-10 21:24:07.843398"], ["id", 13]]
+  [1m[35m (2.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mMoodLog Load (0.2ms)[0m  [1m[34mSELECT  "mood_logs".* FROM "mood_logs" WHERE "mood_logs"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "mood_updates" ("id", "primary_mood", "intensity", "mood_log_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["id", 14], ["primary_mood", -9], ["intensity", -4], ["mood_log_id", 3], ["created_at", "2018-07-10 21:24:07.849269"], ["updated_at", "2018-07-10 21:24:07.849269"]]
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mMoodUpdate Load (0.2ms)[0m  [1m[34mSELECT  "mood_updates".* FROM "mood_updates" WHERE "mood_updates"."id" = $1 LIMIT $2[0m  [["id", 14], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mMoodLog Load (0.2ms)[0m  [1m[34mSELECT  "mood_logs".* FROM "mood_logs" WHERE "mood_logs"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[33mUPDATE "mood_updates" SET "created_at" = $1, "severe" = $2, "moderate" = $3, "updated_at" = $4 WHERE "mood_updates"."id" = $5[0m  [["created_at", "2018-07-01 19:11:53"], ["severe", "t"], ["moderate", "f"], ["updated_at", "2018-07-10 21:24:07.854848"], ["id", 14]]
+  [1m[35m (2.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mMoodLog Load (0.2ms)[0m  [1m[34mSELECT  "mood_logs".* FROM "mood_logs" WHERE "mood_logs"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "mood_updates" ("id", "primary_mood", "intensity", "mood_log_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["id", 15], ["primary_mood", -3], ["intensity", 7], ["mood_log_id", 4], ["created_at", "2018-07-10 21:24:07.860507"], ["updated_at", "2018-07-10 21:24:07.860507"]]
+  [1m[35m (2.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mMoodUpdate Load (0.2ms)[0m  [1m[34mSELECT  "mood_updates".* FROM "mood_updates" WHERE "mood_updates"."id" = $1 LIMIT $2[0m  [["id", 15], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mMoodLog Load (0.2ms)[0m  [1m[34mSELECT  "mood_logs".* FROM "mood_logs" WHERE "mood_logs"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[33mUPDATE "mood_updates" SET "created_at" = $1, "moderate" = $2, "severe" = $3, "updated_at" = $4 WHERE "mood_updates"."id" = $5[0m  [["created_at", "2018-06-30 14:24:56"], ["moderate", "t"], ["severe", "f"], ["updated_at", "2018-07-10 21:24:07.867337"], ["id", 15]]
+  [1m[35m (2.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mMoodLog Load (0.4ms)[0m  [1m[34mSELECT  "mood_logs".* FROM "mood_logs" WHERE "mood_logs"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "mood_updates" ("id", "primary_mood", "intensity", "mood_log_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["id", 16], ["primary_mood", 0], ["intensity", 5], ["mood_log_id", 4], ["created_at", "2018-07-10 21:24:07.873820"], ["updated_at", "2018-07-10 21:24:07.873820"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mMoodUpdate Load (0.3ms)[0m  [1m[34mSELECT  "mood_updates".* FROM "mood_updates" WHERE "mood_updates"."id" = $1 LIMIT $2[0m  [["id", 16], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mMoodLog Load (0.2ms)[0m  [1m[34mSELECT  "mood_logs".* FROM "mood_logs" WHERE "mood_logs"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[35mSQL (0.7ms)[0m  [1m[33mUPDATE "mood_updates" SET "created_at" = $1, "moderate" = $2, "severe" = $3, "updated_at" = $4 WHERE "mood_updates"."id" = $5[0m  [["created_at", "2018-06-30 22:24:34"], ["moderate", "f"], ["severe", "f"], ["updated_at", "2018-07-10 21:24:07.879557"], ["id", 16]]
+  [1m[35m (2.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mMoodLog Load (0.2ms)[0m  [1m[34mSELECT  "mood_logs".* FROM "mood_logs" WHERE "mood_logs"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "mood_updates" ("id", "primary_mood", "intensity", "mood_log_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["id", 17], ["primary_mood", 4], ["intensity", 6], ["mood_log_id", 5], ["created_at", "2018-07-10 21:24:07.887533"], ["updated_at", "2018-07-10 21:24:07.887533"]]
+  [1m[35m (3.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mMoodUpdate Load (0.2ms)[0m  [1m[34mSELECT  "mood_updates".* FROM "mood_updates" WHERE "mood_updates"."id" = $1 LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mMoodLog Load (0.2ms)[0m  [1m[34mSELECT  "mood_logs".* FROM "mood_logs" WHERE "mood_logs"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[33mUPDATE "mood_updates" SET "created_at" = $1, "moderate" = $2, "severe" = $3, "updated_at" = $4 WHERE "mood_updates"."id" = $5[0m  [["created_at", "2018-06-30 06:32:07"], ["moderate", "f"], ["severe", "f"], ["updated_at", "2018-07-10 21:24:07.894768"], ["id", 17]]
+  [1m[35m (2.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mMoodLog Load (0.7ms)[0m  [1m[34mSELECT  "mood_logs".* FROM "mood_logs" WHERE "mood_logs"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "mood_updates" ("id", "primary_mood", "intensity", "mood_log_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["id", 18], ["primary_mood", 4], ["intensity", 4], ["mood_log_id", 5], ["created_at", "2018-07-10 21:24:07.903249"], ["updated_at", "2018-07-10 21:24:07.903249"]]
+  [1m[35m (3.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mMoodUpdate Load (0.3ms)[0m  [1m[34mSELECT  "mood_updates".* FROM "mood_updates" WHERE "mood_updates"."id" = $1 LIMIT $2[0m  [["id", 18], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mMoodLog Load (0.3ms)[0m  [1m[34mSELECT  "mood_logs".* FROM "mood_logs" WHERE "mood_logs"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[35mSQL (0.5ms)[0m  [1m[33mUPDATE "mood_updates" SET "created_at" = $1, "moderate" = $2, "severe" = $3, "updated_at" = $4 WHERE "mood_updates"."id" = $5[0m  [["created_at", "2018-06-30 01:43:51"], ["moderate", "f"], ["severe", "f"], ["updated_at", "2018-07-10 21:24:07.911675"], ["id", 18]]
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mMoodLog Load (0.3ms)[0m  [1m[34mSELECT  "mood_logs".* FROM "mood_logs" WHERE "mood_logs"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "mood_updates" ("id", "primary_mood", "intensity", "mood_log_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["id", 19], ["primary_mood", -2], ["intensity", -5], ["mood_log_id", 6], ["created_at", "2018-07-10 21:24:07.916332"], ["updated_at", "2018-07-10 21:24:07.916332"]]
+  [1m[35m (2.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mMoodUpdate Load (0.3ms)[0m  [1m[34mSELECT  "mood_updates".* FROM "mood_updates" WHERE "mood_updates"."id" = $1 LIMIT $2[0m  [["id", 19], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mMoodLog Load (0.2ms)[0m  [1m[34mSELECT  "mood_logs".* FROM "mood_logs" WHERE "mood_logs"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[33mUPDATE "mood_updates" SET "created_at" = $1, "moderate" = $2, "severe" = $3, "updated_at" = $4 WHERE "mood_updates"."id" = $5[0m  [["created_at", "2018-07-02 03:05:25"], ["moderate", "t"], ["severe", "f"], ["updated_at", "2018-07-10 21:24:07.923751"], ["id", 19]]
+  [1m[35m (2.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mMoodLog Load (0.2ms)[0m  [1m[34mSELECT  "mood_logs".* FROM "mood_logs" WHERE "mood_logs"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "mood_updates" ("id", "primary_mood", "intensity", "mood_log_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["id", 20], ["primary_mood", -3], ["intensity", 3], ["mood_log_id", 6], ["created_at", "2018-07-10 21:24:07.929988"], ["updated_at", "2018-07-10 21:24:07.929988"]]
+  [1m[35m (2.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mMoodUpdate Load (0.7ms)[0m  [1m[34mSELECT  "mood_updates".* FROM "mood_updates" WHERE "mood_updates"."id" = $1 LIMIT $2[0m  [["id", 20], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mMoodLog Load (0.2ms)[0m  [1m[34mSELECT  "mood_logs".* FROM "mood_logs" WHERE "mood_logs"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[33mUPDATE "mood_updates" SET "created_at" = $1, "moderate" = $2, "severe" = $3, "updated_at" = $4 WHERE "mood_updates"."id" = $5[0m  [["created_at", "2018-07-02 17:00:12"], ["moderate", "t"], ["severe", "f"], ["updated_at", "2018-07-10 21:24:07.938120"], ["id", 20]]
+  [1m[35m (3.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mMoodLog Load (0.2ms)[0m  [1m[34mSELECT  "mood_logs".* FROM "mood_logs" WHERE "mood_logs"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "mood_updates" ("id", "primary_mood", "intensity", "mood_log_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["id", 21], ["primary_mood", -2], ["intensity", 5], ["mood_log_id", 7], ["created_at", "2018-07-10 21:24:07.945074"], ["updated_at", "2018-07-10 21:24:07.945074"]]
+  [1m[35m (2.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mMoodUpdate Load (1.5ms)[0m  [1m[34mSELECT  "mood_updates".* FROM "mood_updates" WHERE "mood_updates"."id" = $1 LIMIT $2[0m  [["id", 21], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mMoodLog Load (0.6ms)[0m  [1m[34mSELECT  "mood_logs".* FROM "mood_logs" WHERE "mood_logs"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[33mUPDATE "mood_updates" SET "created_at" = $1, "moderate" = $2, "severe" = $3, "updated_at" = $4 WHERE "mood_updates"."id" = $5[0m  [["created_at", "2018-06-30 22:30:11"], ["moderate", "t"], ["severe", "f"], ["updated_at", "2018-07-10 21:24:07.954802"], ["id", 21]]
+  [1m[35m (2.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mMoodLog Load (0.2ms)[0m  [1m[34mSELECT  "mood_logs".* FROM "mood_logs" WHERE "mood_logs"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "mood_updates" ("id", "primary_mood", "intensity", "mood_log_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["id", 22], ["primary_mood", -5], ["intensity", 5], ["mood_log_id", 7], ["created_at", "2018-07-10 21:24:07.961114"], ["updated_at", "2018-07-10 21:24:07.961114"]]
+  [1m[35m (2.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mMoodUpdate Load (0.4ms)[0m  [1m[34mSELECT  "mood_updates".* FROM "mood_updates" WHERE "mood_updates"."id" = $1 LIMIT $2[0m  [["id", 22], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mMoodLog Load (0.3ms)[0m  [1m[34mSELECT  "mood_logs".* FROM "mood_logs" WHERE "mood_logs"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[33mUPDATE "mood_updates" SET "created_at" = $1, "moderate" = $2, "severe" = $3, "updated_at" = $4 WHERE "mood_updates"."id" = $5[0m  [["created_at", "2018-06-30 04:26:08"], ["moderate", "t"], ["severe", "f"], ["updated_at", "2018-07-10 21:24:07.969878"], ["id", 22]]
+  [1m[35m (2.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mMoodLog Load (0.2ms)[0m  [1m[34mSELECT  "mood_logs".* FROM "mood_logs" WHERE "mood_logs"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "mood_updates" ("id", "primary_mood", "intensity", "mood_log_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["id", 23], ["primary_mood", 5], ["intensity", 0], ["mood_log_id", 7], ["created_at", "2018-07-10 21:24:07.976984"], ["updated_at", "2018-07-10 21:24:07.976984"]]
+  [1m[35m (2.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mMoodUpdate Load (0.2ms)[0m  [1m[34mSELECT  "mood_updates".* FROM "mood_updates" WHERE "mood_updates"."id" = $1 LIMIT $2[0m  [["id", 23], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mMoodLog Load (0.5ms)[0m  [1m[34mSELECT  "mood_logs".* FROM "mood_logs" WHERE "mood_logs"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[33mUPDATE "mood_updates" SET "created_at" = $1, "moderate" = $2, "severe" = $3, "updated_at" = $4 WHERE "mood_updates"."id" = $5[0m  [["created_at", "2018-07-01 04:29:34"], ["moderate", "f"], ["severe", "f"], ["updated_at", "2018-07-10 21:24:07.985373"], ["id", 23]]
+  [1m[35m (2.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mMoodLog Load (0.2ms)[0m  [1m[34mSELECT  "mood_logs".* FROM "mood_logs" WHERE "mood_logs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "mood_updates" ("id", "primary_mood", "intensity", "mood_log_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["id", 24], ["primary_mood", 6], ["intensity", 7], ["mood_log_id", 1], ["created_at", "2018-07-10 21:24:07.992224"], ["updated_at", "2018-07-10 21:24:07.992224"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mMoodUpdate Load (0.2ms)[0m  [1m[34mSELECT  "mood_updates".* FROM "mood_updates" WHERE "mood_updates"."id" = $1 LIMIT $2[0m  [["id", 24], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mMoodLog Load (0.2ms)[0m  [1m[34mSELECT  "mood_logs".* FROM "mood_logs" WHERE "mood_logs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (0.5ms)[0m  [1m[33mUPDATE "mood_updates" SET "created_at" = $1, "moderate" = $2, "severe" = $3, "updated_at" = $4 WHERE "mood_updates"."id" = $5[0m  [["created_at", "2018-07-01 06:21:46"], ["moderate", "f"], ["severe", "f"], ["updated_at", "2018-07-10 21:24:07.996194"], ["id", 24]]
+  [1m[35m (2.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mMoodLog Load (0.2ms)[0m  [1m[34mSELECT  "mood_logs".* FROM "mood_logs" WHERE "mood_logs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "mood_updates" ("id", "primary_mood", "intensity", "mood_log_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["id", 25], ["primary_mood", 2], ["intensity", -5], ["mood_log_id", 1], ["created_at", "2018-07-10 21:24:08.002239"], ["updated_at", "2018-07-10 21:24:08.002239"]]
+  [1m[35m (2.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mMoodUpdate Load (0.4ms)[0m  [1m[34mSELECT  "mood_updates".* FROM "mood_updates" WHERE "mood_updates"."id" = $1 LIMIT $2[0m  [["id", 25], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mMoodLog Load (0.2ms)[0m  [1m[34mSELECT  "mood_logs".* FROM "mood_logs" WHERE "mood_logs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[33mUPDATE "mood_updates" SET "created_at" = $1, "moderate" = $2, "severe" = $3, "updated_at" = $4 WHERE "mood_updates"."id" = $5[0m  [["created_at", "2018-06-30 20:39:00"], ["moderate", "f"], ["severe", "f"], ["updated_at", "2018-07-10 21:24:08.010466"], ["id", 25]]
+  [1m[35m (5.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mMoodLog Load (2.4ms)[0m  [1m[34mSELECT  "mood_logs".* FROM "mood_logs" WHERE "mood_logs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "mood_updates" ("id", "primary_mood", "intensity", "mood_log_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["id", 26], ["primary_mood", 5], ["intensity", 7], ["mood_log_id", 1], ["created_at", "2018-07-10 21:24:08.025698"], ["updated_at", "2018-07-10 21:24:08.025698"]]
+  [1m[35m (5.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mMoodUpdate Load (0.3ms)[0m  [1m[34mSELECT  "mood_updates".* FROM "mood_updates" WHERE "mood_updates"."id" = $1 LIMIT $2[0m  [["id", 26], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mMoodLog Load (0.4ms)[0m  [1m[34mSELECT  "mood_logs".* FROM "mood_logs" WHERE "mood_logs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[33mUPDATE "mood_updates" SET "created_at" = $1, "moderate" = $2, "severe" = $3, "updated_at" = $4 WHERE "mood_updates"."id" = $5[0m  [["created_at", "2018-07-02 01:03:18"], ["moderate", "f"], ["severe", "f"], ["updated_at", "2018-07-10 21:24:08.041473"], ["id", 26]]
+  [1m[35m (1.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mMoodLog Load (0.3ms)[0m  [1m[34mSELECT  "mood_logs".* FROM "mood_logs" WHERE "mood_logs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "mood_updates" ("id", "primary_mood", "intensity", "mood_log_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["id", 27], ["primary_mood", -2], ["intensity", 10], ["mood_log_id", 1], ["created_at", "2018-07-10 21:24:08.047887"], ["updated_at", "2018-07-10 21:24:08.047887"]]
+  [1m[35m (2.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mMoodUpdate Load (0.2ms)[0m  [1m[34mSELECT  "mood_updates".* FROM "mood_updates" WHERE "mood_updates"."id" = $1 LIMIT $2[0m  [["id", 27], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mMoodLog Load (0.4ms)[0m  [1m[34mSELECT  "mood_logs".* FROM "mood_logs" WHERE "mood_logs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (0.5ms)[0m  [1m[33mUPDATE "mood_updates" SET "created_at" = $1, "severe" = $2, "moderate" = $3, "updated_at" = $4 WHERE "mood_updates"."id" = $5[0m  [["created_at", "2018-07-02 16:47:49"], ["severe", "t"], ["moderate", "f"], ["updated_at", "2018-07-10 21:24:08.055138"], ["id", 27]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mMoodLog Load (0.2ms)[0m  [1m[34mSELECT  "mood_logs".* FROM "mood_logs" WHERE "mood_logs"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "mood_updates" ("id", "primary_mood", "intensity", "mood_log_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["id", 28], ["primary_mood", 2], ["intensity", 3], ["mood_log_id", 2], ["created_at", "2018-07-10 21:24:08.059617"], ["updated_at", "2018-07-10 21:24:08.059617"]]
+  [1m[35m (2.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mMoodUpdate Load (0.3ms)[0m  [1m[34mSELECT  "mood_updates".* FROM "mood_updates" WHERE "mood_updates"."id" = $1 LIMIT $2[0m  [["id", 28], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mMoodLog Load (0.3ms)[0m  [1m[34mSELECT  "mood_logs".* FROM "mood_logs" WHERE "mood_logs"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[33mUPDATE "mood_updates" SET "created_at" = $1, "moderate" = $2, "severe" = $3, "updated_at" = $4 WHERE "mood_updates"."id" = $5[0m  [["created_at", "2018-06-30 23:55:31"], ["moderate", "f"], ["severe", "f"], ["updated_at", "2018-07-10 21:24:08.066864"], ["id", 28]]
+  [1m[35m (4.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mMoodLog Load (0.2ms)[0m  [1m[34mSELECT  "mood_logs".* FROM "mood_logs" WHERE "mood_logs"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "mood_updates" ("id", "primary_mood", "intensity", "mood_log_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["id", 29], ["primary_mood", 1], ["intensity", 2], ["mood_log_id", 2], ["created_at", "2018-07-10 21:24:08.075452"], ["updated_at", "2018-07-10 21:24:08.075452"]]
+  [1m[35m (2.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mMoodUpdate Load (0.3ms)[0m  [1m[34mSELECT  "mood_updates".* FROM "mood_updates" WHERE "mood_updates"."id" = $1 LIMIT $2[0m  [["id", 29], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mMoodLog Load (0.2ms)[0m  [1m[34mSELECT  "mood_logs".* FROM "mood_logs" WHERE "mood_logs"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[33mUPDATE "mood_updates" SET "created_at" = $1, "moderate" = $2, "severe" = $3, "updated_at" = $4 WHERE "mood_updates"."id" = $5[0m  [["created_at", "2018-06-30 02:24:36"], ["moderate", "f"], ["severe", "f"], ["updated_at", "2018-07-10 21:24:08.081912"], ["id", 29]]
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mMoodLog Load (0.2ms)[0m  [1m[34mSELECT  "mood_logs".* FROM "mood_logs" WHERE "mood_logs"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "mood_updates" ("id", "primary_mood", "intensity", "mood_log_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["id", 30], ["primary_mood", 2], ["intensity", 2], ["mood_log_id", 2], ["created_at", "2018-07-10 21:24:08.087600"], ["updated_at", "2018-07-10 21:24:08.087600"]]
+  [1m[35m (2.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mMoodUpdate Load (0.3ms)[0m  [1m[34mSELECT  "mood_updates".* FROM "mood_updates" WHERE "mood_updates"."id" = $1 LIMIT $2[0m  [["id", 30], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mMoodLog Load (0.2ms)[0m  [1m[34mSELECT  "mood_logs".* FROM "mood_logs" WHERE "mood_logs"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[33mUPDATE "mood_updates" SET "created_at" = $1, "moderate" = $2, "severe" = $3, "updated_at" = $4 WHERE "mood_updates"."id" = $5[0m  [["created_at", "2018-06-30 10:39:43"], ["moderate", "f"], ["severe", "f"], ["updated_at", "2018-07-10 21:24:08.094703"], ["id", 30]]
+  [1m[35m (2.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mMoodLog Load (0.3ms)[0m  [1m[34mSELECT  "mood_logs".* FROM "mood_logs" WHERE "mood_logs"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "mood_updates" ("id", "primary_mood", "intensity", "mood_log_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["id", 31], ["primary_mood", 4], ["intensity", 6], ["mood_log_id", 2], ["created_at", "2018-07-10 21:24:08.103572"], ["updated_at", "2018-07-10 21:24:08.103572"]]
+  [1m[35m (2.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mMoodUpdate Load (0.3ms)[0m  [1m[34mSELECT  "mood_updates".* FROM "mood_updates" WHERE "mood_updates"."id" = $1 LIMIT $2[0m  [["id", 31], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mMoodLog Load (0.2ms)[0m  [1m[34mSELECT  "mood_logs".* FROM "mood_logs" WHERE "mood_logs"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35mSQL (0.5ms)[0m  [1m[33mUPDATE "mood_updates" SET "created_at" = $1, "moderate" = $2, "severe" = $3, "updated_at" = $4 WHERE "mood_updates"."id" = $5[0m  [["created_at", "2018-07-02 00:32:31"], ["moderate", "f"], ["severe", "f"], ["updated_at", "2018-07-10 21:24:08.110673"], ["id", 31]]
+  [1m[35m (2.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mMoodLog Load (0.2ms)[0m  [1m[34mSELECT  "mood_logs".* FROM "mood_logs" WHERE "mood_logs"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[35mSQL (1.2ms)[0m  [1m[32mINSERT INTO "mood_updates" ("id", "primary_mood", "intensity", "mood_log_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["id", 32], ["primary_mood", 4], ["intensity", 7], ["mood_log_id", 3], ["created_at", "2018-07-10 21:24:08.116919"], ["updated_at", "2018-07-10 21:24:08.116919"]]
+  [1m[35m (2.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mMoodUpdate Load (0.2ms)[0m  [1m[34mSELECT  "mood_updates".* FROM "mood_updates" WHERE "mood_updates"."id" = $1 LIMIT $2[0m  [["id", 32], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mMoodLog Load (0.2ms)[0m  [1m[34mSELECT  "mood_logs".* FROM "mood_logs" WHERE "mood_logs"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[35mSQL (0.5ms)[0m  [1m[33mUPDATE "mood_updates" SET "created_at" = $1, "moderate" = $2, "severe" = $3, "updated_at" = $4 WHERE "mood_updates"."id" = $5[0m  [["created_at", "2018-06-30 00:59:45"], ["moderate", "f"], ["severe", "f"], ["updated_at", "2018-07-10 21:24:08.124439"], ["id", 32]]
+  [1m[35m (3.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mMoodLog Load (0.2ms)[0m  [1m[34mSELECT  "mood_logs".* FROM "mood_logs" WHERE "mood_logs"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "mood_updates" ("id", "primary_mood", "intensity", "mood_log_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["id", 33], ["primary_mood", 6], ["intensity", 5], ["mood_log_id", 3], ["created_at", "2018-07-10 21:24:08.131976"], ["updated_at", "2018-07-10 21:24:08.131976"]]
+  [1m[35m (2.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mMoodUpdate Load (0.2ms)[0m  [1m[34mSELECT  "mood_updates".* FROM "mood_updates" WHERE "mood_updates"."id" = $1 LIMIT $2[0m  [["id", 33], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mMoodLog Load (0.2ms)[0m  [1m[34mSELECT  "mood_logs".* FROM "mood_logs" WHERE "mood_logs"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[33mUPDATE "mood_updates" SET "created_at" = $1, "moderate" = $2, "severe" = $3, "updated_at" = $4 WHERE "mood_updates"."id" = $5[0m  [["created_at", "2018-06-30 04:42:22"], ["moderate", "f"], ["severe", "f"], ["updated_at", "2018-07-10 21:24:08.138412"], ["id", 33]]
+  [1m[35m (2.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mMoodLog Load (0.2ms)[0m  [1m[34mSELECT  "mood_logs".* FROM "mood_logs" WHERE "mood_logs"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "mood_updates" ("id", "primary_mood", "intensity", "mood_log_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["id", 34], ["primary_mood", -2], ["intensity", 6], ["mood_log_id", 3], ["created_at", "2018-07-10 21:24:08.145321"], ["updated_at", "2018-07-10 21:24:08.145321"]]
+  [1m[35m (3.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mMoodUpdate Load (0.8ms)[0m  [1m[34mSELECT  "mood_updates".* FROM "mood_updates" WHERE "mood_updates"."id" = $1 LIMIT $2[0m  [["id", 34], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mMoodLog Load (0.2ms)[0m  [1m[34mSELECT  "mood_logs".* FROM "mood_logs" WHERE "mood_logs"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[33mUPDATE "mood_updates" SET "created_at" = $1, "moderate" = $2, "severe" = $3, "updated_at" = $4 WHERE "mood_updates"."id" = $5[0m  [["created_at", "2018-07-01 23:52:51"], ["moderate", "t"], ["severe", "f"], ["updated_at", "2018-07-10 21:24:08.155118"], ["id", 34]]
+  [1m[35m (0.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.7ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mMoodLog Load (1.6ms)[0m  [1m[34mSELECT  "mood_logs".* FROM "mood_logs" WHERE "mood_logs"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "mood_updates" ("id", "primary_mood", "intensity", "mood_log_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["id", 35], ["primary_mood", 6], ["intensity", 0], ["mood_log_id", 4], ["created_at", "2018-07-10 21:24:08.162962"], ["updated_at", "2018-07-10 21:24:08.162962"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mMoodUpdate Load (0.3ms)[0m  [1m[34mSELECT  "mood_updates".* FROM "mood_updates" WHERE "mood_updates"."id" = $1 LIMIT $2[0m  [["id", 35], ["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mMoodLog Load (0.2ms)[0m  [1m[34mSELECT  "mood_logs".* FROM "mood_logs" WHERE "mood_logs"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[35mSQL (0.5ms)[0m  [1m[33mUPDATE "mood_updates" SET "created_at" = $1, "moderate" = $2, "severe" = $3, "updated_at" = $4 WHERE "mood_updates"."id" = $5[0m  [["created_at", "2018-07-01 17:50:47"], ["moderate", "f"], ["severe", "f"], ["updated_at", "2018-07-10 21:24:08.170462"], ["id", 35]]
+  [1m[35m (2.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mMoodLog Load (0.2ms)[0m  [1m[34mSELECT  "mood_logs".* FROM "mood_logs" WHERE "mood_logs"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "mood_updates" ("id", "primary_mood", "intensity", "mood_log_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["id", 36], ["primary_mood", -3], ["intensity", -6], ["mood_log_id", 4], ["created_at", "2018-07-10 21:24:08.176903"], ["updated_at", "2018-07-10 21:24:08.176903"]]
+  [1m[35m (2.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mMoodUpdate Load (0.2ms)[0m  [1m[34mSELECT  "mood_updates".* FROM "mood_updates" WHERE "mood_updates"."id" = $1 LIMIT $2[0m  [["id", 36], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mMoodLog Load (0.9ms)[0m  [1m[34mSELECT  "mood_logs".* FROM "mood_logs" WHERE "mood_logs"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[33mUPDATE "mood_updates" SET "created_at" = $1, "moderate" = $2, "severe" = $3, "updated_at" = $4 WHERE "mood_updates"."id" = $5[0m  [["created_at", "2018-07-02 06:33:13"], ["moderate", "t"], ["severe", "f"], ["updated_at", "2018-07-10 21:24:08.185137"], ["id", 36]]
+  [1m[35m (2.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mMoodLog Load (0.2ms)[0m  [1m[34mSELECT  "mood_logs".* FROM "mood_logs" WHERE "mood_logs"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "mood_updates" ("id", "primary_mood", "intensity", "mood_log_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["id", 37], ["primary_mood", -1], ["intensity", -1], ["mood_log_id", 4], ["created_at", "2018-07-10 21:24:08.192610"], ["updated_at", "2018-07-10 21:24:08.192610"]]
+  [1m[35m (3.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mMoodUpdate Load (0.2ms)[0m  [1m[34mSELECT  "mood_updates".* FROM "mood_updates" WHERE "mood_updates"."id" = $1 LIMIT $2[0m  [["id", 37], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mMoodLog Load (0.6ms)[0m  [1m[34mSELECT  "mood_logs".* FROM "mood_logs" WHERE "mood_logs"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[33mUPDATE "mood_updates" SET "created_at" = $1, "moderate" = $2, "severe" = $3, "updated_at" = $4 WHERE "mood_updates"."id" = $5[0m  [["created_at", "2018-07-01 23:56:17"], ["moderate", "f"], ["severe", "f"], ["updated_at", "2018-07-10 21:24:08.201550"], ["id", 37]]
+  [1m[35m (2.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mMoodLog Load (0.3ms)[0m  [1m[34mSELECT  "mood_logs".* FROM "mood_logs" WHERE "mood_logs"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "mood_updates" ("id", "primary_mood", "intensity", "mood_log_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["id", 38], ["primary_mood", 5], ["intensity", 5], ["mood_log_id", 4], ["created_at", "2018-07-10 21:24:08.208640"], ["updated_at", "2018-07-10 21:24:08.208640"]]
+  [1m[35m (2.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mMoodUpdate Load (0.3ms)[0m  [1m[34mSELECT  "mood_updates".* FROM "mood_updates" WHERE "mood_updates"."id" = $1 LIMIT $2[0m  [["id", 38], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mMoodLog Load (0.4ms)[0m  [1m[34mSELECT  "mood_logs".* FROM "mood_logs" WHERE "mood_logs"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[35mSQL (0.7ms)[0m  [1m[33mUPDATE "mood_updates" SET "created_at" = $1, "moderate" = $2, "severe" = $3, "updated_at" = $4 WHERE "mood_updates"."id" = $5[0m  [["created_at", "2018-07-01 22:24:15"], ["moderate", "f"], ["severe", "f"], ["updated_at", "2018-07-10 21:24:08.217011"], ["id", 38]]
+  [1m[35m (2.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mMoodLog Load (0.3ms)[0m  [1m[34mSELECT  "mood_logs".* FROM "mood_logs" WHERE "mood_logs"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "mood_updates" ("id", "primary_mood", "intensity", "mood_log_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["id", 39], ["primary_mood", 8], ["intensity", 2], ["mood_log_id", 5], ["created_at", "2018-07-10 21:24:08.226117"], ["updated_at", "2018-07-10 21:24:08.226117"]]
+  [1m[35m (2.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mMoodUpdate Load (0.4ms)[0m  [1m[34mSELECT  "mood_updates".* FROM "mood_updates" WHERE "mood_updates"."id" = $1 LIMIT $2[0m  [["id", 39], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mMoodLog Load (0.6ms)[0m  [1m[34mSELECT  "mood_logs".* FROM "mood_logs" WHERE "mood_logs"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[33mUPDATE "mood_updates" SET "created_at" = $1, "moderate" = $2, "severe" = $3, "updated_at" = $4 WHERE "mood_updates"."id" = $5[0m  [["created_at", "2018-07-01 18:12:12"], ["moderate", "f"], ["severe", "f"], ["updated_at", "2018-07-10 21:24:08.234666"], ["id", 39]]
+  [1m[35m (3.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mMoodLog Load (0.3ms)[0m  [1m[34mSELECT  "mood_logs".* FROM "mood_logs" WHERE "mood_logs"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "mood_updates" ("id", "primary_mood", "intensity", "mood_log_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["id", 40], ["primary_mood", -5], ["intensity", 3], ["mood_log_id", 5], ["created_at", "2018-07-10 21:24:08.242342"], ["updated_at", "2018-07-10 21:24:08.242342"]]
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mMoodUpdate Load (0.2ms)[0m  [1m[34mSELECT  "mood_updates".* FROM "mood_updates" WHERE "mood_updates"."id" = $1 LIMIT $2[0m  [["id", 40], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mMoodLog Load (0.3ms)[0m  [1m[34mSELECT  "mood_logs".* FROM "mood_logs" WHERE "mood_logs"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[35mSQL (0.8ms)[0m  [1m[33mUPDATE "mood_updates" SET "created_at" = $1, "moderate" = $2, "severe" = $3, "updated_at" = $4 WHERE "mood_updates"."id" = $5[0m  [["created_at", "2018-07-01 12:44:20"], ["moderate", "t"], ["severe", "f"], ["updated_at", "2018-07-10 21:24:08.248852"], ["id", 40]]
+  [1m[35m (2.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mMoodLog Load (0.3ms)[0m  [1m[34mSELECT  "mood_logs".* FROM "mood_logs" WHERE "mood_logs"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "mood_updates" ("id", "primary_mood", "intensity", "mood_log_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["id", 41], ["primary_mood", 10], ["intensity", 4], ["mood_log_id", 5], ["created_at", "2018-07-10 21:24:08.256361"], ["updated_at", "2018-07-10 21:24:08.256361"]]
+  [1m[35m (2.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mMoodUpdate Load (0.4ms)[0m  [1m[34mSELECT  "mood_updates".* FROM "mood_updates" WHERE "mood_updates"."id" = $1 LIMIT $2[0m  [["id", 41], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mMoodLog Load (0.2ms)[0m  [1m[34mSELECT  "mood_logs".* FROM "mood_logs" WHERE "mood_logs"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[33mUPDATE "mood_updates" SET "created_at" = $1, "moderate" = $2, "severe" = $3, "updated_at" = $4 WHERE "mood_updates"."id" = $5[0m  [["created_at", "2018-06-30 13:34:00"], ["moderate", "f"], ["severe", "f"], ["updated_at", "2018-07-10 21:24:08.263541"], ["id", 41]]
+  [1m[35m (2.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mMoodLog Load (0.2ms)[0m  [1m[34mSELECT  "mood_logs".* FROM "mood_logs" WHERE "mood_logs"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "mood_updates" ("id", "primary_mood", "intensity", "mood_log_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["id", 42], ["primary_mood", 3], ["intensity", 3], ["mood_log_id", 5], ["created_at", "2018-07-10 21:24:08.271639"], ["updated_at", "2018-07-10 21:24:08.271639"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mMoodUpdate Load (0.2ms)[0m  [1m[34mSELECT  "mood_updates".* FROM "mood_updates" WHERE "mood_updates"."id" = $1 LIMIT $2[0m  [["id", 42], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mMoodLog Load (0.2ms)[0m  [1m[34mSELECT  "mood_logs".* FROM "mood_logs" WHERE "mood_logs"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[33mUPDATE "mood_updates" SET "created_at" = $1, "moderate" = $2, "severe" = $3, "updated_at" = $4 WHERE "mood_updates"."id" = $5[0m  [["created_at", "2018-07-02 14:01:14"], ["moderate", "f"], ["severe", "f"], ["updated_at", "2018-07-10 21:24:08.275832"], ["id", 42]]
+  [1m[35m (2.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "mood_logs"[0m
+Started POST "/users?last_name=new&email=ssafasfb@email.web&first_name=newbie&phone=%22232-232-2322%22" for 127.0.0.1 at 2018-07-10 14:25:34 -0700
+  [1m[35m (10.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#create as */*
+  Parameters: {"last_name"=>"new", "email"=>"ssafasfb@email.web", "first_name"=>"newbie", "phone"=>"\"232-232-2322\""}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO "users" ("first_name", "email", "phone", "last_name", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["first_name", "newbie"], ["email", "ssafasfb@email.web"], ["phone", "\"232-232-2322\""], ["last_name", "new"], ["created_at", "2018-07-10 21:25:36.189013"], ["updated_at", "2018-07-10 21:25:36.189013"]]
+  [1m[35m (3.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mMoodLog Load (0.6ms)[0m  [1m[34mSELECT "mood_logs".* FROM "mood_logs" WHERE "mood_logs"."user_id" = $1[0m  [["user_id", 21]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 21], ["LIMIT", 1]]
+  [1m[35mSQL (1.3ms)[0m  [1m[32mINSERT INTO "mood_logs" ("user_id", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["user_id", 21], ["created_at", "2018-07-10 21:25:36.266982"], ["updated_at", "2018-07-10 21:25:36.266982"]]
+  [1m[35m (5.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.7ms)[0m  [1m[33mUPDATE "users" SET "updated_at" = $1, "log_id" = $2 WHERE "users"."id" = $3[0m  [["updated_at", "2018-07-10 21:25:36.276897"], ["log_id", 21], ["id", 21]]
+  [1m[35m (11.3ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 193ms (Views: 3.3ms | ActiveRecord: 44.4ms)
+
+
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."log_id" = $1 LIMIT $2[0m  [["log_id", 21], ["LIMIT", 1]]

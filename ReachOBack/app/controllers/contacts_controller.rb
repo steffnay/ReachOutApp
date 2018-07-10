@@ -79,7 +79,7 @@ class ContactsController < ApplicationController
           email: contact.email,
           phone: contact.phone,
           confirmed: contact.confirmed,
-          user_id: "whatever",
+          user_id: contact.user_id,
         }
         contacts_array.push(contact)
       end

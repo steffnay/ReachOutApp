@@ -19,7 +19,9 @@ class UsersController < ApplicationController
     if user.valid?
       ##  when a new user is created, corresponding moodlog is also created
       new_log = user.create_moodlog
-      render json: {id: user.id, log_id: new_log}, status: :ok
+      user.log_id = new_log
+      user.save
+      render json: {id: user.id, log_id: new_log, user_log_id: user.log_id}, status: :ok
     else
       render json: {ok: false, errors: user.errors}, status: :bad_request
     end
