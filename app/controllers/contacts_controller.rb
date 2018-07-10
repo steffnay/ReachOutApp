@@ -65,6 +65,32 @@ class ContactsController < ApplicationController
     end
   end
 
+
+  def user_list
+    contactList = Contact.where(user_id: params[:id])
+
+    if contactList
+      contacts_array = []
+      contactList.each do |contact, index|
+        contact = {
+          id: contact.id,
+          first_name: contact.first_name,
+          last_name: contact.last_name,
+          email: contact.email,
+          phone: contact.phone,
+          confirmed: contact.confirmed,
+          user_id: "whatever",
+        }
+        contacts_array.push(contact)
+      end
+
+      show_contact_hash = {contacts: contacts_array}
+      render json: show_contact_hash.as_json, status: :ok
+    else
+      render json: { ok: false, errors: {id: ["Contact not found"]} }, status: :not_found
+    end
+  end
+
   private
     def contact_params
       params.permit(:first_name, :last_name, :phone, :email, :user_id)
