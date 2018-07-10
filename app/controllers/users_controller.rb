@@ -21,7 +21,7 @@ class UsersController < ApplicationController
       new_log = user.create_moodlog
       user.log_id = new_log
       user.save
-      render json: {id: user.id, log_id: new_log, user_log_id: user.log_id}, status: :ok
+      render json: {id: user.id, log_id: new_log}, status: :ok
     else
       render json: {ok: false, errors: user.errors}, status: :bad_request
     end
