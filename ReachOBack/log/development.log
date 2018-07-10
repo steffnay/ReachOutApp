@@ -10267,3 +10267,271 @@ Processing by MoodLogsController#show as */*
 Completed 200 OK in 87ms (Views: 1.9ms | ActiveRecord: 18.6ms)
 
 
+Started GET "/users/1" for 127.0.0.1 at 2018-07-10 15:48:35 -0700
+Started GET "/contacts/userlist/1" for 127.0.0.1 at 2018-07-10 15:48:35 -0700
+  [1m[35m (20.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (29.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ContactsController#user_list as HTML
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  Parameters: {"id"=>"1"}
+  [1m[36mContact Load (82.3ms)[0m  [1m[34mSELECT "contacts".* FROM "contacts" WHERE "contacts"."user_id" = $1[0m  [["user_id", 1]]
+  [1m[36mUser Load (118.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 222ms (Views: 3.4ms | ActiveRecord: 146.8ms)
+
+
+Completed 200 OK in 244ms (Views: 0.3ms | ActiveRecord: 155.6ms)
+
+
+Started GET "/users/1" for 127.0.0.1 at 2018-07-10 16:03:42 -0700
+Started GET "/contacts/userlist/1" for 127.0.0.1 at 2018-07-10 16:03:42 -0700
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+Processing by ContactsController#user_list as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mContact Load (57.1ms)[0m  [1m[34mSELECT "contacts".* FROM "contacts" WHERE "contacts"."user_id" = $1[0m  [["user_id", 1]]
+  [1m[36mUser Load (71.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 5314ms (Views: 24.5ms | ActiveRecord: 1546.1ms)
+
+
+Completed 200 OK in 5289ms (Views: 2.1ms | ActiveRecord: 1396.4ms)
+
+
+Started GET "/users/1" for 127.0.0.1 at 2018-07-10 16:05:29 -0700
+Started GET "/contacts/userlist/1" for 127.0.0.1 at 2018-07-10 16:05:29 -0700
+Processing by UsersController#show as HTML
+Processing by ContactsController#user_list as HTML
+  Parameters: {"id"=>"1"}
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (128.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mContact Load (8.5ms)[0m  [1m[34mSELECT "contacts".* FROM "contacts" WHERE "contacts"."user_id" = $1[0m  [["user_id", 1]]
+Completed 200 OK in 193ms (Views: 13.8ms | ActiveRecord: 128.7ms)
+
+
+Completed 200 OK in 182ms (Views: 8.9ms | ActiveRecord: 8.5ms)
+
+
+Started GET "/contacts/userlist/1" for 127.0.0.1 at 2018-07-10 16:06:35 -0700
+Started GET "/users/1" for 127.0.0.1 at 2018-07-10 16:06:35 -0700
+Processing by UsersController#show as HTML
+Processing by ContactsController#user_list as HTML
+  Parameters: {"id"=>"1"}
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (67.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mContact Load (66.9ms)[0m  [1m[34mSELECT "contacts".* FROM "contacts" WHERE "contacts"."user_id" = $1[0m  [["user_id", 1]]
+Completed 200 OK in 258ms (Views: 11.2ms | ActiveRecord: 67.6ms)
+
+
+Completed 200 OK in 267ms (Views: 25.6ms | ActiveRecord: 66.9ms)
+
+
+Started GET "/users/1" for 127.0.0.1 at 2018-07-10 16:07:52 -0700
+Started GET "/contacts/userlist/1" for 127.0.0.1 at 2018-07-10 16:07:52 -0700
+Processing by ContactsController#user_list as HTML
+  Parameters: {"id"=>"1"}
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mContact Load (43.7ms)[0m  [1m[34mSELECT "contacts".* FROM "contacts" WHERE "contacts"."user_id" = $1[0m  [["user_id", 1]]
+Completed 200 OK in 178ms (Views: 52.4ms | ActiveRecord: 43.7ms)
+
+
+  [1m[36mUser Load (35.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 258ms (Views: 11.5ms | ActiveRecord: 142.3ms)
+
+
+Started GET "/users/1" for 127.0.0.1 at 2018-07-10 16:10:26 -0700
+Started GET "/contacts/userlist/1" for 127.0.0.1 at 2018-07-10 16:10:26 -0700
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+Processing by ContactsController#user_list as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (175.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 506ms (Views: 15.3ms | ActiveRecord: 175.6ms)
+
+
+  [1m[36mContact Load (166.8ms)[0m  [1m[34mSELECT "contacts".* FROM "contacts" WHERE "contacts"."user_id" = $1[0m  [["user_id", 1]]
+Completed 200 OK in 540ms (Views: 31.4ms | ActiveRecord: 166.8ms)
+
+
+Started GET "/contacts/userlist/1" for 127.0.0.1 at 2018-07-10 16:11:22 -0700
+Started GET "/users/1" for 127.0.0.1 at 2018-07-10 16:11:22 -0700
+Processing by ContactsController#user_list as HTML
+  Parameters: {"id"=>"1"}
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (58.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 233ms (Views: 4.8ms | ActiveRecord: 58.9ms)
+
+
+  [1m[36mContact Load (92.7ms)[0m  [1m[34mSELECT "contacts".* FROM "contacts" WHERE "contacts"."user_id" = $1[0m  [["user_id", 1]]
+Completed 200 OK in 399ms (Views: 87.5ms | ActiveRecord: 92.7ms)
+
+
+Started GET "/contacts/userlist/1" for 127.0.0.1 at 2018-07-10 16:13:02 -0700
+Started GET "/users/1" for 127.0.0.1 at 2018-07-10 16:13:02 -0700
+Processing by ContactsController#user_list as HTML
+  Parameters: {"id"=>"1"}
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (67.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 356ms (Views: 15.2ms | ActiveRecord: 137.7ms)
+
+
+  [1m[36mContact Load (282.8ms)[0m  [1m[34mSELECT "contacts".* FROM "contacts" WHERE "contacts"."user_id" = $1[0m  [["user_id", 1]]
+Completed 200 OK in 445ms (Views: 5.1ms | ActiveRecord: 282.8ms)
+
+
+Started GET "/contacts/userlist/1" for 127.0.0.1 at 2018-07-10 16:27:56 -0700
+Started GET "/users/1" for 127.0.0.1 at 2018-07-10 16:27:56 -0700
+Processing by ContactsController#user_list as HTML
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (728.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mContact Load (748.5ms)[0m  [1m[34mSELECT "contacts".* FROM "contacts" WHERE "contacts"."user_id" = $1[0m  [["user_id", 1]]
+Completed 200 OK in 917ms (Views: 17.6ms | ActiveRecord: 728.9ms)
+
+
+Completed 200 OK in 957ms (Views: 20.8ms | ActiveRecord: 748.5ms)
+
+
+Started GET "/users/1" for 127.0.0.1 at 2018-07-10 16:28:26 -0700
+Started GET "/contacts/userlist/1" for 127.0.0.1 at 2018-07-10 16:28:26 -0700
+Processing by UsersController#show as HTML
+Processing by ContactsController#user_list as HTML
+  Parameters: {"id"=>"1"}
+  Parameters: {"id"=>"1"}
+  [1m[36mContact Load (119.8ms)[0m  [1m[34mSELECT "contacts".* FROM "contacts" WHERE "contacts"."user_id" = $1[0m  [["user_id", 1]]
+  [1m[36mUser Load (135.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 451ms (Views: 7.1ms | ActiveRecord: 135.7ms)
+
+
+Completed 200 OK in 379ms (Views: 19.7ms | ActiveRecord: 119.8ms)
+
+
+Started GET "/contacts/userlist/1" for 127.0.0.1 at 2018-07-10 16:31:38 -0700
+Started GET "/users/1" for 127.0.0.1 at 2018-07-10 16:31:38 -0700
+Processing by ContactsController#user_list as HTML
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (86.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mContact Load (96.9ms)[0m  [1m[34mSELECT "contacts".* FROM "contacts" WHERE "contacts"."user_id" = $1[0m  [["user_id", 1]]
+Completed 200 OK in 469ms (Views: 12.6ms | ActiveRecord: 86.9ms)
+
+
+Completed 200 OK in 532ms (Views: 11.2ms | ActiveRecord: 96.9ms)
+
+
+Started GET "/contacts/userlist/1" for 127.0.0.1 at 2018-07-10 16:31:50 -0700
+Started GET "/users/1" for 127.0.0.1 at 2018-07-10 16:31:50 -0700
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+Processing by ContactsController#user_list as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (96.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mContact Load (127.7ms)[0m  [1m[34mSELECT "contacts".* FROM "contacts" WHERE "contacts"."user_id" = $1[0m  [["user_id", 1]]
+Completed 200 OK in 541ms (Views: 10.0ms | ActiveRecord: 96.9ms)
+
+
+Completed 200 OK in 580ms (Views: 38.4ms | ActiveRecord: 127.7ms)
+
+
+Started GET "/users/1" for 127.0.0.1 at 2018-07-10 16:32:28 -0700
+Started GET "/contacts/userlist/1" for 127.0.0.1 at 2018-07-10 16:32:28 -0700
+Processing by ContactsController#user_list as HTML
+  Parameters: {"id"=>"1"}
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mContact Load (72.8ms)[0m  [1m[34mSELECT "contacts".* FROM "contacts" WHERE "contacts"."user_id" = $1[0m  [["user_id", 1]]
+  [1m[36mUser Load (83.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 752ms (Views: 53.0ms | ActiveRecord: 72.8ms)
+
+
+Completed 200 OK in 550ms (Views: 10.3ms | ActiveRecord: 83.4ms)
+
+
+Started GET "/users/1" for 127.0.0.1 at 2018-07-10 16:32:37 -0700
+Started GET "/contacts/userlist/1" for 127.0.0.1 at 2018-07-10 16:32:37 -0700
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+Processing by ContactsController#user_list as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (53.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mContact Load (24.1ms)[0m  [1m[34mSELECT "contacts".* FROM "contacts" WHERE "contacts"."user_id" = $1[0m  [["user_id", 1]]
+Completed 200 OK in 229ms (Views: 38.4ms | ActiveRecord: 53.0ms)
+
+
+Completed 200 OK in 300ms (Views: 29.2ms | ActiveRecord: 24.1ms)
+
+
+Started GET "/contacts/userlist/1" for 127.0.0.1 at 2018-07-10 16:33:33 -0700
+Started GET "/users/1" for 127.0.0.1 at 2018-07-10 16:33:33 -0700
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+Processing by ContactsController#user_list as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (15.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mContact Load (37.5ms)[0m  [1m[34mSELECT "contacts".* FROM "contacts" WHERE "contacts"."user_id" = $1[0m  [["user_id", 1]]
+Completed 200 OK in 69ms (Views: 0.5ms | ActiveRecord: 37.5ms)
+
+
+Completed 200 OK in 61ms (Views: 2.0ms | ActiveRecord: 15.0ms)
+
+
+Started GET "/contacts/userlist/1" for 127.0.0.1 at 2018-07-10 16:34:18 -0700
+Started GET "/users/1" for 127.0.0.1 at 2018-07-10 16:34:18 -0700
+Processing by ContactsController#user_list as HTML
+  Parameters: {"id"=>"1"}
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mContact Load (16.3ms)[0m  [1m[34mSELECT "contacts".* FROM "contacts" WHERE "contacts"."user_id" = $1[0m  [["user_id", 1]]
+  [1m[36mUser Load (61.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 105ms (Views: 1.7ms | ActiveRecord: 61.7ms)
+
+
+Completed 200 OK in 318ms (Views: 112.0ms | ActiveRecord: 16.3ms)
+
+
+Started GET "/users/1" for 127.0.0.1 at 2018-07-10 16:34:59 -0700
+Started GET "/contacts/userlist/1" for 127.0.0.1 at 2018-07-10 16:34:59 -0700
+Processing by ContactsController#user_list as HTML
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  Parameters: {"id"=>"1"}
+  [1m[36mContact Load (11.0ms)[0m  [1m[34mSELECT "contacts".* FROM "contacts" WHERE "contacts"."user_id" = $1[0m  [["user_id", 1]]
+Completed 200 OK in 58ms (Views: 2.9ms | ActiveRecord: 11.0ms)
+
+
+  [1m[36mUser Load (26.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 51ms (Views: 0.3ms | ActiveRecord: 26.8ms)
+
+
+Started GET "/users/1" for 127.0.0.1 at 2018-07-10 16:35:17 -0700
+Started GET "/contacts/userlist/1" for 127.0.0.1 at 2018-07-10 16:35:17 -0700
+Processing by ContactsController#user_list as HTML
+  Parameters: {"id"=>"1"}
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mContact Load (11.8ms)[0m  [1m[34mSELECT "contacts".* FROM "contacts" WHERE "contacts"."user_id" = $1[0m  [["user_id", 1]]
+  [1m[36mUser Load (21.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 124ms (Views: 3.4ms | ActiveRecord: 11.8ms)
+
+
+Completed 200 OK in 67ms (Views: 0.2ms | ActiveRecord: 21.1ms)
+
+
+Started GET "/users/1" for 127.0.0.1 at 2018-07-10 16:36:29 -0700
+Started GET "/contacts/userlist/1" for 127.0.0.1 at 2018-07-10 16:36:29 -0700
+Processing by ContactsController#user_list as HTML
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  Parameters: {"id"=>"1"}
+  [1m[36mContact Load (270.1ms)[0m  [1m[34mSELECT "contacts".* FROM "contacts" WHERE "contacts"."user_id" = $1[0m  [["user_id", 1]]
+  [1m[36mUser Load (274.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 568ms (Views: 3.9ms | ActiveRecord: 274.2ms)
+
+
+Completed 200 OK in 572ms (Views: 26.2ms | ActiveRecord: 270.1ms)
+
+

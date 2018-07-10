@@ -6,7 +6,7 @@ class Contact < ApplicationRecord
   message: "Only allows letters" }
 
   validates :last_name, presence: :true, format: { with: /\A[a-zA-Z]+(?: [a-zA-Z]+)?\z/,
-  message: "Only allows letters" }, :allow_blank => true
+  message: "Only allows letters" }, :allow_blank => false
 
   validates :phone, presence: :true, format: { with: /\d{3}-\d{3}-\d{4}/, message: "bad phone number format" }
 
