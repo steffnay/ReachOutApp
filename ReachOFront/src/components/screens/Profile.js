@@ -14,11 +14,17 @@ class Profile extends Component {
       console.log('hello')
       let phone = user["phone"]
       console.log(`API info: ${phone}`)
-    })
+      this.setState({ backendData: user})
+    }).then (() => {
+      const firebaseUser = firebase.auth().currentUser
+      this.setState({ userData: firebaseUser._user })
+      console.log(this.state)
+      console.log(firebaseUser) })
+
   }
 
   render() {
-    const user = firebase.auth().currentUser
+
 
     return (
       <View style={{height: 100 + "%",
@@ -26,7 +32,7 @@ class Profile extends Component {
         flex: 1,
         justifyContent: "center",
         alignItems: "center"}}>
-          <Text>{user._user.displayName}</Text>
+
           <Text>PROFILE PAGE</Text>
       </View>
 

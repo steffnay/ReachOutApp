@@ -15,6 +15,7 @@ import Contacts from './src/components/screens/Contacts'
 const Tabs = TabNavigator({
   profile: Profile,
   logout: LogOut,
+  contacts: Contacts,
 
 })
 
