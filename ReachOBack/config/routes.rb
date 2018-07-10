@@ -11,6 +11,7 @@ Rails.application.routes.draw do
   delete '/contacts/:id', to: 'contacts#destroy', as: 'delete_contact'
   put '/contacts/:id', to: 'contacts#update', as: 'update_contact'
   get '/contacts/:id', to: 'contacts#show', as: 'show_contact'
+  get '/contacts/userlist/:id', to: 'contacts#user_list', as: "user_contacts"
   post '/contacts', to: 'contacts#create', as: 'add_contact'
   get '/contacts', to: 'contacts#index', as: 'contacts'
 
