@@ -5,6 +5,7 @@ import api from '../utilities/api'
 
 class Profile extends Component {
   state = { currentUser: null }
+
   componentDidMount() {
     const { currentUser } = firebase.auth()
     this.setState({ currentUser })
@@ -24,7 +25,7 @@ class Profile extends Component {
   }
 
   render() {
-
+    const user = firebase.auth().currentUser
 
     return (
       <View style={{height: 100 + "%",
@@ -32,7 +33,7 @@ class Profile extends Component {
         flex: 1,
         justifyContent: "center",
         alignItems: "center"}}>
-
+          <Text>Hi, {user._user.displayName}</Text>
           <Text>PROFILE PAGE</Text>
       </View>
 

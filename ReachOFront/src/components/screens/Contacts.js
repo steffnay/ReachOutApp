@@ -7,12 +7,14 @@ import * as Animatable from 'react-native-animatable';
 import Collapsible from 'react-native-collapsible';
 import Accordion from 'react-native-collapsible/Accordion';
 
-const SECTION = [];
+const CONTENT = [];
 
 class Contacts extends Component {
   state = {
       currentUser: null,
       contactList: null,
+      activeSection: false,
+      collapsed: true
       }
 
   componentDidMount() {
@@ -43,33 +45,91 @@ class Contacts extends Component {
         confirmed: list[c].confirmed
       }
 
-      SECTION.push(contactHash)
+      CONTENT.push(contactHash)
     }
 
-    while(SECTION.length < 3) {
+    while(CONTENT.length < 3) {
       let emptytHash = {
         name: null,
         phone: null,
         confirmed: null
       };
 
-      SECTION.push(emptytHash);
+      CONTENT.push(emptytHash);
     }
   }
 
+  _toggleExpanded = () => {
+    this.setState({ collapsed: !this.state.collapsed });
+  };
 
+  _setSection(section) {
+    this.setState({ activeSection: section });
+  }
+
+  _renderHeader(section, i, isActive) {
+    return (
+      <Animatable.View
+        duration={400}
+        style={[styles.header, isActive ? styles.active : styles.inactive]}
+        transition="backgroundColor"
+      >
+        <Text style={styles.headerText}>{section.name}</Text>
+      </Animatable.View>
+    );
+  }
+
+
+  _renderContent(section, i, isActive) {
+    return (
+      <Animatable.View
+        duration={400}
+        style={[styles.content, isActive ? styles.active : styles.inactive]}
+        transition="backgroundColor"
+      >
+        <Animatable.Text animation={isActive ? 'bounceIn' : undefined}>
+          {section.phone}
+        </Animatable.Text>
+      </Animatable.View>
+    );
+  }
+
+  // <View style={{height: 100 + "%",
+  //   width: 100 + "%",
+  //   flex: 1,
+  //   justifyContent: "center",
+  //   alignItems: "center"}}>
+  //
+  //     <Text>CONTACTS PAGE</Text>
+  // </View>
 
   render() {
 
     return (
-      <View style={{height: 100 + "%",
-        width: 100 + "%",
-        flex: 1,
-        justifyContent: "center",
-        alignItems: "center"}}>
-
-          <Text>CONTACTS PAGE</Text>
-      </View>
+      <View>
+        <TouchableOpacity onPress={this._toggleExpanded}>
+           <View style={styles.header}>
+             <Text style={styles.headerText}>Single Collapsible</Text>
+           </View>
+         </TouchableOpacity>
+         <Collapsible collapsed={this.state.collapsed} align="center">
+           <View style={styles.content}>
+             <Text>
+               Bacon ipsum dolor amet chuck turducken landjaeger tongue spare
+               ribs
+             </Text>
+           </View>
+         </Collapsible>
+         <Accordion
+           activeSection={this.state.activeSection}
+           sections={CONTENT}
+           touchableComponent={TouchableOpacity}
+           renderHeader={this._renderHeader}
+           renderContent={this._renderContent}
+           duration={400}
+           onChange={this._setSection.bind(this)}
+         />
+     </View>
 
     )
   }
