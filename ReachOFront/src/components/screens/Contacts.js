@@ -2,21 +2,23 @@ import React, { Component } from 'react'
 import { View, Text, TouchableOpacity, StyleSheet, Button } from 'react-native'
 import firebase from 'react-native-firebase'
 import api from '../utilities/api'
-import { createStackNavigator } from 'react-navigation';
 
 import * as Animatable from 'react-native-animatable';
-import Collapsible from 'react-native-collapsible';
 import Accordion from 'react-native-collapsible/Accordion';
 
 const CONTENT = [];
 
 class Contacts extends Component {
-  state = {
+  constructor(props) {
+    super(props)
+
+    this.state = {
       currentUser: null,
       contactList: null,
       activeSection: false,
       collapsed: true
-      }
+    };
+  }
 
   componentDidMount() {
     this.setState({contactList: null})
@@ -84,23 +86,22 @@ class Contacts extends Component {
   }
 
   _renderContent = (section) => {
-    const { navigate } = this.props.navigation;
-     let name, phone, button = null;
+     let phone, button = null;
 
      if (section.phone)
-         name = <Text>{section.phone}</Text>;
+         phone = <Text>{section.phone}</Text>;
 
      if (section.button == "update"){
 
-        button = (<View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
+        button = (<View style=
+          {{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
         <Button
           title="Go to Details"
-          onPress={() => this.props.navigation.navigate('Profile')}
-        />
+          onPress={() => this.props.navigation.navigate('Profile')} />
       </View>);
      }
 
-     let content = <View>{name}{phone}{button}</View>
+     let content = <View>{phone}{button}</View>
      return content;
   }
 

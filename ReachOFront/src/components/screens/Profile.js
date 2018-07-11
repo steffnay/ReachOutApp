@@ -3,12 +3,23 @@ import { View, Text, TouchableOpacity } from 'react-native'
 import firebase from 'react-native-firebase'
 import api from '../utilities/api'
 
-class Profile extends Component {
-  constructor(props) {
-  super(props);
+import Icon from "react-native-vector-icons/MaterialIcons";
 
-  this.state = { currentUser: null }
-  }
+class Profile extends Component {
+  state = { currentUser: null }
+
+
+  static navigationOptions = ({ navigation, screenProps }) => ({
+    drawerLabel: "Profile",
+    title: "Profile",
+    headerLeft: (
+      <View style={{ paddingHorizontal: 10 }}>
+        <TouchableOpacity onPress={() => navigation.navigate("DrawerOpen")}>
+          <Icon name="menu" size={30} color="blue" />
+        </TouchableOpacity>
+      </View>
+    )
+  });
 
   componentDidMount = () => {
     const { currentUser } = firebase.auth()

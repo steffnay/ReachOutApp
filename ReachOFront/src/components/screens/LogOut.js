@@ -11,6 +11,8 @@ export default class SignUp extends React.Component {
     password: '',
     errorMessage: null }
 
+    
+
   handleLogOut = () => {
     this.signOut()
     firebase.auth().signOut()
