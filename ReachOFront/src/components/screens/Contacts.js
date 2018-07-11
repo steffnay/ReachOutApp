@@ -1,7 +1,8 @@
 import React, { Component } from 'react'
-import { View, Text, TouchableOpacity, StyleSheet } from 'react-native'
+import { View, Text, TouchableOpacity, StyleSheet, Button } from 'react-native'
 import firebase from 'react-native-firebase'
 import api from '../utilities/api'
+import { createStackNavigator } from 'react-navigation';
 
 import * as Animatable from 'react-native-animatable';
 import Collapsible from 'react-native-collapsible';
@@ -18,6 +19,7 @@ class Contacts extends Component {
       }
 
   componentDidMount() {
+    this.setState({contactList: null})
     const { currentUser } = firebase.auth()
     this.setState({ currentUser })
     console.log("returning contacts")
@@ -42,7 +44,8 @@ class Contacts extends Component {
       let contactHash = {
         name: `${list[c].first_name} ${list[c].last_name}`,
         phone: list[c].phone,
-        confirmed: list[c].confirmed
+        confirmed: list[c].confirmed,
+        button: "update"
       }
 
       CONTENT.push(contactHash)
@@ -52,7 +55,8 @@ class Contacts extends Component {
       let emptytHash = {
         name: null,
         phone: null,
-        confirmed: null
+        confirmed: null,
+        button: "add"
       };
 
       CONTENT.push(emptytHash);
@@ -79,56 +83,40 @@ class Contacts extends Component {
     );
   }
 
+  _renderContent = (section) => {
+    const { navigate } = this.props.navigation;
+     let name, phone, button = null;
 
-  _renderContent(section, i, isActive) {
-    return (
-      <Animatable.View
-        duration={400}
-        style={[styles.content, isActive ? styles.active : styles.inactive]}
-        transition="backgroundColor"
-      >
-        <Animatable.Text animation={isActive ? 'bounceIn' : undefined}>
-          {section.phone}
-        </Animatable.Text>
-      </Animatable.View>
-    );
+     if (section.phone)
+         name = <Text>{section.phone}</Text>;
+
+     if (section.button == "update"){
+
+        button = (<View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
+        <Button
+          title="Go to Details"
+          onPress={() => this.props.navigation.navigate('Profile')}
+        />
+      </View>);
+     }
+
+     let content = <View>{name}{phone}{button}</View>
+     return content;
   }
-
-  // <View style={{height: 100 + "%",
-  //   width: 100 + "%",
-  //   flex: 1,
-  //   justifyContent: "center",
-  //   alignItems: "center"}}>
-  //
-  //     <Text>CONTACTS PAGE</Text>
-  // </View>
 
   render() {
 
     return (
       <View>
-        <TouchableOpacity onPress={this._toggleExpanded}>
-           <View style={styles.header}>
-             <Text style={styles.headerText}>Single Collapsible</Text>
-           </View>
-         </TouchableOpacity>
-         <Collapsible collapsed={this.state.collapsed} align="center">
-           <View style={styles.content}>
-             <Text>
-               Bacon ipsum dolor amet chuck turducken landjaeger tongue spare
-               ribs
-             </Text>
-           </View>
-         </Collapsible>
-         <Accordion
-           activeSection={this.state.activeSection}
-           sections={CONTENT}
-           touchableComponent={TouchableOpacity}
-           renderHeader={this._renderHeader}
-           renderContent={this._renderContent}
-           duration={400}
-           onChange={this._setSection.bind(this)}
-         />
+       <Accordion
+         activeSection={this.state.activeSection}
+         sections={CONTENT}
+         touchableComponent={TouchableOpacity}
+         renderHeader={this._renderHeader}
+         renderContent={this._renderContent}
+         duration={400}
+         onChange={this._setSection.bind(this)}
+       />
      </View>
 
     )
@@ -136,17 +124,6 @@ class Contacts extends Component {
 }
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: 'center',
-    backgroundColor: '#F5FCFF'
-  },
-  title: {
-    textAlign: 'center',
-    fontSize: 22,
-    fontWeight: '300',
-    marginBottom: 20
-  },
   header: {
     backgroundColor: '#F5FCFF',
     padding: 10
@@ -156,32 +133,11 @@ const styles = StyleSheet.create({
     fontSize: 16,
     fontWeight: '500'
   },
-  content: {
-    padding: 20,
-    backgroundColor: '#fff'
-  },
   active: {
     backgroundColor: 'rgba(255,255,255,1)'
   },
   inactive: {
     backgroundColor: 'rgba(245,252,255,1)'
-  },
-  selectors: {
-    marginBottom: 10,
-    flexDirection: 'row',
-    justifyContent: 'center'
-  },
-  selector: {
-    backgroundColor: '#F5FCFF',
-    padding: 10
-  },
-  activeSelector: {
-    fontWeight: 'bold'
-  },
-  selectTitle: {
-    fontSize: 14,
-    fontWeight: '500',
-    padding: 10
   }
 });
 

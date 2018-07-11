@@ -4,11 +4,15 @@ import firebase from 'react-native-firebase'
 import api from '../utilities/api'
 
 class Profile extends Component {
-  state = { currentUser: null }
+  constructor(props) {
+  super(props);
 
-  componentDidMount() {
+  this.state = { currentUser: null }
+  }
+
+  componentDidMount = () => {
     const { currentUser } = firebase.auth()
-    this.setState({ currentUser })
+    this.setState({ user: currentUser._user })
     console.log(`current user: ${currentUser}`)
 
     api.getUser(1).then((user) =>{
@@ -20,20 +24,22 @@ class Profile extends Component {
       const firebaseUser = firebase.auth().currentUser
       this.setState({ userData: firebaseUser._user })
       console.log(this.state)
-      console.log(firebaseUser) })
+      console.log("checking!!!")
+      console.log(this.state.userData.displayName)
+    })
 
   }
 
   render() {
-    const user = firebase.auth().currentUser
-
+    // const user = firebase.auth().currentUser
+    console.log(this.state)
     return (
       <View style={{height: 100 + "%",
         width: 100 + "%",
         flex: 1,
         justifyContent: "center",
         alignItems: "center"}}>
-          <Text>Hi, {user._user.displayName}</Text>
+
           <Text>PROFILE PAGE</Text>
       </View>
 

@@ -23,6 +23,7 @@ const Tabs = TabNavigator({
 // create our app's navigation stack
 const App = SwitchNavigator(
   {
+    Profile: Tabs,
     Loading,
     SignUp,
     Main: Tabs,
