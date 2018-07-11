@@ -10,6 +10,7 @@ import Main from './src/components/screens/Main'
 import LogOut from './src/components/screens/LogOut'
 import Profile from './src/components/screens/Profile'
 import Contacts from './src/components/screens/Contacts'
+import EditContact from './src/components/screens/EditContact'
 
 
 const Tabs = TabNavigator({
@@ -23,7 +24,8 @@ const Tabs = TabNavigator({
 // create our app's navigation stack
 const App = SwitchNavigator(
   {
-    Profile: Tabs,
+    EditContact,
+    Profile,
     Loading,
     SignUp,
     Main: Tabs,

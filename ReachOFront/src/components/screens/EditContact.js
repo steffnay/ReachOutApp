@@ -5,7 +5,7 @@ import api from '../utilities/api'
 
 import Icon from "react-native-vector-icons/MaterialIcons";
 
-class Profile extends Component {
+class EditContact extends Component {
   constructor(props) {
     super(props)
 
@@ -31,6 +31,12 @@ class Profile extends Component {
       console.log(this.state)
       console.log("checking!!!")
       console.log(this.state.userData.displayName)
+    }).then (() => {
+      const id = this.props.navigation.getParam('contact_id', 5);
+      if (id != null) {
+        console.log("contact id.....")
+        console.log(id)
+      }
     })
 
 
@@ -44,11 +50,12 @@ class Profile extends Component {
         flex: 1,
         justifyContent: "center",
         alignItems: "center"}}>
-          <Text>PROFILE PAGE</Text>
+          <Text>{this.props.contact_id}</Text>
+          <Text>EDIT CONTACT PAGE</Text>
       </View>
 
     )
   }
 }
 
-export default Profile
+export default EditContact

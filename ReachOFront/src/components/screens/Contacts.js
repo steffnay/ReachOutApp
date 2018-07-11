@@ -47,7 +47,8 @@ class Contacts extends Component {
         name: `${list[c].first_name} ${list[c].last_name}`,
         phone: list[c].phone,
         confirmed: list[c].confirmed,
-        button: "update"
+        button: "update",
+        id: list[c].id
       }
 
       CONTENT.push(contactHash)
@@ -58,7 +59,8 @@ class Contacts extends Component {
         name: null,
         phone: null,
         confirmed: null,
-        button: "add"
+        button: "add",
+        id: null
       };
 
       CONTENT.push(emptytHash);
@@ -88,6 +90,7 @@ class Contacts extends Component {
   _renderContent = (section) => {
      let phone, button = null;
 
+
      if (section.phone)
          phone = <Text>{section.phone}</Text>;
 
@@ -97,9 +100,9 @@ class Contacts extends Component {
           {{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
         <Button
           title="Go to Details"
-          onPress={() => this.props.navigation.navigate('Profile')} />
+          onPress={() => this.props.navigation.navigate('EditContact', {contact_id: 5} )} />
       </View>);
-     }
+    }
 
      let content = <View>{phone}{button}</View>
      return content;
