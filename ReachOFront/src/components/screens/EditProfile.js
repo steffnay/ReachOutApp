@@ -1,11 +1,11 @@
 import React, { Component } from 'react'
-import { View, Text, TouchableOpacity, Button } from 'react-native'
+import { View, Text, TouchableOpacity } from 'react-native'
 import firebase from 'react-native-firebase'
 import api from '../utilities/api'
 
 import Icon from "react-native-vector-icons/MaterialIcons";
 
-class Profile extends Component {
+class EditProfile extends Component {
   constructor(props) {
     super(props)
 
@@ -44,14 +44,11 @@ class Profile extends Component {
         flex: 1,
         justifyContent: "center",
         alignItems: "center"}}>
-          <Text>PROFILE PAGE</Text>
-          <Button
-            title="Edit"
-            onPress={() => this.props.navigation.navigate('EditProfile') }/>
+          <Text>EDIT PROFILE PAGE</Text>
       </View>
 
     )
   }
 }
 
-export default Profile
+export default EditProfile

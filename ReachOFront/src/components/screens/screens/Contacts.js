@@ -90,6 +90,7 @@ class Contacts extends Component {
   _renderContent = (section) => {
      let phone, button = null;
 
+
      if (section.phone)
          phone = <Text>{section.phone}</Text>;
 
@@ -98,8 +99,8 @@ class Contacts extends Component {
         button = (<View style=
           {{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
         <Button
-          title="EditContact"
-          onPress={() => this.props.navigation.navigate('EditContact', {contact_id: section.id })} />
+          title="Go to Details"
+          onPress={() => this.props.navigation.navigate('EditContact', {contact_id: 5} )} />
       </View>);
     }
 
