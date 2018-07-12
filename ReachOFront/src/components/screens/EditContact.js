@@ -21,7 +21,18 @@ class EditContact extends Component {
   }
 
   updateValue(text, field) {
-    alert(text)
+    if(field == 'first_name') {
+      this.setState({first_name: text,})
+    }
+    else if(field == 'last_name') {
+      this.setState({last_name: text,})
+    }
+    else if(field == 'phone') {
+      this.setState({phone: text,})
+    }
+    else if(field == 'email') {
+      this.setState({email: text})
+    }
   }
 
 
@@ -39,6 +50,32 @@ class EditContact extends Component {
         console.log("console state.....")
         console.log(this.state)
       })
+  }
+
+  logStuff(info) {
+    console.log("made it past update")
+    console.log(info)
+
+  }
+
+  submit() {
+    let collection = {}
+    collection.first_name = this.state.first_name,
+    collection.last_name = this.state.last_name,
+    collection.phone = this.state.phone,
+    collection.email = this.state.email,
+    collection.id = this.state.id;
+
+    api.updateContact(collection).then((contact) => {
+      const params = this.props.navigation.state;
+      this.setState(contact);
+      console.log('***********');
+      console.log(params);
+      console.log('***********');
+
+      params.params.updateList();
+      this.props.navigation.navigate('Contacts')
+    })
   }
 
   render() {
@@ -62,7 +99,9 @@ class EditContact extends Component {
           onChangeText={(text) => this.updateValue(text,'email')}
           />
 
-        <TouchableOpacity style={styles.button}>
+        <TouchableOpacity
+        onPress={()=>this.submit()}
+        style={styles.button}>
           <Text>Submit</Text>
         </TouchableOpacity>
       </View>

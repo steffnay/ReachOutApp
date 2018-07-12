@@ -6,7 +6,7 @@ import api from '../utilities/api'
 import * as Animatable from 'react-native-animatable';
 import Accordion from 'react-native-collapsible/Accordion';
 
-const CONTENT = [];
+let CONTENT = [];
 
 class Contacts extends Component {
   constructor(props) {
@@ -26,10 +26,16 @@ class Contacts extends Component {
     this.setState({ currentUser })
     console.log("returning contacts")
 
+    this.makeApiCall()
+  }
+
+  makeApiCall = () => {
     api.getContacts(1).then((contacts) => {
+      this.setState({contactList: null})
         this.setState({ contactList: contacts})
         console.log(this.state)
       }).then (() => {
+        CONTENT = []
         this.makeSections()
       })
       .then (() => {
@@ -87,6 +93,10 @@ class Contacts extends Component {
     );
   }
 
+  reRenderContacts() {
+    this.makeApiCall()
+  }
+
   _renderContent = (section) => {
      let phone, button = null;
 
@@ -99,7 +109,12 @@ class Contacts extends Component {
           {{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
         <Button
           title="EditContact"
-          onPress={() => this.props.navigation.navigate('EditContact', {contact_id: section.id })} />
+          onPress={() => this.props.navigation.navigate('EditContact', {contact_id: section.id,
+            updateList: () => {
+              console.log('Hey!!');
+              return this.reRenderContacts();
+            }
+            })} />
       </View>);
     }
 
