@@ -102,12 +102,16 @@ class Contacts extends Component {
   }
 
   _renderContent = (section) => {
-     let phone, button = null;
+     let phone, button, confirmed = null;
 
-     if (section.phone)
+      if (section.phone)
          phone = <Text>{section.phone}</Text>;
+      if (section.confirmed == true)
+        confirmed = <Text>Confirmed: True</Text>;
+      if (section.confirmed == false)
+        confirmed = <Text>Confirmed: False</Text>;
 
-     if (section.button == "update"){
+      if (section.button == "update"){
 
         button = (<View style=
           {{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
@@ -122,7 +126,7 @@ class Contacts extends Component {
       </View>);
     }
 
-     let content = <View>{phone}{button}</View>
+     let content = <View>{phone}{confirmed}{button}</View>
      return content;
   }
 

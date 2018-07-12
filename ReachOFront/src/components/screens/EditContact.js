@@ -46,7 +46,7 @@ class EditContact extends Component {
           last_name: contact.last_name,
           email: contact.email,
           phone: contact.phone,
-          cofirmed: contact.confirmed,})
+          confirmed: contact.confirmed,})
         console.log("console state.....")
         console.log(this.state)
       })
@@ -69,14 +69,12 @@ class EditContact extends Component {
     api.updateContact(collection).then((contact) => {
       const params = this.props.navigation.state;
       this.setState(contact);
-      console.log('***********');
       console.log(params);
-      console.log('***********');
-
       params.params.updateList();
       this.props.navigation.navigate('Contacts')
     })
   }
+
 
   render() {
 
@@ -99,11 +97,17 @@ class EditContact extends Component {
           onChangeText={(text) => this.updateValue(text,'email')}
           />
 
-        <TouchableOpacity
-        onPress={()=>this.submit()}
-        style={styles.button}>
+        <TouchableOpacity onPress={()=>this.submit()}
+          style={styles.button}>
           <Text>Submit</Text>
         </TouchableOpacity>
+
+        <TouchableOpacity onPress={()=>this.onPress()}
+          style={styles.button}>
+          <Text>{textValue}</Text>
+        </TouchableOpacity>
+
+
       </View>
 
     )
