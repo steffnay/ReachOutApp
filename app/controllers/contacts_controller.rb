@@ -13,6 +13,9 @@ class ContactsController < ApplicationController
 
   def update
     contact = Contact.find_by(id: params[:id])
+    ###### if phone is updated, resend confirmation through Twilio
+
+
     if !contact.nil?
       if contact.update(contact_params)
         render :json => contact.as_json(only: [:id, :first_name, :last_name, :phone, :email, :confirmed, :user_id]), status: :ok
