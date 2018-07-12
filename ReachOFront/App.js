@@ -15,28 +15,28 @@ import EditProfile from './src/components/screens/EditProfile'
 import Update from './src/components/screens/Update'
 import History from './src/components/screens/History'
 
-export const StackContacts = StackNavigator({
+const StackContacts = StackNavigator({
   Contacts: { screen: Contacts },
   EditContact: { screen: EditContact}
 }, {
   initialRouteName: 'Contacts',
 })
 
-export const StackLog = StackNavigator({
+const StackLog = StackNavigator({
   History: { screen: History },
   Update: { screen: Update}
 }, {
   initialRouteName: 'History',
 })
 
-export const StackProfile = StackNavigator({
+const StackProfile = StackNavigator({
   Profile: { screen: Profile },
   EditProfile: { screen: EditProfile}
 }, {
   initialRouteName: 'Profile',
 })
 
-export const Tabs = TabNavigator({
+const Tabs = TabNavigator({
   Main: Main,
   Contacts: StackContacts,
   MoodLog: StackLog,
@@ -46,19 +46,19 @@ export const Tabs = TabNavigator({
   animationEnabled: true,
 })
 
-const AppStack = createStackNavigator(
-  {
-    MoodStuff: Tabs,
-    ProfileStuff: StackProfile,
-    ContactStuff: StackContacts,
-    });
+// const AppStack = createStackNavigator(
+//   {
+//     MoodStuff: Tabs,
+//     ProfileStuff: StackProfile,
+//     ContactStuff: StackContacts,
+//     });
 
 
 export default createSwitchNavigator(
   {
     SignUp: SignUp,
     Loading: Loading,
-    Main: AppStack,
+    Main: Tabs,
   },
   {
     initialRouteName: 'Loading',
