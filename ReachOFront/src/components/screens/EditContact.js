@@ -102,11 +102,6 @@ class EditContact extends Component {
           <Text>Submit</Text>
         </TouchableOpacity>
 
-        <TouchableOpacity onPress={()=>this.onPress()}
-          style={styles.button}>
-          <Text>{textValue}</Text>
-        </TouchableOpacity>
-
 
       </View>
 
