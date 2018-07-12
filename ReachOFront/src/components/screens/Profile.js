@@ -15,25 +15,29 @@ class Profile extends Component {
   }
 
 
+
   componentDidMount = () => {
-    const { currentUser } = firebase.auth()
-    this.setState({ user: currentUser._user })
-    console.log(`current user: ${currentUser}`)
+    firebase.auth().onAuthStateChanged((user) => {
+      if (user) {
+        this.setState({ user: user._user })
+        console.log(`current user: ${user}`)
 
-    api.getUser(1).then((user) =>{
-      console.log('hello')
-      let phone = user["phone"]
-      console.log(`API info: ${phone}`)
-      this.setState({ backendData: user})
-    }).then (() => {
-      const firebaseUser = firebase.auth().currentUser
-      this.setState({ userData: firebaseUser._user })
-      console.log(this.state)
-      console.log("checking!!!")
-      console.log(this.state.userData.displayName)
-    })
-
-
+      // api.getUser(1).then((user) => {
+      //   console.log('hello')
+      //   let phone = user["phone"]
+      //   console.log(`API info: ${phone}`)
+      //   this.setState({ backendData: user})
+      // }).then (() => {
+      //   // const firebaseUser = firebase.auth().currentUser
+      //   this.setState({ userData: user._user })
+      //   console.log(this.state)
+      //   console.log("checking!!!")
+      //   console.log(this.state.userData.displayName)
+      // })
+    } else {
+      // No user is signed in.
+    }
+  });
   }
 
   render() {
