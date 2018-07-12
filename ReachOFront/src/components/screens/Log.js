@@ -6,6 +6,7 @@ import api from '../utilities/api'
 import Icon from "react-native-vector-icons/MaterialIcons";
 
 class Log extends Component {
+
   constructor(props) {
     super(props)
 

@@ -6,6 +6,10 @@ import api from '../utilities/api'
 import Icon from "react-native-vector-icons/MaterialIcons";
 
 class Profile extends Component {
+  static navigationOptions = {
+      header: null
+   }
+
   constructor(props) {
     super(props)
 

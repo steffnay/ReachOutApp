@@ -20,7 +20,12 @@ const StackContacts = StackNavigator({
   EditContact: { screen: EditContact}
 }, {
   initialRouteName: 'Contacts',
-})
+},
+{
+  headerMode: 'none',
+  navigationOptions: {
+      headerVisible: false,
+  }})
 
 const StackLog = StackNavigator({
   History: { screen: History },

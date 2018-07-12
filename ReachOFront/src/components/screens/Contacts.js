@@ -9,6 +9,10 @@ import Accordion from 'react-native-collapsible/Accordion';
 let CONTENT = [];
 
 class Contacts extends Component {
+  static navigationOptions = {
+      header: null
+   }
+
   constructor(props) {
     super(props)
 
