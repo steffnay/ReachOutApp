@@ -23,6 +23,19 @@ const api = {
         'Content-Type': 'application/json; charset=utf-8'
       })
     }).then((res) => res.json());
+  },
+
+  updateMood(moodInfo){
+    let url = `http://localhost:3000/mood_updates`;
+    return fetch(url, {
+      method: 'POST',
+      body: JSON.stringify(moodInfo),
+      headers: new Headers({
+        'Content-Type': 'application/json; charset=utf-8'
+      })
+    }).then((res) => res.json() (
+      console.log(res)
+    ));
   }
 
 }
