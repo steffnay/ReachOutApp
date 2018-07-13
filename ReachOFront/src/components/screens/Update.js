@@ -8,6 +8,7 @@ import api from '../utilities/api'
 import firebase from 'react-native-firebase'
 import Slider from "react-native-slider";
 
+
 class Update extends Component {
   constructor(props) {
     super(props)
