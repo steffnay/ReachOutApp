@@ -4,7 +4,7 @@ class MoodUpdatesController < ApplicationController
   end
 
   def create
-    uid = params[:uid].to_i
+    uid = params[:uid]
 
     if User.exists?(uid: uid, provider: params[:provider])
       user = User.find_by(uid: uid, provider: params[:provider])
