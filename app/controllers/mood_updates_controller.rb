@@ -1,4 +1,4 @@
-require 'pry'
+
 class MoodUpdatesController < ApplicationController
   def new
   end

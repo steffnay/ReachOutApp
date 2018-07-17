@@ -1,4 +1,4 @@
-require 'pry'
+
 
 class User < ApplicationRecord
   has_one :mood_log
