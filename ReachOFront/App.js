@@ -44,7 +44,8 @@ const Tabs = TabNavigator({
 }, {
   order: ['Main', 'Contacts', 'MoodLog', 'Profile'],
   animationEnabled: true,
-})
+},
+)
 
 // const AppStack = createStackNavigator(
 //   {

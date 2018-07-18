@@ -8,6 +8,7 @@ import api from '../utilities/api'
 import firebase from 'react-native-firebase'
 import Slider from "react-native-slider";
 
+import LinearGradient from 'react-native-linear-gradient';
 
 class Update extends Component {
   constructor(props) {
@@ -17,15 +18,34 @@ class Update extends Component {
       userId: null,
       primaryMood: 0,
       intensity: 0,
+      gradient1: 'white',
+      gradient2: 'white'
     };
   }
 
   updateIntensity = (number) => {
-    this.setState({intesity: number});
+    this.setState({intensity: number});
+    if (number > 0 && number < 3) {
+      this.setState({gradient2: 'lightblue'})
+    }
+    else if (number > 2 && number < 6) {
+      this.setState({gradient2: 'blue'})
+    }
+
   }
 
   updatePrimary = (number) => {
+    console.log(number)
     this.setState({primaryMood: number});
+    console.log('**********')
+    if (number > 0 && number < 3) {
+      this.setState({gradient1: 'pink'})
+    }
+    else if (number > 2 && number < 6) {
+      this.setState({gradient1: 'red'})
+    }
+
+    console.log(this.state)
   }
 
   componentDidMount() {
@@ -61,63 +81,71 @@ class Update extends Component {
   render() {
 
     return (
-      <View style={styles.container}>
-      <Text>
-        Primary Feeling: {this.state.primaryMood}
-      </Text>
-        <Slider
-          value={this.state.primaryMood}
-          minimumValue={-10}
-          maximumValue={10}
-          step={1}
-          thumbStyle={styles.thumb}
-          trackStyle={styles.track}
-          onValueChange={primaryMood => this.setState({ primaryMood })}
-        />
-        <View style={styles.container2}>
-          <Text>
-            Unpleasant
-          </Text>
-          <Text>
-            Pleasant
-          </Text>
-        </View>
+      <LinearGradient colors={[this.state.gradient1, this.state.gradient2]} style={styles.linearGradient}>
 
+        <View style={styles.container1}>
         <Text>
-          Intensity: {this.state.intensity}
+          Primary Feeling: {this.state.primaryMood}
         </Text>
           <Slider
-            value={this.state.intensity}
+            value={this.state.primaryMood}
             minimumValue={-10}
             maximumValue={10}
             step={1}
             thumbStyle={styles.thumb}
             trackStyle={styles.track}
-            onValueChange={intensity => this.setState({ intensity })}
+            onValueChange={primaryMood => this.updatePrimary( primaryMood )}
           />
           <View style={styles.container2}>
             <Text>
-              Activated
+              Unpleasant
             </Text>
             <Text>
-              Deactivated
+              Pleasant
             </Text>
           </View>
 
-        <TouchableOpacity onPress={()=>this.submit()}
-          style={styles.button}>
-          <Text>Submit</Text>
-        </TouchableOpacity>
+          <Text>
+            Intensity: {this.state.intensity}
+          </Text>
+            <Slider
+              value={this.state.intensity}
+              minimumValue={-10}
+              maximumValue={10}
+              step={1}
+              thumbStyle={styles.thumb}
+              trackStyle={styles.track}
+              onValueChange={intensity => this.updateIntensity( intensity )}
+            />
+            <View style={styles.container2}>
+              <Text>
+                Activated
+              </Text>
+              <Text>
+                Deactivated
+              </Text>
+            </View>
+
+          <TouchableOpacity onPress={()=>this.submit()}
+            style={styles.button}>
+            <Text>Submit</Text>
+          </TouchableOpacity>
 
 
-      </View>
-
+        </View>
+      </LinearGradient>
     )
   }
 }
 
 const styles = StyleSheet.create({
-  container: {
+  linearGradient: {
+    flex: 1,
+    paddingLeft: 15,
+    paddingRight: 15,
+    borderRadius: 5
+  },
+  container1: {
     flex: 1,
     marginLeft: 10,
     marginRight: 10,
