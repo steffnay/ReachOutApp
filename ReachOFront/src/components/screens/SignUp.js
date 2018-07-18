@@ -2,6 +2,7 @@ import React from 'react'
 import { StyleSheet, Text, TextInput, View, Button } from 'react-native'
 import firebase from 'react-native-firebase'
 import { GoogleSignin, GoogleSigninButton } from 'react-native-google-signin';
+import FBSDK, {LoginManager} from 'react-native-fbsdk'
 
 
 export default class SignUp extends React.Component {
@@ -94,6 +95,19 @@ export default class SignUp extends React.Component {
     .done()
   }
 
+  fbAuth() {
+    LoginManager.logInWithReadPermissions(['public_profile']).then(function(result){
+      if (result.isCancelled) {
+        console.log('login was cancelled')
+      } else {
+        console.log('login was a success' + result.grantedPermissions.toString())
+      }
+    }, function(error) {
+      console.log('An error occurred:' + error);
+    })
+
+  }
+
 
 
 render() {
@@ -133,6 +147,7 @@ render() {
           color={GoogleSigninButton.Color.Dark}
           onPress={this.googleSignIn}/>
 
+        <Button title="Sign In With Facebook" onPress={this.fbAuth} />
 
       </View>
     )
