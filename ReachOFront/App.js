@@ -40,9 +40,10 @@ const Tabs = TabNavigator({
   Main: Main,
   Contacts: StackContacts,
   MoodLog: StackLog,
-  Profile: StackProfile
+  Profile: StackProfile,
+  Update: Update,
 }, {
-  order: ['Main', 'Contacts', 'MoodLog', 'Profile'],
+  order: ['Main', 'Contacts', 'Update', 'MoodLog', 'Profile'],
   animationEnabled: true,
 },
 )
