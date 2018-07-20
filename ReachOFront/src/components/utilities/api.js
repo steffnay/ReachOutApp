@@ -1,21 +1,21 @@
 const api = {
   getUser(userID){
-    let url = `http://localhost:3000/users/${userID}`;
+    let url = `http://reach-out-project-backend.herokuapp.com/users/${userID}`;
     return fetch(url).then((res) => res.json());
   },
 
   getContacts(userID){
-    let url = `http://localhost:3000/contacts/userlist/${userID}`;
+    let url = `http://reach-out-project-backend.herokuapp.com/contacts/userlist/${userID}`;
     return fetch(url).then((res) => res.json());
   },
 
   getContactInfo(contactID){
-    let url = `http://localhost:3000/contacts/${contactID}`;
+    let url = `http://reach-out-project-backend.herokuapp.com/contacts/${contactID}`;
     return fetch(url).then((res) => res.json());
   },
 
   updateContact(contactInfo){
-    let url = `http://localhost:3000/contacts/${contactInfo.id}`;
+    let url = `http://reach-out-project-backend.herokuapp.com/contacts/${contactInfo.id}`;
     return fetch(url, {
       method: 'PUT',
       body: JSON.stringify(contactInfo),
@@ -26,7 +26,7 @@ const api = {
   },
 
   updateMood(moodInfo){
-    let url = `http://localhost:3000/mood_updates`;
+    let url = `http://reach-out-project-backend.herokuapp.com/mood_updates`;
     return fetch(url, {
       method: 'POST',
       body: JSON.stringify(moodInfo),
@@ -39,7 +39,7 @@ const api = {
   },
 
   createUser(userInfo){
-    let url = `http://localhost:3000/users`;
+    let url = `http://reach-out-project-backend.herokuapp.com/users`;
     return fetch(url, {
       method: 'POST',
       body: JSON.stringify(userInfo),

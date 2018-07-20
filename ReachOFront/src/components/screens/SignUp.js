@@ -2,7 +2,8 @@ import React from 'react'
 import { StyleSheet, Text, TextInput, View, Button } from 'react-native'
 import firebase from 'react-native-firebase'
 import { GoogleSignin, GoogleSigninButton } from 'react-native-google-signin';
-import FBSDK, {LoginManager} from 'react-native-fbsdk'
+import { LoginManager,LoginButton,AccessToken,GraphRequest,GraphRequestManager} from 'react-native-fbsdk';
+
 import api from '../utilities/api'
 
 
@@ -78,11 +79,31 @@ export default class SignUp extends React.Component {
       const currentUser = firebase
         .auth()
         .signInAndRetrieveDataWithCredential(credential);
-      this.setState({user: data});
-    }).then(() => {
 
         let googleUser = firebase.auth().currentUser
+        this.setState({user: data});
 
+        const collection = {
+          first_name: "fern",
+          email: "fern@mail.com",
+          provider: "google",
+          uid: "asal3429-0294"
+        }
+
+        api.createUser(collection)
+    }).then((data) => {
+      const credential = firebase.auth.GoogleAuthProvider.credential(
+        data.idToken,
+        data.accessToken
+      );
+
+      // login with credential
+      const currentUser = firebase
+        .auth()
+        .signInAndRetrieveDataWithCredential(credential);
+
+        let googleUser = firebase.auth().currentUser
+        this.setState({user: data});
 
         const collection = {
           first_name: "fern",
@@ -106,12 +127,22 @@ export default class SignUp extends React.Component {
         console.log('login was cancelled')
       } else {
         console.log('login was a success' + result.grantedPermissions.toString())
+        console.log("facebook tiiiiiime!!!")
+        console.log(result)
       }
     }, function(error) {
       console.log('An error occurred:' + error);
     })
 
   }
+
+  _responseInfoCallback = (error, result) => {
+  if (error) {
+    alert('Error fetching data: ' + error.toString());
+  } else {
+    alert('Result Name: ' + result.first_name + result.last_name + result.email);
+  }
+}
 
 
 
@@ -154,6 +185,30 @@ render() {
 
         <Button title="Sign In With Facebook" onPress={this.fbAuth} />
 
+        <LoginButton
+         publishPermissions={["publish_actions"]}
+         onLoginFinished={
+           (error, result) => {
+             if (error) {
+               alert("login has error: " + result.error);
+             } else if (result.isCancelled) {
+               alert("login is cancelled.");
+             } else {
+               AccessToken.getCurrentAccessToken().then(
+                 (data) => {
+                   const infoRequest = new GraphRequest(
+                     '/me?fields=first_name,last_name',
+                     null,
+                     this._responseInfoCallback
+                   );
+                   // Start the graph request.
+                   new GraphRequestManager().addRequest(infoRequest).start();
+                 }
+               )
+             }
+           }
+         }
+         onLogoutFinished={() => alert("logout.")}/>
       </View>
     )
   }
