@@ -2,7 +2,7 @@ import React from 'react'
 import { StyleSheet, Text, TextInput, View, Button } from 'react-native'
 import firebase from 'react-native-firebase'
 import { GoogleSignin, GoogleSigninButton } from 'react-native-google-signin';
-import { LoginManager,LoginButton,AccessToken,GraphRequest,GraphRequestManager} from 'react-native-fbsdk';
+import { LoginManager, AccessToken } from 'react-native-fbsdk';
 
 import api from '../utilities/api'
 
@@ -37,35 +37,6 @@ export default class SignUp extends React.Component {
       });
     }
 
-  // handleSignUp = () => {
-  //   firebase
-  //     .auth()
-  //     .createUserWithEmailAndPassword(this.state.email, this.state.password)
-  //     .then(() => this.props.navigation.navigate('Main'))
-  //     .catch(error => this.setState({ errorMessage: error.message }))
-  // }
-  //
-  // handleAnonymous = () => {
-  //   firebase
-  //     .auth()
-  //     .signInAnonymously()
-  //     .then(() => this.props.navigation.navigate('Main'))
-  //     .catch(error => this.setState({ errorMessage: error.message }))
-  // }
-
-  firebaseLogin = (googleData) => {
-    const credential = firebase.auth.GoogleAuthProvider.credential(
-      googleData.idToken,
-      googleData.accessToken
-    );
-
-    // login with credential
-    const currentUser = firebase
-      .auth()
-      .signInAndRetrieveDataWithCredential(credential);
-      console.log("made it to end of firebaselogin")
-  }
-
 
   googleSignIn = () => {
     GoogleSignin.signIn()
@@ -75,45 +46,32 @@ export default class SignUp extends React.Component {
         data.accessToken
       );
 
-      // login with credential
+
       const currentUser = firebase
         .auth()
         .signInAndRetrieveDataWithCredential(credential);
 
-        let googleUser = firebase.auth().currentUser
-        this.setState({user: data});
+      console.log(currentUser)
 
-        const collection = {
-          first_name: "fern",
-          email: "fern@mail.com",
-          provider: "google",
-          uid: "asal3429-0294"
-        }
-
-        api.createUser(collection)
-    }).then((data) => {
-      const credential = firebase.auth.GoogleAuthProvider.credential(
-        data.idToken,
-        data.accessToken
-      );
-
+    }).then((response) => {
       // login with credential
-      const currentUser = firebase
-        .auth()
-        .signInAndRetrieveDataWithCredential(credential);
+      console.log("!!!!!!!!!!!!!")
+      console.log(response)
 
         let googleUser = firebase.auth().currentUser
-        this.setState({user: data});
-
-        const collection = {
-          first_name: "fern",
-          email: "fern@mail.com",
-          provider: "google",
-          uid: "asal3429-0294"
-        }
-
-        api.createUser(collection)
-    })
+        // console.log("ahhhhhhhhhhh!!!!!!!!!!!!!")
+        // console.log(googleUser)
+        // this.setState({user: data});
+        //
+        // const collection = {
+        //   first_name: "fern",
+        //   email: "fern@mail.com",
+        //   provider: "google",
+        //   uid: "asal3429-0294"
+        // }
+        //
+        // api.createUser(collection)
+      })
     .then(() => this.props.navigation.navigate('Main'))
     .catch((err) => {
       console.log('WRONG SIGNIN', err);
@@ -121,61 +79,48 @@ export default class SignUp extends React.Component {
     .done()
   }
 
-  fbAuth() {
-    LoginManager.logInWithReadPermissions(['public_profile']).then(function(result){
+onLoginFacebook = () => {
+  LoginManager
+    .logInWithReadPermissions(['public_profile', 'email'])
+    .then((result) => {
       if (result.isCancelled) {
-        console.log('login was cancelled')
-      } else {
-        console.log('login was a success' + result.grantedPermissions.toString())
-        console.log("facebook tiiiiiime!!!")
-        console.log(result)
+        return Promise.reject(new Error('The user cancelled the request'));
       }
-    }, function(error) {
-      console.log('An error occurred:' + error);
+
+      console.log(`Success. ${result.grantedPermissions.toString()}`);
+      return AccessToken.getCurrentAccessToken();
     })
+    .then(data => {
+      const credential = firebase.auth.FacebookAuthProvider.credential(data.accessToken);
+      return firebase.auth().signInWithCredential(credential);
+    })
+    .then((currentUser) => {
+      console.log('hip hop hooray')
+      const data = currentUser._user
+      console.log(currentUser._user);
+      this.setState({user: currentUser._user});
 
-  }
+      const collection = {
+        first_name: data.displayName,
+        email: data.email,
+        provider: "facebook",
+        uid: data.uid
+      }
 
-  _responseInfoCallback = (error, result) => {
-  if (error) {
-    alert('Error fetching data: ' + error.toString());
-  } else {
-    alert('Result Name: ' + result.first_name + result.last_name + result.email);
-  }
+      api.createUser(collection)
+    })
+    .catch((error) => {
+      alert(error)
+    });
+
+
 }
-
 
 
 render() {
 
     return (
       <View style={styles.container}>
-        <Text>Sign Up</Text>
-        {this.state.errorMessage &&
-          <Text style={{ color: 'red' }}>
-            {this.state.errorMessage}
-          </Text>}
-        <TextInput
-          placeholder="Email"
-          autoCapitalize="none"
-          style={styles.textInput}
-          onChangeText={email => this.setState({ email })}
-          value={this.state.email}
-        />
-        <TextInput
-          secureTextEntry
-          placeholder="Password"
-          autoCapitalize="none"
-          style={styles.textInput}
-          onChangeText={password => this.setState({ password })}
-          value={this.state.password}
-        />
-        <Button title="Sign Up" onPress={this.handleSignUp} />
-        <Button title="Anonymous User" onPress={this.handleAnonymous} />
-        <Button
-          title="Already have an account? Login"
-          onPress={() => this.props.navigation.navigate('Login')}
-        />
 
         <GoogleSigninButton
           style={{ width: 250, height: 48 }}
@@ -183,32 +128,15 @@ render() {
           color={GoogleSigninButton.Color.Dark}
           onPress={this.googleSignIn}/>
 
-        <Button title="Sign In With Facebook" onPress={this.fbAuth} />
-
-        <LoginButton
-         publishPermissions={["publish_actions"]}
-         onLoginFinished={
-           (error, result) => {
-             if (error) {
-               alert("login has error: " + result.error);
-             } else if (result.isCancelled) {
-               alert("login is cancelled.");
-             } else {
-               AccessToken.getCurrentAccessToken().then(
-                 (data) => {
-                   const infoRequest = new GraphRequest(
-                     '/me?fields=first_name,last_name',
-                     null,
-                     this._responseInfoCallback
-                   );
-                   // Start the graph request.
-                   new GraphRequestManager().addRequest(infoRequest).start();
-                 }
-               )
-             }
-           }
-         }
-         onLogoutFinished={() => alert("logout.")}/>
+        <Button title="LoginFB" containerStyle={{
+          padding: 10,
+          width: 150,
+          margin: 20,
+          borderRadius: 4,
+          backgroundColor: 'rgb(73,104,173)'
+        }}
+        style = {{fontSize: 18, color: 'white'}}
+        onPress={this.onLoginFacebook}/>
       </View>
     )
   }

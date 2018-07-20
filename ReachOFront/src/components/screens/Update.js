@@ -25,24 +25,75 @@ class Update extends Component {
 
   updateIntensity = (number) => {
     this.setState({intensity: number});
-    if (number > 0 && number < 3) {
-      this.setState({gradient2: 'lightblue'})
+    if (number == 0) {
+      this.setState({gradient2: 'white'})
     }
-    else if (number > 2 && number < 6) {
-      this.setState({gradient2: 'blue'})
+    else if (number == -1 || number == -2) {
+      this.setState({gradient2: '#FF7373'})
+    }
+    else if (number == -3 || number == -4) {
+      this.setState({gradient2: '#FF4C4C'})
+    }
+    else if (number == -5 && number == -6) {
+      this.setState({gradient2: '#FF2626'})
+    }
+    else if (number == -7 || number == -8) {
+      this.setState({gradient2: '#D90000'})
+    }
+    else if (number == -9 || number == -10) {
+      this.setState({gradient2: '#B20000'})
+    }
+    else if (number == 1 || number == 2) {
+      this.setState({gradient2: '#EBF5FF'})
+    }
+    else if (number == 3 || number == 4) {
+      this.setState({gradient2: '#C4E3FF'})
+    }
+    else if (number == 5 && number == 6) {
+      this.setState({gradient2: '#9ED1FF'})
+    }
+    else if (number == 7 || number == 8) {
+      this.setState({gradient2: '#78BFFF'})
+    }
+    else if (number == 9 || number == 10) {
+      this.setState({gradient2: '#4593D9'})
     }
 
   }
 
   updatePrimary = (number) => {
-    console.log(number)
-    this.setState({primaryMood: number});
-    console.log('**********')
-    if (number > 0 && number < 3) {
-      this.setState({gradient1: 'pink'})
+    if (number == 0) {
+      this.setState({gradient1: 'white'})
     }
-    else if (number > 2 && number < 6) {
-      this.setState({gradient1: 'red'})
+    else if (number == -1 || number == -2) {
+      this.setState({gradient1: '#E7FFE7'})
+    }
+    else if (number == -3 || number == -4) {
+      this.setState({gradient1: '#C1FFC1'})
+    }
+    else if (number == -5 && number == -6) {
+      this.setState({gradient1: '#90EE90'})
+    }
+    else if (number == -7 || number == -8) {
+      this.setState({gradient1: '#5BC85B'})
+    }
+    else if (number == -9 || number == -10) {
+      this.setState({gradient1: '#31A231'})
+    }
+    else if (number == 1 || number == 2) {
+      this.setState({gradient1: '#FFFFB2'})
+    }
+    else if (number == 3 || number == 4) {
+      this.setState({gradient1: '#FFFF99'})
+    }
+    else if (number == 5 && number == 6) {
+      this.setState({gradient1: '#FFFF8C'})
+    }
+    else if (number == 7 || number == 8) {
+      this.setState({gradient1: '#FFFF66'})
+    }
+    else if (number == 9 || number == 10) {
+      this.setState({gradient1: '#FFFF00'})
     }
 
     console.log(this.state)
