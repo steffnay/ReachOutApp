@@ -38,7 +38,7 @@ export default class SignUp extends React.Component {
     }
 
 
-  googleSignIn = () => {
+    googleSignIn = () => {
     GoogleSignin.signIn()
     .then((data) => {
       const credential = firebase.auth.GoogleAuthProvider.credential(
@@ -46,32 +46,21 @@ export default class SignUp extends React.Component {
         data.accessToken
       );
 
-
+      // login with credential
       const currentUser = firebase
         .auth()
         .signInAndRetrieveDataWithCredential(credential);
 
-      console.log(currentUser)
+        console.log("made it to end of firebaselogin 1")
+        let now = firebase.auth().currentUser
+        console.log(now)
+        console.log("made it to end of firebaselogin 2")
 
-    }).then((response) => {
-      // login with credential
-      console.log("!!!!!!!!!!!!!")
-      console.log(response)
 
-        let googleUser = firebase.auth().currentUser
-        // console.log("ahhhhhhhhhhh!!!!!!!!!!!!!")
-        // console.log(googleUser)
-        // this.setState({user: data});
-        //
-        // const collection = {
-        //   first_name: "fern",
-        //   email: "fern@mail.com",
-        //   provider: "google",
-        //   uid: "asal3429-0294"
-        // }
-        //
-        // api.createUser(collection)
-      })
+
+      console.log(data);
+      this.setState({user: data});
+    })
     .then(() => this.props.navigation.navigate('Main'))
     .catch((err) => {
       console.log('WRONG SIGNIN', err);

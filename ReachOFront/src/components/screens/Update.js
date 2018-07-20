@@ -19,7 +19,8 @@ class Update extends Component {
       primaryMood: 0,
       intensity: 0,
       gradient1: 'white',
-      gradient2: 'white'
+      gradient2: 'white',
+      moodWord: 'tiger'
     };
   }
 
@@ -28,40 +29,43 @@ class Update extends Component {
     if (number == 0) {
       this.setState({gradient2: 'white'})
     }
-    else if (number == -1 || number == -2) {
+    else if (number == 1 || number == 2) {
       this.setState({gradient2: '#FF7373'})
     }
-    else if (number == -3 || number == -4) {
+    else if (number == 3 || number == 4) {
       this.setState({gradient2: '#FF4C4C'})
     }
-    else if (number == -5 && number == -6) {
+    else if (number == 5 && number == 6) {
       this.setState({gradient2: '#FF2626'})
     }
-    else if (number == -7 || number == -8) {
+    else if (number == 7 || number == 8) {
       this.setState({gradient2: '#D90000'})
     }
-    else if (number == -9 || number == -10) {
+    else if (number == 9 || number == 10) {
       this.setState({gradient2: '#B20000'})
     }
-    else if (number == 1 || number == 2) {
+    else if (number == -1 || number == -2) {
       this.setState({gradient2: '#EBF5FF'})
     }
-    else if (number == 3 || number == 4) {
+    else if (number == -3 || number == -4) {
       this.setState({gradient2: '#C4E3FF'})
     }
-    else if (number == 5 && number == 6) {
+    else if (number == -5 && number == -6) {
       this.setState({gradient2: '#9ED1FF'})
     }
-    else if (number == 7 || number == 8) {
+    else if (number == -7 || number == -8) {
       this.setState({gradient2: '#78BFFF'})
     }
-    else if (number == 9 || number == 10) {
+    else if (number == -9 || number == -10) {
       this.setState({gradient2: '#4593D9'})
     }
+
+    this.updateMoodWord()
 
   }
 
   updatePrimary = (number) => {
+    this.setState({primaryMood: number});
     if (number == 0) {
       this.setState({gradient1: 'white'})
     }
@@ -96,7 +100,99 @@ class Update extends Component {
       this.setState({gradient1: '#FFFF00'})
     }
 
+    this.updateMoodWord()
     console.log(this.state)
+  }
+
+  updateMoodWord() {
+    // Q1
+    if (this.state.intensity > -1 &&
+      this.state.primaryMood > 0 &&
+      this.state.primaryMood < 4) {
+      this.setState({moodWord: 'Alert'})
+    }
+    else if (this.state.intensity > -1 &&
+      this.state.primaryMood > 3 &&
+      this.state.primaryMood < 6) {
+      this.setState({moodWord: 'Excited'})
+      }
+    else if (this.state.intensity > -1 &&
+      this.state.primaryMood > 5 &&
+      this.state.primaryMood < 9) {
+      this.setState({moodWord: 'Happy'})
+    }
+    else if (this.state.intensity > -1 &&
+      this.state.primaryMood > 9 &&
+      this.state.primaryMood < 11) {
+      this.setState({moodWord: 'Elated'})
+    }
+    // Q2
+    if (this.state.intensity < 0 &&
+      this.state.primaryMood > 0 &&
+      this.state.primaryMood < 4) {
+      this.setState({moodWord: 'Calm'})
+    }
+    else if (this.state.intensity < 0 &&
+      this.state.primaryMood > 3 &&
+      this.state.primaryMood < 6) {
+      this.setState({moodWord: 'Relaxed'})
+      }
+    else if (this.state.intensity < 0 &&
+      this.state.primaryMood > 5 &&
+      this.state.primaryMood < 9) {
+      this.setState({moodWord: 'Serene'})
+    }
+    else if (this.state.intensity < 0 &&
+      this.state.primaryMood > 9 &&
+      this.state.primaryMood < 11) {
+      this.setState({moodWord: 'Contented'})
+    }
+    // Q3
+    if (this.state.intensity < 0 &&
+      this.state.primaryMood < 0 &&
+      this.state.primaryMood > -4) {
+      this.setState({moodWord: 'Fatigued'})
+    }
+    else if (this.state.intensity < 0 &&
+      this.state.primaryMood < -3 &&
+      this.state.primaryMood > -6) {
+      this.setState({moodWord: 'Bored'})
+      }
+    else if (this.state.intensity < 0 &&
+      this.state.primaryMood < -5 &&
+      this.state.primaryMood > -9) {
+      this.setState({moodWord: 'Depressed'})
+    }
+    else if (this.state.intensity < 0 &&
+      this.state.primaryMood < -8 &&
+      this.state.primaryMood > -11) {
+      this.setState({moodWord: 'Sad'})
+    }
+    // Q4
+    if (this.state.intensity > -1 &&
+      this.state.primaryMood < 0 &&
+      this.state.primaryMood > -4) {
+      this.setState({moodWord: 'Tense'})
+    }
+    else if (this.state.intensity > -1 &&
+      this.state.primaryMood < -3 &&
+      this.state.primaryMood > -6) {
+      this.setState({moodWord: 'Nervous'})
+      }
+    else if (this.state.intensity > -1 &&
+      this.state.primaryMood < -5 &&
+      this.state.primaryMood > -9) {
+      this.setState({moodWord: 'Stressed'})
+    }
+    else if (this.state.intensity > -1 &&
+      this.state.primaryMood < -8 &&
+      this.state.primaryMood > -11) {
+      this.setState({moodWord: 'Upset'})
+    }
+
+    console.log("blah ~ blah ~ blah ~ blah")
+    console.log(this.state.moodWord)
+
   }
 
   componentDidMount() {
@@ -156,6 +252,10 @@ class Update extends Component {
             </Text>
           </View>
 
+          <View style={styles.container3}>
+            <Text style={styles.moodWord}>{this.state.moodWord}</Text>
+          </View>
+
           <Text>
             Intensity: {this.state.intensity}
           </Text>
@@ -170,10 +270,10 @@ class Update extends Component {
             />
             <View style={styles.container2}>
               <Text>
-                Activated
+                Dectivated
               </Text>
               <Text>
-                Deactivated
+                Activated
               </Text>
             </View>
 
@@ -209,6 +309,16 @@ const styles = StyleSheet.create({
     marginRight: 10,
     flexDirection: 'row',
     justifyContent: 'space-between',
+  },
+  container3: {
+    flex: 1,
+    marginLeft: 10,
+    marginRight: 10,
+    flexDirection: 'row',
+    justifyContent: 'center',
+  },
+  moodWord: {
+    fontSize: 28,
   },
   button: {
     backgroundColor: 'skyblue',
