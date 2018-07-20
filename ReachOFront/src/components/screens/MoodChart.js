@@ -9,15 +9,13 @@ import {
   ScrollView
 } from 'react-native';
 
-import MoodChart from './MoodChart'
-
 import {BarChart} from 'react-native-charts-wrapper';
 
 const GREEN = processColor('#71BD6A');
 const RED = processColor('#D14B5A');
 
 
-class History extends React.Component {
+class MoodChart extends React.Component {
   static navigationOptions = {
       header: null
    }
@@ -71,7 +69,24 @@ class History extends React.Component {
    return (
 
      <View style={{flex: 1}}>
-     <MoodChart />
+
+       <View style={{height:80}}>
+         <Text> selected entry</Text>
+         <Text> {this.state.selectedEntry}</Text>
+       </View>
+
+       <View style={styles.container}>
+         <BarChart
+           style={styles.chart}
+           data={this.state.data}
+           xAxis={this.state.xAxis}
+           yAxis={this.state.yAxis}
+           chartDescription={{text: ''}}
+           legend={{enabled: false}}
+           onSelect={this.handleSelect.bind(this)}
+           onChange={(event) => console.log(event.nativeEvent)}
+         />
+       </View>
 
      </View>
 
@@ -90,4 +105,4 @@ const styles = StyleSheet.create({
 });
 
 
-export default History
+export default MoodChart

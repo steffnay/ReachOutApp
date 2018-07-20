@@ -3,6 +3,7 @@ import { StyleSheet, Text, TextInput, View, Button } from 'react-native'
 import firebase from 'react-native-firebase'
 import { GoogleSignin, GoogleSigninButton } from 'react-native-google-signin';
 import FBSDK, {LoginManager} from 'react-native-fbsdk'
+import api from '../utilities/api'
 
 
 export default class SignUp extends React.Component {
@@ -35,21 +36,21 @@ export default class SignUp extends React.Component {
       });
     }
 
-  handleSignUp = () => {
-    firebase
-      .auth()
-      .createUserWithEmailAndPassword(this.state.email, this.state.password)
-      .then(() => this.props.navigation.navigate('Main'))
-      .catch(error => this.setState({ errorMessage: error.message }))
-  }
-
-  handleAnonymous = () => {
-    firebase
-      .auth()
-      .signInAnonymously()
-      .then(() => this.props.navigation.navigate('Main'))
-      .catch(error => this.setState({ errorMessage: error.message }))
-  }
+  // handleSignUp = () => {
+  //   firebase
+  //     .auth()
+  //     .createUserWithEmailAndPassword(this.state.email, this.state.password)
+  //     .then(() => this.props.navigation.navigate('Main'))
+  //     .catch(error => this.setState({ errorMessage: error.message }))
+  // }
+  //
+  // handleAnonymous = () => {
+  //   firebase
+  //     .auth()
+  //     .signInAnonymously()
+  //     .then(() => this.props.navigation.navigate('Main'))
+  //     .catch(error => this.setState({ errorMessage: error.message }))
+  // }
 
   firebaseLogin = (googleData) => {
     const credential = firebase.auth.GoogleAuthProvider.credential(
@@ -77,16 +78,20 @@ export default class SignUp extends React.Component {
       const currentUser = firebase
         .auth()
         .signInAndRetrieveDataWithCredential(credential);
-
-        console.log("made it to end of firebaselogin 1")
-        let now = firebase.auth().currentUser
-        console.log(now)
-        console.log("made it to end of firebaselogin 2")
-
-
-
-      console.log(data);
       this.setState({user: data});
+    }).then(() => {
+
+        let googleUser = firebase.auth().currentUser
+
+
+        const collection = {
+          first_name: "fern",
+          email: "fern@mail.com",
+          provider: "google",
+          uid: "asal3429-0294"
+        }
+
+        api.createUser(collection)
     })
     .then(() => this.props.navigation.navigate('Main'))
     .catch((err) => {

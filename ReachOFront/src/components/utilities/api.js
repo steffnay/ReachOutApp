@@ -36,6 +36,19 @@ const api = {
     }).then((res) => res.json() (
       console.log(res)
     ));
+  },
+
+  createUser(userInfo){
+    let url = `http://localhost:3000/users`;
+    return fetch(url, {
+      method: 'POST',
+      body: JSON.stringify(userInfo),
+      headers: new Headers({
+        'Content-Type': 'application/json; charset=utf-8'
+      })
+    }).then((res) => res.json() (
+      console.log(res)
+    ));
   }
 
 }
