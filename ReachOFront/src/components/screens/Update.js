@@ -20,7 +20,7 @@ class Update extends Component {
       intensity: 0,
       gradient1: 'white',
       gradient2: 'white',
-      moodWord: 'tiger'
+      moodWord: 'How do you feel?'
     };
   }
 

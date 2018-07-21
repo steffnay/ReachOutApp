@@ -12,6 +12,8 @@ import {
 import MoodChart from './MoodChart'
 
 import {BarChart} from 'react-native-charts-wrapper';
+import firebase from 'react-native-firebase'
+import api from '../utilities/api'
 
 const GREEN = processColor('#71BD6A');
 const RED = processColor('#D14B5A');
@@ -26,53 +28,59 @@ class History extends React.Component {
    super();
 
    this.state = {
-     data: {
-       dataSets: [{
-         values: [{y: -224.1}, {y: 238.5}, {y: 1280.1}, {y: -442.3}, {y: -2280.1}, {y: 238.5}, {y: 238.5}, {y: 238.5}, {y: 238.5},
-           {y: -224.1}, {y: 238.5}, {y: 1280.1}, {y: -442.3}, {y: -2280.1}, {y: 238.5}, {y: 238.5}, {y: 238.5}, {y: 238.5}],
-         label: 'Zero line dataset',
-         config: {
-           colors: [RED, GREEN, GREEN, RED, RED, GREEN, GREEN, GREEN, GREEN, RED, GREEN, GREEN, RED, RED, GREEN, GREEN, GREEN, GREEN]
-         }
-       }],
-     },
-     xAxis: {
-       enabled: false
-     },
-     yAxis: {
-       left: {
-         drawLabels: false,
-         drawAxisLine: false,
-         drawGridLines: false,
-         zeroLine: {
-           enabled: true,
-           lineWidth: 1.5
-         }
-       },
-       right: {
-         enabled: false
-       }
-     }
+     chartData: [],
    };
- }
 
- handleSelect(event) {
-   let entry = event.nativeEvent
-   if (entry == null) {
-     this.setState({...this.state, selectedEntry: null})
-   } else {
-     this.setState({...this.state, selectedEntry: JSON.stringify(entry)})
-   }
 
-   console.log(event.nativeEvent)
- }
+  }
+
+  componentDidMount() {
+    const { currentUser } = firebase.auth();
+    const uid = currentUser._user.uid
+    this.makeWeekApiCall(uid)
+  }
+
+
+  makeWeekApiCall(uid) {
+    api.getWeekLogData('0741709239').then((data) => {
+      this.makeColorArray(data)
+      this.setState({chartData: data})
+      console.log('oOOOOOooOoOoooooooOooooo')
+      console.log(this.state)
+    })
+  }
+
+  makeMonthApiCall(uid) {
+    api.getMonthLogData('0741709239').then((data)  => {
+      this.makeColorArray(data)
+      this.setState({chartData: data})
+
+    })
+  }
+
+  makeColorArray(data) {
+
+    console.log(data.length)
+    const logNum = data.length
+    let array = []
+
+    for(let i=0; i < logNum; i++){
+      array.push('GREEN')
+    }
+    console.log(array)
+    this.setState({colorArray: array})
+
+  }
+
+
 
  render() {
+   const vals = [{y: -224.1}, {y: 238.5}, {y: 1280.1}]
+
    return (
 
      <View style={{flex: 1}}>
-     <MoodChart />
-
+      <MoodChart logValues={ this.state.chartData } colors= { this.state.colorArray}/>
      </View>
 
    );

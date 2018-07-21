@@ -10,6 +10,7 @@ import {
 } from 'react-native';
 
 import {BarChart} from 'react-native-charts-wrapper';
+import PropTypes from 'prop-types';
 
 const GREEN = processColor('#71BD6A');
 const RED = processColor('#D14B5A');
@@ -20,17 +21,16 @@ class MoodChart extends React.Component {
       header: null
    }
 
-  constructor() {
-   super();
+  constructor(props) {
+   super(props);
 
    this.state = {
      data: {
        dataSets: [{
-         values: [{y: -224.1}, {y: 238.5}, {y: 1280.1}, {y: -442.3}, {y: -2280.1}, {y: 238.5}, {y: 238.5}, {y: 238.5}, {y: 238.5},
-           {y: -224.1}, {y: 238.5}, {y: 1280.1}, {y: -442.3}, {y: -2280.1}, {y: 238.5}, {y: 238.5}, {y: 238.5}, {y: 238.5}],
+         values: props.logValues,
          label: 'Zero line dataset',
          config: {
-           colors: [RED, GREEN, GREEN, RED, RED, GREEN, GREEN, GREEN, GREEN, RED, GREEN, GREEN, RED, RED, GREEN, GREEN, GREEN, GREEN]
+           colors: props.colors
          }
        }],
      },
@@ -52,6 +52,22 @@ class MoodChart extends React.Component {
        }
      }
    };
+ }
+
+ componentDidMount() {
+
+   console.log('%%%%%%%%%%%%%%%%%%%%')
+   console.log(this.state)
+
+  // const logNum = this.state.chartData.length
+  //
+  // let array = []
+  //
+  // for(let i=0; i < logNum; i++){
+  //   array.push('GREEN')
+  // }
+  //
+  // this.setState()
  }
 
  handleSelect(event) {
@@ -104,5 +120,9 @@ const styles = StyleSheet.create({
  }
 });
 
+MoodChart.propTypes = {
+  logValues: PropTypes.array,
+  colors: PropTypes.array,
+};
 
 export default MoodChart

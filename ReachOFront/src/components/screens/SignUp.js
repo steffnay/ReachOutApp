@@ -51,13 +51,10 @@ export default class SignUp extends React.Component {
         .auth()
         .signInAndRetrieveDataWithCredential(credential);
 
-        console.log("made it to end of firebaselogin 1")
-        let now = firebase.auth().currentUser
-        console.log(now)
-        console.log("made it to end of firebaselogin 2")
-
-
-
+      console.log("made it to end of firebaselogin 1");
+      let now = firebase.auth().currentUser;
+      console.log(now);
+      console.log("made it to end of firebaselogin 2");
       console.log(data);
       this.setState({user: data});
     })

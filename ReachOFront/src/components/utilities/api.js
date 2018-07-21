@@ -14,6 +14,16 @@ const api = {
     return fetch(url).then((res) => res.json());
   },
 
+  getWeekLogData(uid){
+    let url = `http://reach-out-project-backend.herokuapp.com/mood_logs?uid=${uid}&week=true`;
+    return fetch(url).then((res) => res.json());
+  },
+
+  getMonthLogData(uid){
+    let url = `http://reach-out-project-backend.herokuapp.com/mood_logs?uid=${uid}&month=true`;
+    return fetch(url).then((res) => res.json());
+  },
+
   updateContact(contactInfo){
     let url = `http://reach-out-project-backend.herokuapp.com/contacts/${contactInfo.id}`;
     return fetch(url, {
