@@ -6,7 +6,8 @@ import {
   View,
   processColor,
   Button,
-  ScrollView
+  ScrollView,
+  TouchableOpacity
 } from 'react-native';
 
 import MoodChart from './MoodChart'
@@ -29,6 +30,7 @@ class History extends React.Component {
 
    this.state = {
      chartData: [],
+     colorArray: []
    };
 
 
@@ -37,13 +39,13 @@ class History extends React.Component {
   componentDidMount() {
     const { currentUser } = firebase.auth();
     const uid = currentUser._user.uid
+    this.setState({currentUser: uid})
     this.makeWeekApiCall(uid)
   }
 
 
   makeWeekApiCall(uid) {
-    api.getWeekLogData('0741709239').then((data) => {
-      this.makeColorArray(data)
+    api.getWeekLogData(uid).then((data) => {
 
       const dataLength = data.length
       let dataArray = []
@@ -55,16 +57,32 @@ class History extends React.Component {
       }
 
       this.setState({chartData: dataArray})
+      this.makeColorArray(data)
+
       console.log('oOOOOOooOoOoooooooOooooo')
       console.log(this.state)
+        console.log('oOOOOOooOoOoooooooOooooo')
     })
   }
 
   makeMonthApiCall(uid) {
-    api.getMonthLogData('0741709239').then((data)  => {
-      this.makeColorArray(data)
-      this.setState({chartData: data})
+    api.getMonthLogData(uid).then((data) => {
 
+      const dataLength = data.length
+      let dataArray = []
+
+      for(let i=0; i < dataLength; i++){
+        let yVal = data[i].primary_mood
+        let yObject = {y: yVal}
+        dataArray.push(yObject)
+      }
+
+      this.setState({chartData: dataArray})
+      this.makeColorArray(data)
+
+      console.log('oOOOOOooOoOoooooooOooooo')
+      console.log(this.state)
+        console.log('oOOOOOooOoOoooooooOooooo')
     })
   }
 
@@ -163,9 +181,18 @@ render() {
 
    return (
 
-     <View style={{flex: 1}}>
-      <MoodChart logValues={moodVals} colors={colorVals}/>
-
+     <View style={styles.container}>
+      <MoodChart logValues={this.state.chartData} colors={this.state.colorArray}/>
+      <View style={styles.buttonContainer}>
+        <TouchableOpacity onPress={()=>this.makeWeekApiCall(this.state.currentUser)}
+          style={styles.button}>
+          <Text>Week</Text>
+        </TouchableOpacity>
+        <TouchableOpacity onPress={()=>this.makeMonthApiCall(this.state.currentUser)}
+          style={styles.button}>
+          <Text>Month</Text>
+        </TouchableOpacity>
+      </View>
      </View>
 
    );
@@ -177,8 +204,15 @@ const styles = StyleSheet.create({
    flex: 1,
    backgroundColor: '#F5FCFF'
  },
- chart: {
-   flex: 1
+ buttonContainer: {
+   flex: 1,
+   paddingBottom: 0,
+   flexDirection: 'row',
+   justifyContent: 'space-around',
+   alignItems: 'center',
+ },
+ button: {
+
  }
 });
 

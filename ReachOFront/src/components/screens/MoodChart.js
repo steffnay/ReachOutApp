@@ -58,7 +58,8 @@ class MoodChart extends React.Component {
 
    console.log('%%%%%%%%%%%%%%%%%%%%')
    console.log(this.state)
-
+   console.log(this.props)
+  console.log('%%%%%%%%%%%%%%%%%%%%')
   // const logNum = this.state.chartData.length
   //
   // let array = []
