@@ -56,12 +56,12 @@ class History extends React.Component {
         dataArray.push(yObject)
       }
 
-      this.setState({chartData: dataArray})
-      this.makeColorArray(data)
+      this.setState({chartData: dataArray});
+      this.makeColorArray(data);
 
-      console.log('oOOOOOooOoOoooooooOooooo')
-      console.log(this.state)
-        console.log('oOOOOOooOoOoooooooOooooo')
+      console.log('oOOOOOooOoOoooooooOooooo');
+      console.log(this.state);
+      console.log('oOOOOOooOoOoooooooOooooo');
     })
   }
 
@@ -77,12 +77,12 @@ class History extends React.Component {
         dataArray.push(yObject)
       }
 
-      this.setState({chartData: dataArray})
-      this.makeColorArray(data)
+      this.setState({chartData: dataArray});
+      this.makeColorArray(data);
 
-      console.log('oOOOOOooOoOoooooooOooooo')
-      console.log(this.state)
-        console.log('oOOOOOooOoOoooooooOooooo')
+      console.log('oOOOOOooOoOoooooooOooooo');
+      console.log(this.state);
+      console.log('oOOOOOooOoOoooooooOooooo');
     })
   }
 
