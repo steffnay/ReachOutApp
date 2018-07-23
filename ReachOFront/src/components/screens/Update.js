@@ -20,12 +20,16 @@ class Update extends Component {
       intensity: 0,
       gradient1: 'white',
       gradient2: 'white',
-      moodWord: 'How do you feel?'
+      moodWord: 'How do you feel?',
+      primaryDisplay: 0,
+      intensityDisplay: 0,
     };
   }
 
   updateIntensity = (number) => {
     this.setState({intensity: number});
+    let absNumber = Math.abs(number);
+    this.setState({intensityDisplay: absNumber})
     if (number == 0) {
       this.setState({gradient2: 'white'})
     }
@@ -66,6 +70,8 @@ class Update extends Component {
 
   updatePrimary = (number) => {
     this.setState({primaryMood: number});
+    let absNumber = Math.abs(number);
+    this.setState({primaryDisplay: absNumber})
     if (number == 0) {
       this.setState({gradient1: 'white'})
     }
@@ -232,7 +238,7 @@ class Update extends Component {
 
         <View style={styles.container1}>
         <Text style={styles.moodMeasure}>
-          Primary Feeling: {this.state.primaryMood}
+          Primary Feeling: {this.state.primaryDisplay}
         </Text>
           <Slider
             value={this.state.primaryMood}
@@ -257,7 +263,7 @@ class Update extends Component {
           </View>
 
           <Text style={styles.moodMeasure}>
-            Intensity: {this.state.intensity}
+            Intensity: {this.state.intensityDisplay}
           </Text>
             <Slider
               value={this.state.intensity}
