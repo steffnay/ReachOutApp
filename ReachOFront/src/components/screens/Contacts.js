@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { View, Text, TouchableOpacity, StyleSheet, Button } from 'react-native'
+import { View, Text, TouchableOpacity, StyleSheet, Button, ImageBackground } from 'react-native'
 import firebase from 'react-native-firebase'
 import api from '../utilities/api'
 
@@ -150,6 +150,8 @@ class Contacts extends Component {
   render() {
 
     return (
+      <ImageBackground source={require('../utilities/ReachOutTransparent1.png')} style={styles.backgroundImage}>
+
       <View style={styles.container}>
       <View style={styles.titleContainer}>
         <Text style={styles.title}>I can reach out to...</Text>
@@ -164,6 +166,7 @@ class Contacts extends Component {
          onChange={this._setSection.bind(this)}
        />
      </View>
+     </ImageBackground>
 
     )
   }
@@ -176,31 +179,35 @@ const styles = StyleSheet.create({
     flexDirection: 'column',
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: '#F5FCFF',
   },
   titleContainer: {
   },
   header: {
-    backgroundColor: '#F5FCFF',
-    padding: 10
+    padding: 10,
   },
   title: {
     fontSize: 30,
     textAlign: 'center',
     paddingBottom: 50,
-    fontWeight: '500'
+    fontWeight: '500',
+    color: 'black',
   },
   headerText: {
     textAlign: 'center',
     fontSize: 26,
     fontWeight: '400',
     paddingBottom: 10,
+    color: 'black',
   },
   active: {
-    backgroundColor: 'rgba(255,255,255,1)'
+    backgroundColor: 'rgba(255,255,255,0.0)',
   },
   inactive: {
-    backgroundColor: 'rgba(245,252,255,1)'
+    backgroundColor: 'rgba(245,252,255,0.0)',
+  },
+  backgroundImage: {
+    flex: 1,
+    resizeMode: 'cover', // or 'stretch'
   }
 });
 

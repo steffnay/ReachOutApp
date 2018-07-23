@@ -43,7 +43,7 @@ const Tabs = TabNavigator(
     navigationOptions: {
       tabBarLabel:"",
       tabBarIcon: ({ tintColor }) => (
-        <Icon name="home" size={20} color="#900" />
+        <Icon name="home" size={20} color="#fff" />
       )
     },
   },
@@ -53,7 +53,7 @@ const Tabs = TabNavigator(
     navigationOptions: {
       tabBarLabel:"",
       tabBarIcon: ({ tintColor }) => (
-        <Icon name="people" size={20} color="#900" />
+        <Icon name="people" size={20} color="#fff" />
       )
     },
   },
@@ -63,7 +63,7 @@ const Tabs = TabNavigator(
     navigationOptions: {
       tabBarLabel:"",
       tabBarIcon: ({ tintColor }) => (
-        <Icon name="graph" size={20} color="#900" />
+        <Icon name="graph" size={20} color="#fff" />
       )
     },
   },
@@ -73,7 +73,7 @@ const Tabs = TabNavigator(
     navigationOptions: {
       tabBarLabel:"",
       tabBarIcon: ({ tintColor }) => (
-        <Icon name="plus" size={20} color="#900" />
+        <Icon name="plus" size={20} color="#fff" />
       )
     },
   },
@@ -87,7 +87,7 @@ const Tabs = TabNavigator(
       activeTintColor: '#D4AF37',
       inactiveTintColor: 'gray',
       style: {
-        backgroundColor: 'white',
+        backgroundColor: '#4a4a4a',
       }
     },
   }

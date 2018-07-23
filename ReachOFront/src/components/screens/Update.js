@@ -18,8 +18,8 @@ class Update extends Component {
       userId: null,
       primaryMood: 0,
       intensity: 0,
-      gradient1: 'white',
-      gradient2: 'white',
+      gradient1: '#fce0c7',
+      gradient2: '#fce0c7',
       moodWord: 'How do you feel?',
       primaryDisplay: 0,
       intensityDisplay: 0,
@@ -285,7 +285,7 @@ class Update extends Component {
 
           <TouchableOpacity onPress={()=>this.submit()}
             style={styles.button}>
-            <Text>Submit</Text>
+            <Text style={{color:'white'}}>Submit</Text>
           </TouchableOpacity>
 
 
@@ -300,7 +300,6 @@ const styles = StyleSheet.create({
     flex: 1,
     paddingLeft: 15,
     paddingRight: 15,
-    borderRadius: 5
   },
   container1: {
     flex: 1,
@@ -334,9 +333,8 @@ const styles = StyleSheet.create({
     fontSize: 18,
   },
   button: {
-    backgroundColor: 'skyblue',
+    backgroundColor: '#4a4a4a',
     height: 40,
-    color: 'white',
     justifyContent: 'center',
     alignItems: 'center',
   },

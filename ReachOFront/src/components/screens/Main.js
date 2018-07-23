@@ -63,10 +63,10 @@ export default class Main extends React.Component {
       console.log(`${currentUser} hello`)
 
       return (
-        <ImageBackground source={require('../utilities/ReachOut.png')} style={styles.backgroundImage}>
+        <ImageBackground source={require('../utilities/ReachOutTransparent1.png')} style={styles.backgroundImage}>
 
         <View style={styles.container}>
-        <Text>
+        <Text style={{color: 'black'}}>
             Hello {currentUser && currentUser.email}!
           </Text>
           <Button title="Log Out" onPress={this.handleLogOut} />
