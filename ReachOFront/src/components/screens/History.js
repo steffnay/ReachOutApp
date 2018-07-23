@@ -200,11 +200,11 @@ render() {
        <View style={styles.buttonContainer}>
          <TouchableOpacity onPress={()=>this.makeWeekApiCall(this.state.currentUser)}
            style={styles.button}>
-           <Text>Week</Text>
+           <Text>This Week</Text>
          </TouchableOpacity>
          <TouchableOpacity onPress={()=>this.makeMonthApiCall(this.state.currentUser)}
            style={styles.button}>
-           <Text>Month</Text>
+           <Text>This Month</Text>
          </TouchableOpacity>
        </View>
      </View>
