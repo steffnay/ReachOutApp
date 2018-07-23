@@ -16,8 +16,11 @@ class Contacts extends Component {
   constructor(props) {
     super(props)
 
+    const { currentUser } = firebase.auth()
+    const userID = currentUser._user.uid
+
     this.state = {
-      currentUser: null,
+      currentUser: userID,
       contactList: null,
       activeSection: false,
       collapsed: true
@@ -30,12 +33,13 @@ class Contacts extends Component {
     const userID = currentUser._user.uid
     this.setState({ currentUser: userID })
     console.log("returning contacts")
-
+    console.log(this.state)
     this.makeApiCall()
   }
 
   makeApiCall = () => {
     api.getContacts(this.state.currentUser).then((contacts) => {
+      console.log('&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&')
       this.setState({contactList: null})
         this.setState({ contactList: contacts})
         console.log(this.state)
@@ -146,7 +150,10 @@ class Contacts extends Component {
   render() {
 
     return (
-      <View>
+      <View style={styles.container}>
+      <View style={styles.titleContainer}>
+        <Text style={styles.title}>I can reach out to...</Text>
+      </View>
        <Accordion
          activeSection={this.state.activeSection}
          sections={CONTENT}
@@ -163,14 +170,31 @@ class Contacts extends Component {
 }
 
 const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    paddingBottom: 50,
+    flexDirection: 'column',
+    justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor: '#F5FCFF',
+  },
+  titleContainer: {
+  },
   header: {
     backgroundColor: '#F5FCFF',
     padding: 10
   },
+  title: {
+    fontSize: 30,
+    textAlign: 'center',
+    paddingBottom: 50,
+    fontWeight: '500'
+  },
   headerText: {
     textAlign: 'center',
-    fontSize: 16,
-    fontWeight: '500'
+    fontSize: 26,
+    fontWeight: '400',
+    paddingBottom: 10,
   },
   active: {
     backgroundColor: 'rgba(255,255,255,1)'

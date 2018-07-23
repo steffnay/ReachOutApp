@@ -5,6 +5,7 @@ import {
   TouchableOpacity,
   Vibration, TextInput } from 'react-native'
 import api from '../utilities/api'
+import {MaskedInput} from 'react-native-ui-lib';
 
 class EditContact extends Component {
   constructor(props) {
@@ -22,13 +23,24 @@ class EditContact extends Component {
 
   updateValue(text, field) {
     if(field == 'first_name') {
-      this.setState({first_name: text,})
+      this.setState({first_name: text})
     }
     else if(field == 'last_name') {
-      this.setState({last_name: text,})
+      this.setState({last_name: text})
     }
     else if(field == 'phone') {
-      this.setState({phone: text,})
+      if (text.length == 10) {
+        const area = text.substr(0,3)
+        const first = text.substr(3,3)
+        const last = text.substr(6,4)
+        text = `${area}-${first}-${last}`
+      }
+      else if (text.length > 10) {
+        text = text.substr(0, 10)
+      }
+      console.log(text)
+      console.log(this.state.phone)
+      this.setState({phone: text})
     }
     else if(field == 'email') {
       this.setState({email: text})
@@ -90,9 +102,12 @@ class EditContact extends Component {
             />
         <TextInput placeholder= {this.state.phone}
             style = {styles.input}
+            keyboardType = {'phone-pad'}
+            maxLength={10}
             onChangeText={(text) => this.updateValue(text,'phone')}
             />
         <TextInput placeholder= {this.state.email}
+          keyboardType={'email-address'}
           style = {styles.input}
           onChangeText={(text) => this.updateValue(text,'email')}
           />

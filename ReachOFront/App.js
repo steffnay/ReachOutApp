@@ -16,6 +16,8 @@ import Update from './src/components/screens/Update'
 import History from './src/components/screens/History'
 import AddContact from './src/components/screens/AddContact'
 
+console.disableYellowBox = true;
+
 const StackContacts = StackNavigator({
   Contacts: { screen: Contacts },
   EditContact: { screen: EditContact},
