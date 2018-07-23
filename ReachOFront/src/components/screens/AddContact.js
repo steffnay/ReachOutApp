@@ -4,9 +4,11 @@ import {
   Text, Image,
   TouchableOpacity,
   Vibration, TextInput } from 'react-native'
-import api from '../utilities/api'
 
-class EditContact extends Component {
+import api from '../utilities/api'
+import firebase from 'react-native-firebase'
+
+class AddContact extends Component {
   constructor(props) {
     super(props)
 
@@ -16,7 +18,6 @@ class EditContact extends Component {
       last_name: '',
       email: '',
       phone: '',
-      confirmed: null,
     };
   }
 
@@ -37,39 +38,23 @@ class EditContact extends Component {
 
 
   componentDidMount = () => {
-    const id = this.props.navigation.getParam('contact_id', 5);
-    this.setState({id: id})
-
-    api.getContactInfo(id).then((contact) => {
-        this.setState({
-          first_name: contact.first_name,
-          last_name: contact.last_name,
-          email: contact.email,
-          phone: contact.phone,
-          confirmed: contact.confirmed,})
-        console.log("console state.....")
-        console.log(this.state)
-      })
   }
 
-  // logStuff(info) {
-  //   console.log("made it past update")
-  //   console.log(info)
-  //
-  // }
-
   submit() {
-    let collection = {}
-    collection.first_name = this.state.first_name,
-    collection.last_name = this.state.last_name,
-    collection.phone = this.state.phone,
-    collection.email = this.state.email,
-    collection.id = this.state.id;
+    const { currentUser } = firebase.auth();
+    const uid = currentUser._user.uid
 
-    api.updateContact(collection).then((contact) => {
+    let collection = {}
+    collection.first_name = this.state.first_name
+    collection.last_name = this.state.last_name
+    collection.phone = this.state.phone
+    collection.email = this.state.email
+    collection.uid = uid
+
+    console.log(collection)
+
+    api.createContact(collection).then(() => {
       const params = this.props.navigation.state;
-      this.setState(contact);
-      console.log(params);
       params.params.updateList();
       this.props.navigation.navigate('Contacts')
     })
@@ -80,19 +65,19 @@ class EditContact extends Component {
 
     return (
       <View style={styles.container}>
-        <TextInput placeholder= {this.state.first_name}
+        <TextInput placeholder= {'First name'}
           style = {styles.input}
           onChangeText={(text) => this.updateValue(text,'first_name')}
           />
-        <TextInput placeholder= {this.state.last_name}
+        <TextInput placeholder= {'Last Name'}
             style = {styles.input}
             onChangeText={(text) => this.updateValue(text,'last_name')}
             />
-        <TextInput placeholder= {this.state.phone}
+        <TextInput placeholder= {'Phone'}
             style = {styles.input}
             onChangeText={(text) => this.updateValue(text,'phone')}
             />
-        <TextInput placeholder= {this.state.email}
+        <TextInput placeholder= {"Email"}
           style = {styles.input}
           onChangeText={(text) => this.updateValue(text,'email')}
           />
@@ -124,4 +109,4 @@ const styles = StyleSheet.create({
   }
 })
 
-export default EditContact
+export default AddContact

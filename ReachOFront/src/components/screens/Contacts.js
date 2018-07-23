@@ -66,7 +66,7 @@ class Contacts extends Component {
 
     while(CONTENT.length < 3) {
       let emptytHash = {
-        name: null,
+        name: 'Empty Contact',
         phone: null,
         confirmed: null,
         button: "add",
@@ -119,7 +119,19 @@ class Contacts extends Component {
           title="EditContact"
           onPress={() => this.props.navigation.navigate('EditContact', {contact_id: section.id,
             updateList: () => {
-              console.log('Hey!!');
+              return this.reRenderContacts();
+            }
+            })} />
+      </View>);
+    }
+    else if (section.button == "add"){
+
+        button = (<View style=
+          {{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
+        <Button
+          title="Add Contact"
+          onPress={() => this.props.navigation.navigate('AddContact', {
+            updateList: () => {
               return this.reRenderContacts();
             }
             })} />

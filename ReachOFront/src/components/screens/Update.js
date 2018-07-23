@@ -231,7 +231,7 @@ class Update extends Component {
       <LinearGradient colors={[this.state.gradient1, this.state.gradient2]} style={styles.linearGradient}>
 
         <View style={styles.container1}>
-        <Text>
+        <Text style={styles.moodMeasure}>
           Primary Feeling: {this.state.primaryMood}
         </Text>
           <Slider
@@ -256,7 +256,7 @@ class Update extends Component {
             <Text style={styles.moodWord}>{this.state.moodWord}</Text>
           </View>
 
-          <Text>
+          <Text style={styles.moodMeasure}>
             Intensity: {this.state.intensity}
           </Text>
             <Slider
@@ -300,8 +300,10 @@ const styles = StyleSheet.create({
     flex: 1,
     marginLeft: 10,
     marginRight: 10,
+    marginTop: 50,
+    marginBottom: 50,
     alignItems: "stretch",
-    justifyContent: "center"
+    justifyContent: "space-around"
   },
   container2: {
     flex: 1,
@@ -314,11 +316,16 @@ const styles = StyleSheet.create({
     flex: 1,
     marginLeft: 10,
     marginRight: 10,
+    marginBottom: 10,
     flexDirection: 'row',
     justifyContent: 'center',
   },
   moodWord: {
-    fontSize: 28,
+    fontSize: 32,
+  },
+  moodMeasure: {
+    textAlign: 'center',
+    fontSize: 18,
   },
   button: {
     backgroundColor: 'skyblue',

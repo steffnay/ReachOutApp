@@ -6,7 +6,7 @@ import { GoogleSignin } from 'react-native-google-signin';
 
 
 export default class Main extends React.Component {
-  
+
 
     handleLogOut = () => {
       this.signOut()

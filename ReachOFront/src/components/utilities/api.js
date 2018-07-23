@@ -24,6 +24,17 @@ const api = {
     return fetch(url).then((res) => res.json());
   },
 
+  createContact(contactInfo){
+    let url = `http://reach-out-project-backend.herokuapp.com/contacts`;
+    return fetch(url, {
+      method: 'POST',
+      body: JSON.stringify(contactInfo),
+      headers: new Headers({
+        'Content-Type': 'application/json; charset=utf-8'
+      })
+    }).then((res) => res.json());
+  },
+
   updateContact(contactInfo){
     let url = `http://reach-out-project-backend.herokuapp.com/contacts/${contactInfo.id}`;
     return fetch(url, {
