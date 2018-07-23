@@ -27,14 +27,15 @@ class Contacts extends Component {
   componentDidMount() {
     this.setState({contactList: null})
     const { currentUser } = firebase.auth()
-    this.setState({ currentUser })
+    const userID = currentUser._user.uid
+    this.setState({ currentUser: userID })
     console.log("returning contacts")
 
     this.makeApiCall()
   }
 
   makeApiCall = () => {
-    api.getContacts(1).then((contacts) => {
+    api.getContacts(this.state.currentUser).then((contacts) => {
       this.setState({contactList: null})
         this.setState({ contactList: contacts})
         console.log(this.state)
