@@ -226,8 +226,17 @@ class Update extends Component {
     collection.provider = this.state.provider,
 
     api.updateMood(collection).then(
+      this.setState({  primaryMood: 0,
+        intensity: 0,
+        gradient1: '#fce0c7',
+        gradient2: '#fce0c7',
+        moodWord: 'How do you feel?',
+        primaryDisplay: 0,
+        intensityDisplay: 0}),
       this.props.navigation.navigate('History')
     )
+
+
   }
 
 
