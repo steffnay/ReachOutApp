@@ -88,10 +88,12 @@ const Tabs = TabNavigator(
       inactiveTintColor: 'gray',
       style: {
         backgroundColor: '#4a4a4a',
-      }
+      },
+      indicatorStyle: {
+            backgroundColor: '#fff0ca',
     },
   }
-)
+})
 
 const Switch = createSwitchNavigator(
   {
