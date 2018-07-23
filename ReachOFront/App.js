@@ -1,7 +1,8 @@
 import React from 'react'
 import { StyleSheet, Platform, Image, Text, View } from 'react-native'
 import { TabNavigator, SwitchNavigator, createSwitchNavigator, StackNavigator, createStackNavigator } from 'react-navigation'
-import Icon from 'react-native-vector-icons/FontAwesome';
+
+import Icon from 'react-native-vector-icons/SimpleLineIcons';
 import OneSignal from 'react-native-onesignal'; // Import package from node modules
 
 // import the different screens
@@ -9,7 +10,6 @@ import Loading from './src/components/screens/Loading'
 import SignUp from './src/components/screens/SignUp'
 import Main from './src/components/screens/Main'
 import LogOut from './src/components/screens/LogOut'
-import Profile from './src/components/screens/Profile'
 import Contacts from './src/components/screens/Contacts'
 import EditContact from './src/components/screens/EditContact'
 import EditProfile from './src/components/screens/EditProfile'
@@ -35,13 +35,6 @@ const StackLog = StackNavigator({
   initialRouteName: 'History',
 })
 
-const StackProfile = StackNavigator({
-  Profile: { screen: Profile },
-  EditProfile: { screen: EditProfile}
-}, {
-  initialRouteName: 'Profile',
-})
-
 const Tabs = TabNavigator(
   {
     Main: {
@@ -50,7 +43,7 @@ const Tabs = TabNavigator(
     navigationOptions: {
       tabBarLabel:"",
       tabBarIcon: ({ tintColor }) => (
-        <Icon name="home" size={30} color="#900" />
+        <Icon name="home" size={20} color="#900" />
       )
     },
   },
@@ -60,7 +53,7 @@ const Tabs = TabNavigator(
     navigationOptions: {
       tabBarLabel:"",
       tabBarIcon: ({ tintColor }) => (
-        <Icon name="home" size={30} color="#900" />
+        <Icon name="people" size={20} color="#900" />
       )
     },
   },
@@ -70,27 +63,7 @@ const Tabs = TabNavigator(
     navigationOptions: {
       tabBarLabel:"",
       tabBarIcon: ({ tintColor }) => (
-        <Icon name="home" size={30} color="#900" />
-      )
-    },
-  },
-  Profile: {
-    screen: StackProfile,
-
-    navigationOptions: {
-      tabBarLabel:"",
-      tabBarIcon: ({ tintColor }) => (
-        <Icon name="home" size={30} color="#900" />
-      )
-    },
-  },
-  MoodLog: {
-    screen: StackLog,
-
-    navigationOptions: {
-      tabBarLabel:"",
-      tabBarIcon: ({ tintColor }) => (
-        <Icon name="home" size={30} color="#900" />
+        <Icon name="graph" size={20} color="#900" />
       )
     },
   },
@@ -100,13 +73,13 @@ const Tabs = TabNavigator(
     navigationOptions: {
       tabBarLabel:"",
       tabBarIcon: ({ tintColor }) => (
-        <Icon name="home" size={30} color="#900" />
+        <Icon name="plus" size={20} color="#900" />
       )
     },
   },
 },
   {
-  order: ['Main', 'Contacts', 'Update', 'MoodLog', 'Profile'],
+  order: ['Main', 'Contacts', 'Update', 'MoodLog'],
   animationEnabled: true,
   tabBarOptions: {
       showLabel: false,
