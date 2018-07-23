@@ -1,5 +1,5 @@
 import React from 'react'
-import { StyleSheet, Text, TextInput, View, Button } from 'react-native'
+import { StyleSheet, Text, TextInput, View, Button, ImageBackground } from 'react-native'
 import firebase from 'react-native-firebase'
 import { GoogleSignin, GoogleSigninButton } from 'react-native-google-signin';
 import { LoginManager, AccessToken } from 'react-native-fbsdk';
@@ -106,17 +106,19 @@ onLoginFacebook = () => {
 render() {
 
     return (
+    <ImageBackground source={require('../utilities/ReachOut1.png')} style={styles.backgroundImage}>
+
       <View style={styles.container}>
 
         <GoogleSigninButton
-          style={{ width: 250, height: 48 }}
+          style={{ width: 185, height: 48, margin: 10}}
           size={GoogleSigninButton.Size.Wide}
           color={GoogleSigninButton.Color.Dark}
           onPress={this.googleSignIn}/>
 
-        <Button title="LoginFB" containerStyle={{
+        <Button title="Sign in with Facebook" containerStyle={{
           padding: 10,
-          width: 150,
+          width: 200,
           margin: 20,
           borderRadius: 4,
           backgroundColor: 'rgb(73,104,173)'
@@ -124,6 +126,7 @@ render() {
         style = {{fontSize: 18, color: 'white'}}
         onPress={this.onLoginFacebook}/>
       </View>
+    </ImageBackground>
     )
   }
 }
@@ -132,7 +135,8 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     justifyContent: 'center',
-    alignItems: 'center'
+    alignItems: 'center',
+    paddingBottom: 200,
   },
   textInput: {
     height: 40,
@@ -140,5 +144,9 @@ const styles = StyleSheet.create({
     borderColor: 'gray',
     borderWidth: 1,
     marginTop: 8
+  },
+  backgroundImage: {
+    flex: 1,
+    resizeMode: 'cover', // or 'stretch'
   }
 })

@@ -1,5 +1,5 @@
 import React from 'react'
-import { StyleSheet, Platform, Image, Text, View, Button } from 'react-native'
+import { StyleSheet, Platform, Image, Text, View, Button, ImageBackground } from 'react-native'
 import firebase from 'react-native-firebase'
 
 import { GoogleSignin } from 'react-native-google-signin';
@@ -63,12 +63,15 @@ export default class Main extends React.Component {
       console.log(`${currentUser} hello`)
 
       return (
+        <ImageBackground source={require('../utilities/ReachOut.png')} style={styles.backgroundImage}>
+
         <View style={styles.container}>
-          <Text>
+        <Text>
             Hello {currentUser && currentUser.email}!
           </Text>
           <Button title="Log Out" onPress={this.handleLogOut} />
         </View>
+          </ImageBackground>
       )
     }
 }
@@ -80,5 +83,10 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center'
+  },
+  backgroundImage: {
+    flex: 1,
+    resizeMode: 'cover', // or 'stretch'
   }
+
 })
