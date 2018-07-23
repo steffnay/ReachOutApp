@@ -6,8 +6,12 @@ import {
   Vibration, TextInput } from 'react-native'
 import api from '../utilities/api'
 import {MaskedInput} from 'react-native-ui-lib';
+import { TabNavigator, SwitchNavigator, createSwitchNavigator, StackNavigator, createStackNavigator } from 'react-navigation'
+
 
 class EditContact extends Component {
+  
+
   constructor(props) {
     super(props)
 
@@ -126,12 +130,12 @@ class EditContact extends Component {
 
 const styles = StyleSheet.create({
   container: {
-    backgroundColor: '#F5FCFF',
+    backgroundColor: '#fce0c7',
     flex: 1,
     justifyContent: 'center',
   },
   button: {
-    backgroundColor: 'skyblue',
+    backgroundColor: '#4a4a4a',
     height: 40,
     color: 'white',
     justifyContent: 'center',

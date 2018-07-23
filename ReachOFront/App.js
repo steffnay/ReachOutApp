@@ -22,12 +22,22 @@ import AddContact from './src/components/screens/AddContact'
 console.disableYellowBox = true;
 
 const StackContacts = StackNavigator({
-  Contacts: { screen: Contacts },
-  EditContact: { screen: EditContact},
-  AddContact: { screen: AddContact}
-}, {
-  initialRouteName: 'Contacts',
-})
+    Contacts: { screen: Contacts },
+    EditContact: { screen: EditContact,
+      navigationOptions: {
+        headerStyle: {backgroundColor:'#fce0c7', elevation:0 },
+        headerTintColor: '#4a4a4a',
+      },
+    },
+    AddContact: { screen: AddContact,
+      navigationOptions: {
+        headerStyle: {backgroundColor:'#fce0c7', elevation:0 },
+        headerTintColor: '#4a4a4a',
+      },
+    }
+  }, {
+    initialRouteName: 'Contacts',
+  })
 
 const StackLog = StackNavigator({
   History: { screen: History }
@@ -51,6 +61,10 @@ const Tabs = TabNavigator(
     screen: StackContacts,
 
     navigationOptions: {
+      headerTitle:'Booking',
+      headerTitleStyle: {color:'white'},
+      headerStyle: {backgroundColor:'orange'},
+      headerTintColor: 'blue',
       tabBarLabel:"",
       tabBarIcon: ({ tintColor }) => (
         <Icon name="people" size={20} color="#fff" />
