@@ -83,6 +83,11 @@ class MoodChart extends React.Component {
  }
 
  render() {
+   console.log("chart is finally being rendered")
+   console.log(this.state)
+   console.log(this.props.logValues);
+   console.log(this.props.colors);
+
    return (
 
      <View style={{flex: 1}}>

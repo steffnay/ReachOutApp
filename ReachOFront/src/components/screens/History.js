@@ -167,7 +167,21 @@ class History extends React.Component {
     }
   }
 
-
+  renderChart() {
+    if (this.state.chartData.length > 0 && this.state.colorArray.length > 0 &&
+        this.state.chartData.length == this.state.colorArray.length) {
+      console.log("this is calling because chart data is full")
+      return (
+        <MoodChart logValues={this.state.chartData} colors={this.state.colorArray}/>
+      );
+    }
+    else {
+      console.log("this is calling because chart data is empty")
+      return (
+          <Text>~*Loading*~</Text>
+      );
+    }
+  }
 
 render() {
    const moodVals = [{y: -10}, {y: -10}, {y: -10}, {y: -10}, {y: -10},
@@ -179,22 +193,21 @@ render() {
       -12217383, -12217383, -12217383, -12217383, -12217383, -12217383, -12217383,
       -12217383, -12217383, -12217383, -39, -35981, -2555904, -10762149, -10762149]
 
+
    return (
-
      <View style={styles.container}>
-      <MoodChart logValues={this.state.chartData} colors={this.state.colorArray}/>
-      <View style={styles.buttonContainer}>
-        <TouchableOpacity onPress={()=>this.makeWeekApiCall(this.state.currentUser)}
-          style={styles.button}>
-          <Text>Week</Text>
-        </TouchableOpacity>
-        <TouchableOpacity onPress={()=>this.makeMonthApiCall(this.state.currentUser)}
-          style={styles.button}>
-          <Text>Month</Text>
-        </TouchableOpacity>
-      </View>
+       {this.renderChart()}
+       <View style={styles.buttonContainer}>
+         <TouchableOpacity onPress={()=>this.makeWeekApiCall(this.state.currentUser)}
+           style={styles.button}>
+           <Text>Week</Text>
+         </TouchableOpacity>
+         <TouchableOpacity onPress={()=>this.makeMonthApiCall(this.state.currentUser)}
+           style={styles.button}>
+           <Text>Month</Text>
+         </TouchableOpacity>
+       </View>
      </View>
-
    );
  }
 }
