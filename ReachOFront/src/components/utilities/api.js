@@ -46,6 +46,17 @@ const api = {
     }).then((res) => res.json());
   },
 
+  deleteContact(id){
+    let url = `http://reach-out-project-backend.herokuapp.com/contacts/${id}`;
+    return fetch(url, {
+      method: 'DELETE',
+      body: JSON.stringify(),
+      headers: new Headers({
+        'Content-Type': 'application/json; charset=utf-8'
+      })
+    }).then((res) => res.json());
+  },
+
   updateMood(moodInfo){
     let url = `http://reach-out-project-backend.herokuapp.com/mood_updates`;
     return fetch(url, {

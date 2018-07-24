@@ -3,14 +3,14 @@ import {
   View, StyleSheet,
   Text, Image,
   TouchableOpacity,
-  Vibration, TextInput } from 'react-native'
+  Vibration, TextInput, Alert } from 'react-native'
 import api from '../utilities/api'
 import {MaskedInput} from 'react-native-ui-lib';
 import { TabNavigator, SwitchNavigator, createSwitchNavigator, StackNavigator, createStackNavigator } from 'react-navigation'
 
 
 class EditContact extends Component {
-  
+
 
   constructor(props) {
     super(props)
@@ -85,7 +85,28 @@ class EditContact extends Component {
     api.updateContact(collection).then((contact) => {
       const params = this.props.navigation.state;
       this.setState(contact);
-      console.log(params);
+      params.params.updateList();
+      this.props.navigation.navigate('Contacts')
+    })
+  }
+
+  deleteAlert() {
+    Alert.alert(
+    'Are you sure?',
+    `Remove ${this.state.first_name}?`,
+    [
+      {text: 'Cancel', onPress: () => console.log('Cancel Pressed'), style: 'cancel'},
+      {text: 'OK', onPress: () => this.deleteContact()},
+    ],
+    { cancelable: false }
+    )
+  }
+
+  deleteContact() {
+    api.deleteContact(this.state.id).then((data) => {
+      console.log('~* DELETE RESPONSE....')
+      console.log(data)
+      const params = this.props.navigation.state;
       params.params.updateList();
       this.props.navigation.navigate('Contacts')
     })
@@ -119,6 +140,11 @@ class EditContact extends Component {
         <TouchableOpacity onPress={()=>this.submit()}
           style={styles.button}>
           <Text>Submit</Text>
+        </TouchableOpacity>
+
+        <TouchableOpacity onPress={()=>this.deleteAlert()}
+          style={styles.button}>
+          <Text>Delete Contact</Text>
         </TouchableOpacity>
 
 
