@@ -128,7 +128,7 @@ class Update extends Component {
       this.setState({moodWord: 'Happy'})
     }
     else if (this.state.intensity > -1 &&
-      this.state.primaryMood > 9 &&
+      this.state.primaryMood > 8 &&
       this.state.primaryMood < 11) {
       this.setState({moodWord: 'Elated'})
     }

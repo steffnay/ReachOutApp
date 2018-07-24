@@ -42,8 +42,7 @@ class EditContact extends Component {
       else if (text.length > 10) {
         text = text.substr(0, 10)
       }
-      console.log(text)
-      console.log(this.state.phone)
+  
       this.setState({phone: text})
     }
     else if(field == 'email') {

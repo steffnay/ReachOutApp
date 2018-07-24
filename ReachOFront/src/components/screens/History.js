@@ -20,6 +20,7 @@ const GREEN = processColor('#71BD6A');
 const RED = processColor('#D14B5A');
 
 
+
 class History extends React.Component {
   static navigationOptions = {
       header: null
@@ -58,6 +59,7 @@ class History extends React.Component {
 
       this.setState({chartData: dataArray});
       this.makeColorArray(data);
+      this.makeLabelArray(data);
 
       console.log('oOOOOOooOoOoooooooOooooo');
       console.log(this.state);
@@ -79,6 +81,7 @@ class History extends React.Component {
 
       this.setState({chartData: dataArray});
       this.makeColorArray(data);
+      this.makeLabelArray(data);
 
       console.log('oOOOOOooOoOoooooooOooooo');
       console.log(this.state);
@@ -167,12 +170,119 @@ class History extends React.Component {
     }
   }
 
+  makeLabelArray(data) {
+    const dataLength = data.length;
+    let labelArray = []
+
+    for(let i=0; i < dataLength; i++){
+      let primary = data[i].primary_mood;
+      let intensity = data[i].intensity;
+      let label = this.checkLabel(primary, intensity);
+
+      labelArray.push(label);
+      this.setState({labelArray: labelArray});
+    }
+  }
+
+  checkLabel(primaryMood, intensity) {
+  // Q1
+    if (intensity > -1 &&
+      primaryMood > 0 &&
+      primaryMood < 4) {
+      return ('Alert')
+    }
+    else if (intensity > -1 &&
+      primaryMood > 3 &&
+      primaryMood < 6) {
+      return ('Excited')
+      }
+    else if (intensity > -1 &&
+      primaryMood > 5 &&
+      primaryMood < 9) {
+      return ('Happy')
+    }
+    else if (intensity > -1 &&
+      primaryMood > 8 &&
+      primaryMood < 11) {
+      return ('Elated')
+    }
+    // Q2
+    if (intensity < 0 &&
+      primaryMood > 0 &&
+      primaryMood < 4) {
+      return ('Calm')
+    }
+    else if (intensity < 0 &&
+      primaryMood > 3 &&
+      primaryMood < 6) {
+      return ('Relaxed')
+      }
+    else if (intensity < 0 &&
+      primaryMood > 5 &&
+      primaryMood < 9) {
+      return ('Serene')
+    }
+    else if (intensity < 0 &&
+      primaryMood > 9 &&
+      primaryMood < 11) {
+      return ('Contented')
+    }
+    // Q3
+    if (intensity < 0 &&
+      primaryMood < 0 &&
+      primaryMood > -4) {
+      return ('Fatigued')
+    }
+    else if (intensity < 0 &&
+      primaryMood < -3 &&
+      primaryMood > -6) {
+      return ('Bored')
+      }
+    else if (intensity < 0 &&
+      primaryMood < -5 &&
+      primaryMood > -9) {
+      return ('Depressed')
+    }
+    else if (intensity < 0 &&
+      primaryMood < -8 &&
+      primaryMood > -11) {
+      return ('Sad')
+    }
+    // Q4
+    if (intensity > -1 &&
+      primaryMood < 0 &&
+      primaryMood > -4) {
+      return ('Tense')
+    }
+    else if (intensity > -1 &&
+      primaryMood < -3 &&
+      primaryMood > -6) {
+      return ('Nervous')
+      }
+    else if (intensity > -1 &&
+      primaryMood < -5 &&
+      primaryMood > -9) {
+      return ('Stressed')
+    }
+    else if (intensity > -1 &&
+      primaryMood < -8 &&
+      primaryMood > -11) {
+      return ('Upset')
+    }
+
+    console.log("blah ~ blah ~ blah ~ blah LABELS LABELS LABELS")
+    console.log(this.state.label)
+  }
+
+
+
+
   renderChart() {
     if (this.state.chartData.length > 0 && this.state.colorArray.length > 0 &&
         this.state.chartData.length == this.state.colorArray.length) {
       console.log("this is calling because chart data is full")
       return (
-        <MoodChart logValues={this.state.chartData} colors={this.state.colorArray}/>
+        <MoodChart logValues={this.state.chartData} colors={this.state.colorArray} labels={this.state.labelArray}/>
       );
     }
     else {
@@ -214,8 +324,9 @@ render() {
 
 const styles = StyleSheet.create({
  container: {
+   backgroundColor: '#fce0c7',
    flex: 1,
-   backgroundColor: '#F5FCFF'
+   justifyContent: 'center',
  },
  buttonContainer: {
    flex: 1,

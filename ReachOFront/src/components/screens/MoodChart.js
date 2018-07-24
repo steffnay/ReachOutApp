@@ -60,26 +60,21 @@ class MoodChart extends React.Component {
    console.log(this.state)
    console.log(this.props)
   console.log('%%%%%%%%%%%%%%%%%%%%')
-  // const logNum = this.state.chartData.length
-  //
-  // let array = []
-  //
-  // for(let i=0; i < logNum; i++){
-  //   array.push('GREEN')
-  // }
-  //
-  // this.setState()
  }
 
  handleSelect(event) {
    let entry = event.nativeEvent
+   let index = this.props.labels[event.nativeEvent.x]
+
    if (entry == null) {
      this.setState({...this.state, selectedEntry: null})
    } else {
-     this.setState({...this.state, selectedEntry: JSON.stringify(entry)})
+     this.setState({...this.state, selectedEntry: index})
    }
 
+
    console.log(event.nativeEvent)
+   console.log(event.nativeEvent.x)
  }
 
  render() {
@@ -90,9 +85,9 @@ class MoodChart extends React.Component {
 
    return (
 
-     <View style={{flex: 1}}>
+     <View style={styles.container}>
 
-       <View style={{height:80}}>
+       <View style={{height:80, backgroundColor: '#fce0c7'}}>
          <Text> selected entry</Text>
          <Text> {this.state.selectedEntry}</Text>
        </View>
@@ -104,7 +99,7 @@ class MoodChart extends React.Component {
            xAxis={this.state.xAxis}
            yAxis={this.state.yAxis}
            chartDescription={{text: ''}}
-           legend={{enabled: false}}
+           legend={{enabled: false }}
            onSelect={this.handleSelect.bind(this)}
            onChange={(event) => console.log(event.nativeEvent)}
          />
@@ -118,8 +113,9 @@ class MoodChart extends React.Component {
 
 const styles = StyleSheet.create({
  container: {
+   backgroundColor: '#fce0c7',
    flex: 1,
-   backgroundColor: '#F5FCFF'
+   justifyContent: 'center',
  },
  chart: {
    flex: 1
@@ -129,6 +125,7 @@ const styles = StyleSheet.create({
 MoodChart.propTypes = {
   logValues: PropTypes.array,
   colors: PropTypes.array,
+  labels: PropTypes.array,
 };
 
 export default MoodChart
