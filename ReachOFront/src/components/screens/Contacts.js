@@ -14,10 +14,10 @@ class Contacts extends Component {
    }
 
   constructor(props) {
-    super(props)
+    super(props);
 
-    const { currentUser } = firebase.auth()
-    const userID = currentUser._user.uid
+    const { currentUser } = firebase.auth();
+    const userID = currentUser._user.uid;
 
     this.state = {
       currentUser: userID,
@@ -28,29 +28,24 @@ class Contacts extends Component {
   }
 
   componentDidMount() {
-    this.setState({contactList: null})
-    const { currentUser } = firebase.auth()
-    const userID = currentUser._user.uid
-    this.setState({ currentUser: userID })
-    console.log("returning contacts")
-    console.log(this.state)
-    this.makeApiCall()
+    this.setState({contactList: null});
+    const { currentUser } = firebase.auth();
+    const userID = currentUser._user.uid;
+    this.setState({ currentUser: userID });
+    this.makeApiCall();
   }
 
   makeApiCall = () => {
     api.getContacts(this.state.currentUser).then((contacts) => {
-      console.log('&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&')
-      this.setState({contactList: null})
-        this.setState({ contactList: contacts})
-        console.log(this.state)
+      this.setState({contactList: null});
+      this.setState({ contactList: contacts});
       }).then (() => {
         CONTENT = []
-        this.makeSections()
+        this.makeSections();
       })
       .then (() => {
         const firebaseUser = firebase.auth().currentUser
         this.setState({ userData: firebaseUser._user })
-
     })
   }
 
@@ -64,13 +59,13 @@ class Contacts extends Component {
         confirmed: list[c].confirmed,
         button: "update",
         id: list[c].id
-      }
+      };
 
-      CONTENT.push(contactHash)
+      CONTENT.push(contactHash);
     }
 
     while(CONTENT.length < 3) {
-      let emptytHash = {
+      let emptyHash = {
         name: 'Empty Contact',
         phone: null,
         confirmed: null,
@@ -78,8 +73,10 @@ class Contacts extends Component {
         id: null
       };
 
-      CONTENT.push(emptytHash);
+      CONTENT.push(emptyHash);
     }
+    console.log('****************** CONTENT IS:')
+    console.log(CONTENT)
   }
 
   _toggleExpanded = () => {
@@ -103,23 +100,24 @@ class Contacts extends Component {
   }
 
   reRenderContacts() {
-    this.makeApiCall()
+    this._setSection(null)
+    this.makeApiCall();
   }
 
   _renderContent = (section) => {
-     let phone, button, confirmed = null;
+   let phone, button, confirmed = null;
 
-      if (section.phone)
-         phone = <Text>{section.phone}</Text>;
-      if (section.confirmed == true)
-        confirmed = <Text>Confirmed: True</Text>;
-      if (section.confirmed == false)
-        confirmed = <Text>Confirmed: False</Text>;
+    if (section.phone)
+       phone = <Text>{section.phone}</Text>;
+    if (section.confirmed == true)
+      confirmed = <Text>Confirmed: True</Text>;
+    if (section.confirmed == false)
+      confirmed = <Text>Confirmed: False</Text>;
 
-      if (section.button == "update"){
-
-        button = (<View style=
-          {{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
+    if (section.button == "update"){
+      button = (
+      <View style=
+        {{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
         <Button
           title="EditContact"
           onPress={() => this.props.navigation.navigate('EditContact', {contact_id: section.id,
@@ -130,42 +128,43 @@ class Contacts extends Component {
       </View>);
     }
     else if (section.button == "add"){
-
-        button = (<View style=
-          {{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
+      button = (
+      <View style=
+        {{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
         <Button
           title="Add Contact"
           onPress={() => this.props.navigation.navigate('AddContact', {
             updateList: () => {
               return this.reRenderContacts();
             }
-            })} />
+          })
+        } />
       </View>);
     }
 
-     let content = <View>{phone}{confirmed}{button}</View>
-     return content;
+    let content = <View>{phone}{confirmed}{button}</View>
+    return content;
   }
+
 
   render() {
 
     return (
       <ImageBackground source={require('../utilities/ReachOutTransparent1.png')} style={styles.backgroundImage}>
-
-      <View style={styles.container}>
-      <View style={styles.titleContainer}>
-        <Text style={styles.title}>I can reach out to...</Text>
-      </View>
-       <Accordion
-         activeSection={this.state.activeSection}
-         sections={CONTENT}
-         touchableComponent={TouchableOpacity}
-         renderHeader={this._renderHeader}
-         renderContent={this._renderContent}
-         duration={400}
-         onChange={this._setSection.bind(this)}
-       />
-     </View>
+        <View>
+          <View style={styles.titleContainer}>
+            <Text style={styles.title}>I can reach out to...</Text>
+          </View>
+          <Accordion
+           activeSection={this.state.activeSection}
+           sections={CONTENT}
+           touchableComponent={TouchableOpacity}
+           renderHeader={this._renderHeader}
+           renderContent={this._renderContent}
+           duration={400}
+           onChange={this._setSection.bind(this)}
+          />
+       </View>
      </ImageBackground>
 
     )
@@ -181,6 +180,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   titleContainer: {
+    marginTop: 70,
   },
   header: {
     padding: 10,
