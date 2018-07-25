@@ -106,18 +106,19 @@ class Contacts extends Component {
    let phone, button, confirmed = null;
 
     if (section.phone)
-       phone = <Text>{section.phone}</Text>;
+       phone = <Text style={{fontSize: 18}}>{section.phone}</Text>;
     if (section.confirmed == true)
-      confirmed = <Text>Confirmed: True</Text>;
+      confirmed = <Text style={{fontSize: 18, color: 'black'}}>Confirmed: True</Text>;
     if (section.confirmed == false)
-      confirmed = <Text>Confirmed: False</Text>;
+      confirmed = <Text style={{fontSize: 18, color: 'black'}}>Confirmed: False</Text>;
 
     if (section.button == "update"){
       button = (
       <View style=
         {{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
         <Button
-          title="EditContact"
+          color='#4a4a4a'
+          title="Edit"
           onPress={() => this.props.navigation.navigate('EditContact', {contact_id: section.id,
             updateList: () => {
               return this.reRenderContacts();
@@ -130,7 +131,8 @@ class Contacts extends Component {
       <View style=
         {{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
         <Button
-          title="Add Contact"
+          color='#4a4a4a'
+          title="Add"
           onPress={() => this.props.navigation.navigate('AddContact', {
             updateList: () => {
               return this.reRenderContacts();
@@ -140,7 +142,13 @@ class Contacts extends Component {
       </View>);
     }
 
-    let content = <View>{phone}{confirmed}{button}</View>
+    let content = (
+      <View style={{backgroundColor: 'rgba(255,255,255,0.2)', padding: 20 }}>
+        <View style={styles.contentContainer}>
+          <View>{phone}</View><View>{confirmed}</View>
+        </View>
+        <View style={{paddingTop: 5}}>{button}</View>
+      </View>)
     return content;
   }
 
@@ -194,11 +202,29 @@ const styles = StyleSheet.create({
     textAlign: 'center',
     fontSize: 26,
     fontWeight: '400',
-    paddingBottom: 10,
+    paddingBottom: 0,
     color: 'black',
+    // textDecorationLine: 'underline'
+  },
+  contentContainer: {
+    flex: 1,
+    flexDirection: 'row',
+    justifyContent: 'space-around',
+    marginRight: 20,
+    marginLeft: 20,
+    paddingBottom: 10,
+  },
+  button: {
+    flex: 1,
+    backgroundColor: '#4a4a4a',
+    height: 20,
+    justifyContent: 'center',
+    alignItems: 'center',
+    width: 30,
+    margin: 5
   },
   active: {
-    backgroundColor: 'rgba(255,255,255,0.0)',
+    backgroundColor: 'rgba(255,255,255,0.2)',
   },
   inactive: {
     backgroundColor: 'rgba(245,252,255,0.0)',
