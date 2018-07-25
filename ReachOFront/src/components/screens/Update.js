@@ -107,7 +107,6 @@ class Update extends Component {
     }
 
     this.updateMoodWord()
-    console.log(this.state)
   }
 
   updateMoodWord() {
@@ -195,27 +194,12 @@ class Update extends Component {
       this.state.primaryMood > -11) {
       this.setState({moodWord: 'Upset'})
     }
-
-    console.log("blah ~ blah ~ blah ~ blah")
-    console.log(this.state.moodWord)
-
   }
 
   componentDidMount() {
     const { currentUser } = firebase.auth();
-    console.log("**************");
-    this.setState({ ok: 'OK' });
-    console.log(currentUser);
     this.setState({provider: currentUser._user.providerId,
       uid: currentUser._user.uid});
-
-    console.log(this.state);
-  }
-
-  logStuff(info) {
-    console.log("made it past update")
-    console.log(info)
-
   }
 
   submit() {

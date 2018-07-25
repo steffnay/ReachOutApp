@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import {
   View, StyleSheet,
-  Text, Image,
+  Text, Image, ScrollView,
   TouchableOpacity,
   Vibration, TextInput, Alert } from 'react-native'
 import api from '../utilities/api'
@@ -42,7 +42,7 @@ class EditContact extends Component {
       else if (text.length > 10) {
         text = text.substr(0, 10)
       }
-  
+
       this.setState({phone: text})
     }
     else if(field == 'email') {
@@ -62,16 +62,8 @@ class EditContact extends Component {
           email: contact.email,
           phone: contact.phone,
           confirmed: contact.confirmed,})
-        console.log("console state.....")
-        console.log(this.state)
       })
   }
-
-  // logStuff(info) {
-  //   console.log("made it past update")
-  //   console.log(info)
-  //
-  // }
 
   submit() {
     let collection = {}
@@ -103,8 +95,6 @@ class EditContact extends Component {
 
   deleteContact() {
     api.deleteContact(this.state.id).then((data) => {
-      console.log('~* DELETE RESPONSE....')
-      console.log(data)
       const params = this.props.navigation.state;
       params.params.updateList();
       this.props.navigation.navigate('Contacts')
@@ -115,6 +105,7 @@ class EditContact extends Component {
   render() {
 
     return (
+      <ScrollView style={{backgroundColor:'#fce0c7'}}>
       <View style={styles.container}>
         <TextInput placeholder= {this.state.first_name}
           style = {styles.input}
@@ -135,19 +126,21 @@ class EditContact extends Component {
           style = {styles.input}
           onChangeText={(text) => this.updateValue(text,'email')}
           />
+        <View style={styles.buttonContainer}>
+          <TouchableOpacity onPress={()=>this.submit()}
+            style={styles.button}>
+            <Text style={{color: 'white'}}>Submit</Text>
+          </TouchableOpacity>
 
-        <TouchableOpacity onPress={()=>this.submit()}
-          style={styles.button}>
-          <Text>Submit</Text>
-        </TouchableOpacity>
-
-        <TouchableOpacity onPress={()=>this.deleteAlert()}
-          style={styles.button}>
-          <Text>Delete Contact</Text>
-        </TouchableOpacity>
+          <TouchableOpacity onPress={()=>this.deleteAlert()}
+            style={styles.button}>
+            <Text style={{color: 'white'}}>Delete Contact</Text>
+          </TouchableOpacity>
+        </View>
 
 
       </View>
+      </ScrollView>
 
     )
   }
@@ -158,13 +151,32 @@ const styles = StyleSheet.create({
     backgroundColor: '#fce0c7',
     flex: 1,
     justifyContent: 'center',
+    marginTop: 60,
+  },
+  buttonContainer: {
+    flex: 1,
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'center',
+    marginLeft: 40,
+    marginRight: 40,
   },
   button: {
+    flex: 1,
     backgroundColor: '#4a4a4a',
-    height: 40,
-    color: 'white',
+    height: 50,
     justifyContent: 'center',
     alignItems: 'center',
+    width: 30,
+    margin: 5
+  },
+  input: {
+    height: 50,
+    fontSize: 20,
+    marginLeft: 40,
+    marginRight: 40,
+    paddingTop: 10,
+    paddingBottom: 10,
   }
 })
 

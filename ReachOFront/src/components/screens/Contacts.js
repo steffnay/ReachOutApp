@@ -75,8 +75,6 @@ class Contacts extends Component {
 
       CONTENT.push(emptyHash);
     }
-    console.log('****************** CONTENT IS:')
-    console.log(CONTENT)
   }
 
   _toggleExpanded = () => {

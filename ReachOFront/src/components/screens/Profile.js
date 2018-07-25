@@ -24,20 +24,6 @@ class Profile extends Component {
     firebase.auth().onAuthStateChanged((user) => {
       if (user) {
         this.setState({ user: user._user })
-        console.log(`current user: ${user}`)
-
-      // api.getUser(1).then((user) => {
-      //   console.log('hello')
-      //   let phone = user["phone"]
-      //   console.log(`API info: ${phone}`)
-      //   this.setState({ backendData: user})
-      // }).then (() => {
-      //   // const firebaseUser = firebase.auth().currentUser
-      //   this.setState({ userData: user._user })
-      //   console.log(this.state)
-      //   console.log("checking!!!")
-      //   console.log(this.state.userData.displayName)
-      // })
     } else {
       // No user is signed in.
     }
@@ -53,9 +39,7 @@ class Profile extends Component {
         justifyContent: "center",
         alignItems: "center"}}>
           <Text>PROFILE PAGE</Text>
-          <Button
-            title="Edit"
-            onPress={() => this.props.navigation.navigate('EditProfile') }/>
+        
       </View>
 
     )

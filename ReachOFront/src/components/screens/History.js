@@ -47,8 +47,6 @@ class History extends React.Component {
 
   makeWeekApiCall(uid) {
     api.getWeekLogData(uid).then((data) => {
-      console.log('LOOKING FOR THE DATA FROM API CALL!!!!!!!!!')
-      console.log(data)
       const dataLength = data.length
       let dataArray = []
 
@@ -61,10 +59,6 @@ class History extends React.Component {
       this.setState({chartData: dataArray});
       this.makeColorArray(data);
       this.makeLabelArray(data);
-
-      console.log('oOOOOOooOoOoooooooOooooo');
-      console.log(this.state);
-      console.log('oOOOOOooOoOoooooooOooooo');
     })
   }
 
@@ -87,6 +81,7 @@ class History extends React.Component {
   }
 
   makeColorArray(data) {
+    /// THIS ALSO MAKES DATE ARRAY
     const dataLength = data.length;
     let colorArray = []
     let dateArray = []
@@ -97,10 +92,12 @@ class History extends React.Component {
       let color = this.checkColor(primary, intensity);
 
       colorArray.push(color);
+      this.setState({colorArray: colorArray});
+
+
       let date = new Date(data[i].created_at);
       date = ((date.getMonth() + 1) + '/' + date.getDate());
       dateArray.push(date);
-      this.setState({colorArray: colorArray});
       this.setState({dateArray: dateArray});
     }
   }
@@ -271,9 +268,6 @@ class History extends React.Component {
       primaryMood > -11) {
       return ('Upset')
     }
-
-    console.log("blah ~ blah ~ blah ~ blah LABELS LABELS LABELS")
-    console.log(this.state.label)
   }
 
 
