@@ -12,9 +12,6 @@ import {
 import {BarChart} from 'react-native-charts-wrapper';
 import PropTypes from 'prop-types';
 
-const GREEN = processColor('#71BD6A');
-const RED = processColor('#D14B5A');
-
 
 class MoodChart extends React.Component {
   static navigationOptions = {
@@ -25,6 +22,8 @@ class MoodChart extends React.Component {
    super(props);
 
    this.state = {
+     selectedEntry: "none selected",
+     selectedDate: "none selected",
      data: {
        dataSets: [{
          values: props.logValues,
@@ -54,42 +53,28 @@ class MoodChart extends React.Component {
    };
  }
 
- componentDidMount() {
-
-   console.log('%%%%%%%%%%%%%%%%%%%%')
-   console.log(this.state)
-   console.log(this.props)
-  console.log('%%%%%%%%%%%%%%%%%%%%')
- }
 
  handleSelect(event) {
    let entry = event.nativeEvent
-   let index = this.props.labels[event.nativeEvent.x]
+   let labelIndex = this.props.labels[event.nativeEvent.x]
+   let dateIndex = this.props.date[event.nativeEvent.x]
 
    if (entry == null) {
      this.setState({...this.state, selectedEntry: null})
    } else {
-     this.setState({...this.state, selectedEntry: index})
+     this.setState({...this.state, selectedEntry: labelIndex, selectedDate: dateIndex})
    }
-
-
-   console.log(event.nativeEvent)
-   console.log(event.nativeEvent.x)
  }
 
  render() {
-   console.log("chart is finally being rendered")
-   console.log(this.state)
-   console.log(this.props.logValues);
-   console.log(this.props.colors);
 
    return (
 
      <View style={styles.container}>
 
-       <View style={{height:80, backgroundColor: '#fce0c7'}}>
-         <Text> selected entry</Text>
-         <Text> {this.state.selectedEntry}</Text>
+       <View style={styles.selectedContainer}>
+        <Text style={{ fontSize: 22, fontWeight: '400', marginTop: 60}}>Date: {this.state.selectedDate}</Text>
+         <Text style={{ fontSize: 22, fontWeight: '400', paddingBottom: 30,}}>Mood: {this.state.selectedEntry}</Text>
        </View>
 
        <View style={styles.container}>
@@ -119,6 +104,13 @@ const styles = StyleSheet.create({
  },
  chart: {
    flex: 1
+ },
+ selectedContainer: {
+   height: 130,
+   backgroundColor: '#fce0c7',
+   justifyContent: 'center',
+   alignItems: 'center',
+   paddingBottom: 0,
  }
 });
 
@@ -126,6 +118,7 @@ MoodChart.propTypes = {
   logValues: PropTypes.array,
   colors: PropTypes.array,
   labels: PropTypes.array,
+  date: PropTypes.array
 };
 
 export default MoodChart

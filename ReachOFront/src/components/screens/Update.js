@@ -336,6 +336,7 @@ const styles = StyleSheet.create({
   },
   moodWord: {
     fontSize: 32,
+    fontWeight: '500',
   },
   moodMeasure: {
     textAlign: 'center',

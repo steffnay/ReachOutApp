@@ -47,7 +47,8 @@ class History extends React.Component {
 
   makeWeekApiCall(uid) {
     api.getWeekLogData(uid).then((data) => {
-
+      console.log('LOOKING FOR THE DATA FROM API CALL!!!!!!!!!')
+      console.log(data)
       const dataLength = data.length
       let dataArray = []
 
@@ -82,16 +83,13 @@ class History extends React.Component {
       this.setState({chartData: dataArray});
       this.makeColorArray(data);
       this.makeLabelArray(data);
-
-      console.log('oOOOOOooOoOoooooooOooooo');
-      console.log(this.state);
-      console.log('oOOOOOooOoOoooooooOooooo');
     })
   }
 
   makeColorArray(data) {
     const dataLength = data.length;
     let colorArray = []
+    let dateArray = []
 
     for(let i=0; i < dataLength; i++){
       let primary = data[i].primary_mood;
@@ -99,7 +97,11 @@ class History extends React.Component {
       let color = this.checkColor(primary, intensity);
 
       colorArray.push(color);
+      let date = new Date(data[i].created_at);
+      date = ((date.getMonth() + 1) + '/' + date.getDate());
+      dateArray.push(date);
       this.setState({colorArray: colorArray});
+      this.setState({dateArray: dateArray});
     }
   }
 
@@ -280,41 +282,30 @@ class History extends React.Component {
   renderChart() {
     if (this.state.chartData.length > 0 && this.state.colorArray.length > 0 &&
         this.state.chartData.length == this.state.colorArray.length) {
-      console.log("this is calling because chart data is full")
       return (
-        <MoodChart logValues={this.state.chartData} colors={this.state.colorArray} labels={this.state.labelArray}/>
+        <MoodChart logValues={this.state.chartData} colors={this.state.colorArray}
+          labels={this.state.labelArray} date={this.state.dateArray}/>
       );
     }
     else {
-      console.log("this is calling because chart data is empty")
       return (
-          <Text>~*Loading*~</Text>
+          <Text>Loading...</Text>
       );
     }
   }
 
 render() {
-   const moodVals = [{y: -10}, {y: -10}, {y: -10}, {y: -10}, {y: -10},
-     {y: -10}, {y: -10}, {y: -10}, {y: -10}, {y: -10},
-     {y: -10}, {y: -10}, {y: -10}, {y: -10}, {y: -10}, {y: -10},
-     {y: 5}, {y: -2}, {y: -5}, {y: 5}, {y: 5}]
-
-    const colorVals = [-12217383, -12217383, -12217383, -12217383, -12217383, -12217383,
-      -12217383, -12217383, -12217383, -12217383, -12217383, -12217383, -12217383,
-      -12217383, -12217383, -12217383, -39, -35981, -2555904, -10762149, -10762149]
-
-
    return (
      <View style={styles.container}>
        {this.renderChart()}
        <View style={styles.buttonContainer}>
          <TouchableOpacity onPress={()=>this.makeWeekApiCall(this.state.currentUser)}
            style={styles.button}>
-           <Text>This Week</Text>
+           <Text style={styles.buttonText}>This Week</Text>
          </TouchableOpacity>
          <TouchableOpacity onPress={()=>this.makeMonthApiCall(this.state.currentUser)}
            style={styles.button}>
-           <Text>This Month</Text>
+           <Text style={styles.buttonText}>This Month</Text>
          </TouchableOpacity>
        </View>
      </View>
@@ -335,8 +326,9 @@ const styles = StyleSheet.create({
    justifyContent: 'space-around',
    alignItems: 'center',
  },
- button: {
-
+ buttonText: {
+   fontWeight: '500',
+   fontSize: 18,
  }
 });
 
