@@ -106,7 +106,7 @@ class Contacts extends Component {
    let phone, button, confirmed = null;
 
     if (section.phone)
-       phone = <Text style={{fontSize: 18}}>{section.phone}</Text>;
+       phone = <Text style={{fontSize: 18, color: 'black'}}>{section.phone}</Text>;
     if (section.confirmed == true)
       confirmed = <Text style={{fontSize: 18, color: 'black'}}>Confirmed: True</Text>;
     if (section.confirmed == false)
