@@ -73,8 +73,10 @@ class MoodChart extends React.Component {
      <View style={styles.container}>
 
        <View style={styles.selectedContainer}>
-        <Text style={{ fontSize: 22, fontWeight: '400', marginTop: 60}}>Date: {this.state.selectedDate}</Text>
-         <Text style={{ fontSize: 22, fontWeight: '400', paddingBottom: 30,}}>Mood: {this.state.selectedEntry}</Text>
+        <Text style={{ fontSize: 22, fontWeight: '400', marginTop: 60, color: 'black'}}>
+          Date: {this.state.selectedDate}</Text>
+        <Text style={{ fontSize: 22, fontWeight: '400', paddingBottom: 30, color: 'black'}}>
+          Mood: {this.state.selectedEntry}</Text>
        </View>
 
        <View style={styles.container}>

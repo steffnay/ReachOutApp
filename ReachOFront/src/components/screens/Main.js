@@ -7,25 +7,24 @@ import { GoogleSignin } from 'react-native-google-signin';
 
 export default class Main extends React.Component {
 
+  handleLogOut = () => {
+    this.signOut()
+    firebase.auth().signOut()
+    .then(() => this.props.navigation.navigate('Loading'))
+      .catch(error => this.setState({ errorMessage: error.message }))
+  }
 
-    handleLogOut = () => {
-      this.signOut()
-      firebase.auth().signOut()
-      .then(() => this.props.navigation.navigate('Loading'))
-        .catch(error => this.setState({ errorMessage: error.message }))
+  signOut() {
+    try {
+      GoogleSignin.revokeAccess();
+      GoogleSignin.signOut();
+      this.setState({ user: null });
+    } catch (error) {
+      this.setState({
+        error,
+      });
     }
-
-    signOut() {
-      try {
-        GoogleSignin.revokeAccess();
-        GoogleSignin.signOut();
-        this.setState({ user: null });
-      } catch (error) {
-        this.setState({
-          error,
-        });
-      }
-    }
+  }
 
   state = { currentUser: null }
   componentDidMount() {
@@ -46,13 +45,13 @@ export default class Main extends React.Component {
       const { currentUser } = this.state
 
       return (
-        <ImageBackground source={require('../utilities/ReachOutTransparent1.png')} style={styles.backgroundImage}>
+        <ImageBackground source={require('../utilities/ReachOutTransparent4.png')} style={styles.backgroundImage}>
 
         <View style={styles.container}>
-        <Text style={{color: 'black'}}>
-            Hello {currentUser && currentUser.email}!
+        <Text style={{color: 'black', fontSize: 28, padding: 20}}>
+            Hi, {currentUser && currentUser.displayName}!
           </Text>
-          <Button title="Log Out" onPress={this.handleLogOut} />
+          <Button title="Log Out" onPress={this.handleLogOut} color='#4a4a4a'/>
         </View>
           </ImageBackground>
       )
@@ -60,12 +59,12 @@ export default class Main extends React.Component {
 }
 
 
-
 const styles = StyleSheet.create({
   container: {
     flex: 1,
     justifyContent: 'center',
-    alignItems: 'center'
+    alignItems: 'center',
+    paddingBottom: 50
   },
   backgroundImage: {
     flex: 1,

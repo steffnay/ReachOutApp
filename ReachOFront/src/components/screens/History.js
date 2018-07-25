@@ -16,10 +16,6 @@ import {BarChart} from 'react-native-charts-wrapper';
 import firebase from 'react-native-firebase'
 import api from '../utilities/api'
 
-const GREEN = processColor('#71BD6A');
-const RED = processColor('#D14B5A');
-
-
 
 class History extends React.Component {
   static navigationOptions = {
@@ -323,6 +319,7 @@ const styles = StyleSheet.create({
  buttonText: {
    fontWeight: '500',
    fontSize: 18,
+   color: 'black',
  }
 });
 
