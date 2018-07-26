@@ -50,7 +50,6 @@ const api = {
     let url = `http://reach-out-project-backend.herokuapp.com/contacts/${id}`;
     return fetch(url, {
       method: 'DELETE',
-      body: JSON.stringify(),
       headers: new Headers({
         'Content-Type': 'application/json; charset=utf-8'
       })
