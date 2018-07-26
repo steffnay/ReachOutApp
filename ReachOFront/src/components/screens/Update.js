@@ -269,7 +269,7 @@ class Update extends Component {
             />
             <View style={styles.container2}>
               <Text>
-                Dectivated
+                Deactivated
               </Text>
               <Text>
                 Activated
