@@ -8,8 +8,8 @@ cd ReachOFront
 
 npm install
 
-react-native start
-
 react-native link
+
+react-native start
 
 react-native run-android
