@@ -12,8 +12,6 @@ Because isolation is a common obstacle for individuals wishing to maintain menta
 
 _Android_
 
-cd ReachOFront
-
 npm install
 
 react-native link
